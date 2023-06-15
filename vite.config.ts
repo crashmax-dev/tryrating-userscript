@@ -13,10 +13,7 @@ export default defineConfig((config) => {
           author,
           license,
           homepage,
-          match: [
-            'http://localhost:3000',
-            'https://example.com'
-          ]
+          match: 'https://www.tryrating.com/app/survey/*'
         },
         server: {
           port: 3000
