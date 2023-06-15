@@ -1,0 +1,12 @@
+.timer-container {
+  position: absolute;
+  z-index: 99999;
+  background: #2e2c2f;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  width: 75px;
+  bottom: 12%;
+  padding: 4px;
+  text-align: center;
+}
