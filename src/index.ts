@@ -9,7 +9,7 @@ import {
 import { Storage } from './storage.js'
 import { Timer } from './timer.js'
 import './styles.css'
-import { Backuper } from './backup.js'
+import { Backuper } from './backuper.js'
 
 function createTimer() {
   const container = el('div', { className: 'timer-container' })
@@ -30,11 +30,13 @@ const backuper = new Backuper(storage)
 const timerElement = createTimer()
 
 window.addEventListener('keydown', (event) => {
+  // backup
   if (event.altKey && event.code === 'KeyQ') {
     event.preventDefault()
     backuper.download()
   }
 
+  // reset
   if (event.altKey && event.code === 'KeyW') {
     event.preventDefault()
     if (confirm('Reset data.\nAre you sure?')) {

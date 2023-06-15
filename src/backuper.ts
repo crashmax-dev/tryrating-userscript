@@ -6,6 +6,9 @@ export class Backuper {
   constructor(private readonly storage: Storage) {}
 
   download() {
+    const values = this.storage.read()
+    if (!values.length) return
+
     const currentDate = new Date()
     const dateFormat = new Intl.DateTimeFormat('ru-RU', {
       timeZone: 'UTC',
@@ -23,7 +26,6 @@ export class Backuper {
     table.append(caption, thead)
 
     let sumEstimated = 0
-    const values = this.storage.read()
     for (const { type, estimated } of values) {
       sumEstimated += estimated
       const tr = el('tr', [
