@@ -7,7 +7,10 @@ export class Backuper {
 
   download() {
     const values = this.storage.read()
-    if (!values.length) return
+    if (!values.length) {
+      alert('Нету данных для экспорта.')
+      return
+    }
 
     const currentDate = new Date()
     const dateFormat = new Intl.DateTimeFormat('ru-RU', {

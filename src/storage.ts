@@ -13,6 +13,10 @@ export class Storage {
     console.log('storage', this.values)
   }
 
+  get data() {
+    return this.values
+  }
+
   reset() {
     this.values = []
     GM_setValue(STORAGE_KEY, this.values)

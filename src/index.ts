@@ -11,23 +11,24 @@ import { Timer } from './timer.js'
 import './styles.css'
 import { Backuper } from './backuper.js'
 
-function createTimer() {
-  const container = el('div', { className: 'timer-container' })
-  const timer = el('time')
+function createTimer(storage: Storage) {
+  const container = el('div', { className: 'tryrating-container' })
+  const taskCounter = el('span', `Tasks: ${storage.data.length}`)
+  const timer = el('span')
 
-  container.append(timer)
+  container.append(timer, taskCounter)
   document.body.appendChild(container)
 
   return {
     render: (time: string) => {
-      timer.textContent = time
+      timer.textContent = `Time: ${time}`
     }
   }
 }
 
 const storage = new Storage()
 const backuper = new Backuper(storage)
-const timerElement = createTimer()
+const timerElement = createTimer(storage)
 
 window.addEventListener('keydown', (event) => {
   // backup
@@ -66,8 +67,9 @@ async function init() {
     (time) => timerElement.render(time),
     async () => {
       submitButton.click()
+      await sleep(500)
 
-      if (!getModal()) {
+      if (getModal()) {
         GM_notification({
           title: 'Подтвердите задание',
           text: fields.taskType,
@@ -77,10 +79,9 @@ async function init() {
         })
 
         submitButton.addEventListener('click', onSubmitTask, { once: true })
-        return
+      } else {
+        onSubmitTask()
       }
-
-      onSubmitTask()
     }
   )
 
