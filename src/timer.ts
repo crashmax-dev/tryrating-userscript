@@ -2,13 +2,19 @@ import ms from 'ms'
 import { clearInterval, setInterval } from 'worker-timers'
 
 export class Timer {
-  private intervalId: ReturnType<typeof setInterval>
+  private intervalId: ReturnType<typeof setInterval> | null
   private ms: number = 0
 
-  constructor(
-    private readonly onTick: (time: string) => void,
-    private readonly onEnd: () => void
-  ) {}
+  private onTick: (time: string) => void
+  private onEnd: () => void
+
+  onTimerTick(callback: (time: string) => void): void {
+    this.onTick = callback
+  }
+
+  onTimerEnd(callback: () => void): void {
+    this.onEnd = callback
+  }
 
   private onTickTimer() {
     this.ms -= 1000
@@ -30,5 +36,6 @@ export class Timer {
   stop() {
     if (!this.intervalId) return
     clearInterval(this.intervalId)
+    this.intervalId = null
   }
 }

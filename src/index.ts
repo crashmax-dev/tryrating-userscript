@@ -1,91 +1,124 @@
-import { el } from '@zero-dependency/dom'
 import { sleep } from '@zero-dependency/utils'
-import {
-  getModal,
-  getSubmitButton,
-  getSurveyFields,
-  parseTimeToMs
-} from './helpers.js'
-import { Storage } from './storage.js'
-import { Timer } from './timer.js'
-import './styles.css'
 import { Backuper } from './backuper.js'
+import { getModal, getSubmitButtons, parseTimeToMs } from './helpers.js'
+import { Storage } from './storage.js'
+import { TaskFieldsWatcher } from './task-fields.js'
+import { Timer } from './timer.js'
+import { Ui } from './ui.js'
+import type { TaskFields } from './task-fields.js'
+import './styles.css'
 
-function createTimer(storage: Storage) {
-  const container = el('div', { className: 'tryrating-container' })
-  const taskCounter = el('span', `Tasks: ${storage.data.length}`)
-  const timer = el('span')
+class App {
+  private backuper: Backuper
+  private ui: Ui
+  private timer: Timer
+  private taskFieldsWatcher: TaskFieldsWatcher
 
-  container.append(timer, taskCounter)
-  document.body.appendChild(container)
+  private submitted = false
+  private submitButtons: HTMLButtonElement[] = []
+  private taskFields: TaskFields | null = null
 
-  return {
-    render: (time: string) => {
-      timer.textContent = `Time: ${time}`
-    }
-  }
-}
+  private onSubmitEvent: () => void
 
-const storage = new Storage()
-const backuper = new Backuper(storage)
-const timerElement = createTimer(storage)
-
-window.addEventListener('keydown', (event) => {
-  // backup
-  if (event.altKey && event.code === 'KeyQ') {
-    event.preventDefault()
-    backuper.download()
+  constructor(private readonly storage: Storage) {
+    this.onSubmitEvent = this.writeSubmittedTask.bind(this)
   }
 
-  // reset
-  if (event.altKey && event.code === 'KeyW') {
-    event.preventDefault()
-    if (confirm('Reset data.\nAre you sure?')) {
-      storage.reset()
-    }
-  }
-})
+  init(): void {
+    this.backuper = new Backuper(this.storage)
 
-async function init() {
-  const submitButton = await getSubmitButton()
-  const fields = await getSurveyFields()
-  if (!fields) {
-    alert(
-      'Задание не найдено, обновите страницу или обратитесь к разработчику!'
-    )
-    return
-  }
+    this.ui = new Ui(this.storage)
+    this.ui.init()
 
-  async function onSubmitTask() {
-    storage.write({ type: fields!.taskType, estimated: ms })
-    await sleep(5000)
-    location.reload()
-  }
+    this.timer = new Timer()
+    this.timer.onTimerTick((time) => this.ui.render(time))
+    this.timer.onTimerEnd(async () => {
+      if (!this.submitButtons.length) {
+        console.error('submitButton is not defined')
+        return
+      }
 
-  const ms = parseTimeToMs(fields.estimatedRatingTime)
-  const timer = new Timer(
-    (time) => timerElement.render(time),
-    async () => {
-      submitButton.click()
+      this.submitButtons[0]!.click()
       await sleep(500)
 
-      if (getModal()) {
+      const modal = getModal()
+      if (modal) {
         GM_notification({
-          title: 'Подтвердите задание',
-          text: fields.taskType,
+          title: 'Открылось модальное окно',
           highlight: true,
           silent: false,
           timeout: 0
         })
 
-        submitButton.addEventListener('click', onSubmitTask, { once: true })
-      } else {
-        onSubmitTask()
+        this.addSubmitListeners()
+        return
       }
-    }
-  )
 
-  timer.start(ms)
+      this.writeSubmittedTask()
+    })
+
+    this.taskFieldsWatcher = new TaskFieldsWatcher()
+    this.taskFieldsWatcher.init()
+    this.taskFieldsWatcher.onChangeTask((taskFields) => {
+      this.removeSubmitListeners()
+      this.submitted = false
+      this.taskFields = taskFields
+      this.submitButtons = getSubmitButtons()
+
+      console.log({ buttons: this.submitButtons, task: this.taskFields })
+
+      const timerMs = parseTimeToMs(this.taskFields.estimatedRatingTime)
+      this.timer.start(timerMs)
+    })
+
+    window.addEventListener('keydown', (event) => {
+      // export
+      if (event.altKey && event.key === '1') {
+        event.preventDefault()
+        this.backuper.download()
+      }
+
+      // reset
+      if (event.altKey && event.key === '2') {
+        event.preventDefault()
+        if (confirm('Reset data.\nAre you sure?')) {
+          this.storage.reset()
+        }
+      }
+    })
+  }
+
+  writeSubmittedTask(): void {
+    if (!this.taskFields) {
+      console.error('taskFields is not defined')
+      return
+    }
+
+    if (this.submitted) {
+      console.info('current task is submitted', this.taskFields)
+      return
+    }
+
+    this.submitted = true
+    this.storage.write({
+      type: this.taskFields.taskType,
+      estimated: parseTimeToMs(this.taskFields.estimatedRatingTime)
+    })
+  }
+
+  addSubmitListeners() {
+    for (const submitButton of this.submitButtons) {
+      submitButton.addEventListener('click', this.onSubmitEvent)
+    }
+  }
+
+  removeSubmitListeners() {
+    for (const submitButton of this.submitButtons) {
+      submitButton.removeEventListener('click', this.onSubmitEvent)
+    }
+  }
 }
 
-init()
+const storage = new Storage()
+const root = new App(storage)
+root.init()
