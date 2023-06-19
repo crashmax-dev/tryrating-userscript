@@ -5,7 +5,7 @@ import type { Storage } from './storage.js'
 export class Backuper {
   constructor(private readonly storage: Storage) {}
 
-  download() {
+  download(): void {
     const values = this.storage.read()
     if (!values.length) {
       alert('Нету данных для экспорта.')

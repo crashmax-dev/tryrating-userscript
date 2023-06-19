@@ -106,13 +106,13 @@ class App {
     this.ui.renderTaskCounter()
   }
 
-  addSubmitListeners() {
+  addSubmitListeners(): void {
     for (const submitButton of this.submitButtons) {
       submitButton.addEventListener('click', this.onSubmitEvent)
     }
   }
 
-  removeSubmitListeners() {
+  removeSubmitListeners(): void {
     for (const submitButton of this.submitButtons) {
       submitButton.removeEventListener('click', this.onSubmitEvent)
     }

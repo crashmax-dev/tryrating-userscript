@@ -22,6 +22,6 @@ export class Ui {
   }
 
   renderTaskCounter(): void {
-    this.taskCounter.textContent = `Tasks: ${this.storage.data.length}`
+    this.taskCounter.textContent = `Tasks: ${this.storage.values.length}`
   }
 }

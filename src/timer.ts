@@ -5,35 +5,35 @@ export class Timer {
   private intervalId: ReturnType<typeof setInterval> | null
   private ms: number = 0
 
-  private onTick: (time: string) => void
-  private onEnd: () => void
+  private onTickCallback: (time: string) => void
+  private onEndCallback: () => void
 
   onTimerTick(callback: (time: string) => void): void {
-    this.onTick = callback
+    this.onTickCallback = callback
   }
 
   onTimerEnd(callback: () => void): void {
-    this.onEnd = callback
+    this.onEndCallback = callback
   }
 
-  private onTickTimer() {
+  private onTickTimer(): void {
     this.ms -= 1000
     const time = ms(this.ms, { long: true })
-    this.onTick(time)
+    this.onTickCallback(time)
 
     if (this.ms === 0) {
-      this.onEnd()
+      this.onEndCallback()
       this.stop()
     }
   }
 
-  start(ms: number) {
+  start(ms: number): void {
     this.stop()
     this.ms = ms
     this.intervalId = setInterval(() => this.onTickTimer(), 1000)
   }
 
-  stop() {
+  stop(): void {
     if (!this.intervalId) return
     clearInterval(this.intervalId)
     this.intervalId = null

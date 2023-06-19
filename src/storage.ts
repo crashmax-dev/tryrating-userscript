@@ -6,29 +6,29 @@ interface Task {
 }
 
 export class Storage {
-  private values: Task[] = []
+  private tasks: Task[] = []
 
   constructor() {
     this.read()
-    console.log('storage', this.values)
+    console.log('storage', this.tasks)
   }
 
-  get data() {
-    return this.values
+  get values() {
+    return this.tasks
   }
 
-  reset() {
-    this.values = []
-    GM_setValue(STORAGE_KEY, this.values)
+  reset(): void {
+    this.tasks = []
+    GM_setValue(STORAGE_KEY, this.tasks)
   }
 
-  read() {
-    this.values = GM_getValue<Task[]>(STORAGE_KEY, [])
-    return this.values
+  read(): Task[] {
+    this.tasks = GM_getValue<Task[]>(STORAGE_KEY, [])
+    return this.tasks
   }
 
   write(task: Task) {
-    this.values.push(task)
-    GM_setValue(STORAGE_KEY, this.values)
+    this.tasks.push(task)
+    GM_setValue(STORAGE_KEY, this.tasks)
   }
 }
