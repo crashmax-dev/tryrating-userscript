@@ -15,7 +15,6 @@ class App {
   private taskFieldsWatcher: TaskFieldsWatcher
   private submitButtons: HTMLButtonElement[] = []
   private taskFields: TaskFields | null = null
-  private modal: Element | null = null
 
   constructor(private readonly storage: Storage) {}
 
