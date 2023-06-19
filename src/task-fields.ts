@@ -1,4 +1,3 @@
-import { setInterval } from 'worker-timers'
 import { SURVEY_FIELDS, SURVEY_META } from './constants.js'
 
 export interface TaskFields {
@@ -15,15 +14,11 @@ export class TaskFieldsWatcher {
     return this.taskFields
   }
 
-  init(): void {
-    setInterval(() => this.getTaskFields(), 5000)
-  }
-
   onChangeTask(callback: (taskFields: TaskFields) => void): void {
     this.onChangeTaskCallback = callback
   }
 
-  private getTaskFields(): void {
+  watch(): void {
     const taskFields = document.querySelector(SURVEY_META)
     if (!taskFields) return
 

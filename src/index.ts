@@ -1,4 +1,4 @@
-import { sleep } from '@zero-dependency/utils'
+import { setInterval } from 'worker-timers'
 import { Backuper } from './backuper.js'
 import { getModal, getSubmitButtons, parseTimeToMs } from './helpers.js'
 import { Storage } from './storage.js'
@@ -13,16 +13,11 @@ class App {
   private ui: Ui
   private timer: Timer
   private taskFieldsWatcher: TaskFieldsWatcher
-
-  private submitted = false
   private submitButtons: HTMLButtonElement[] = []
   private taskFields: TaskFields | null = null
+  private modal: Element | null = null
 
-  private onSubmitEvent: () => void
-
-  constructor(private readonly storage: Storage) {
-    this.onSubmitEvent = this.writeSubmittedTask.bind(this)
-  }
+  constructor(private readonly storage: Storage) {}
 
   init(): void {
     this.backuper = new Backuper(this.storage)
@@ -34,41 +29,44 @@ class App {
     this.timer.onTimerTick((time) => this.ui.renderTime(time))
     this.timer.onTimerEnd(async () => {
       if (!this.submitButtons.length) {
-        console.error('submitButton is not defined')
+        console.error('submitButtons is not defined')
         return
       }
 
       this.submitButtons[0]!.click()
-      await sleep(1000)
+    })
 
-      const modal = getModal()
-      if (modal) {
+    this.taskFieldsWatcher = new TaskFieldsWatcher()
+    this.taskFieldsWatcher.onChangeTask((taskFields) => {
+      // write task fields
+      if (
+        this.taskFields &&
+        this.taskFields.requestId !== taskFields.requestId
+      ) {
+        console.info('Current task is submitted:', this.taskFields)
+        this.writeSubmittedTask()
+      }
+
+      this.taskFields = taskFields
+      this.submitButtons = getSubmitButtons()
+
+      // start timer
+      const taskTime = parseTimeToMs(this.taskFields.estimatedRatingTime)
+      this.timer.start(taskTime)
+    })
+
+    setInterval(() => {
+      this.taskFieldsWatcher.watch()
+
+      if (getModal()) {
         GM_notification({
           title: 'Открылось модальное окно',
           highlight: true,
           silent: false,
-          timeout: 0
+          timeout: 5000
         })
-
-        this.addSubmitListeners()
-        return
       }
-
-      this.writeSubmittedTask()
-    })
-
-    this.taskFieldsWatcher = new TaskFieldsWatcher()
-    this.taskFieldsWatcher.init()
-    this.taskFieldsWatcher.onChangeTask((taskFields) => {
-      this.removeSubmitListeners()
-
-      this.submitted = false
-      this.taskFields = taskFields
-      this.submitButtons = getSubmitButtons()
-
-      const timerMs = parseTimeToMs(this.taskFields.estimatedRatingTime)
-      this.timer.start(timerMs)
-    })
+    }, 5000)
 
     window.addEventListener('keydown', (event) => {
       // export
@@ -82,40 +80,18 @@ class App {
         event.preventDefault()
         if (confirm('Reset data.\nAre you sure?')) {
           this.storage.reset()
+          this.ui.renderTaskCounter()
         }
       }
     })
   }
 
   writeSubmittedTask(): void {
-    if (!this.taskFields) {
-      console.error('taskFields is not defined')
-      return
-    }
-
-    if (this.submitted) {
-      console.info('current task is submitted', this.taskFields)
-      return
-    }
-
-    this.submitted = true
     this.storage.write({
-      type: this.taskFields.taskType,
-      estimated: parseTimeToMs(this.taskFields.estimatedRatingTime)
+      type: this.taskFields!.taskType,
+      estimated: parseTimeToMs(this.taskFields!.estimatedRatingTime)
     })
     this.ui.renderTaskCounter()
-  }
-
-  addSubmitListeners(): void {
-    for (const submitButton of this.submitButtons) {
-      submitButton.addEventListener('click', this.onSubmitEvent)
-    }
-  }
-
-  removeSubmitListeners(): void {
-    for (const submitButton of this.submitButtons) {
-      submitButton.removeEventListener('click', this.onSubmitEvent)
-    }
   }
 }
 
