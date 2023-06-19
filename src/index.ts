@@ -31,7 +31,7 @@ class App {
     this.ui.init()
 
     this.timer = new Timer()
-    this.timer.onTimerTick((time) => this.ui.render(time))
+    this.timer.onTimerTick((time) => this.ui.renderTime(time))
     this.timer.onTimerEnd(async () => {
       if (!this.submitButtons.length) {
         console.error('submitButton is not defined')
@@ -39,7 +39,7 @@ class App {
       }
 
       this.submitButtons[0]!.click()
-      await sleep(500)
+      await sleep(1000)
 
       const modal = getModal()
       if (modal) {
@@ -61,11 +61,10 @@ class App {
     this.taskFieldsWatcher.init()
     this.taskFieldsWatcher.onChangeTask((taskFields) => {
       this.removeSubmitListeners()
+
       this.submitted = false
       this.taskFields = taskFields
       this.submitButtons = getSubmitButtons()
-
-      console.log({ buttons: this.submitButtons, task: this.taskFields })
 
       const timerMs = parseTimeToMs(this.taskFields.estimatedRatingTime)
       this.timer.start(timerMs)
@@ -104,6 +103,7 @@ class App {
       type: this.taskFields.taskType,
       estimated: parseTimeToMs(this.taskFields.estimatedRatingTime)
     })
+    this.ui.renderTaskCounter()
   }
 
   addSubmitListeners() {

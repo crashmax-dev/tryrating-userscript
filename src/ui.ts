@@ -9,15 +9,19 @@ export class Ui {
 
   init(): void {
     const container = el('div', { className: 'tryrating-container' })
-    this.taskCounter = el('span', `Tasks: ${this.storage.data.length}`)
+    this.taskCounter = el('span')
     this.timer = el('span')
 
     container.append(this.timer, this.taskCounter)
-    console.log(container)
     document.body.appendChild(container)
+    this.renderTaskCounter()
   }
 
-  render(time: string): void {
+  renderTime(time: string): void {
     this.timer.textContent = `Time: ${time}`
+  }
+
+  renderTaskCounter(): void {
+    this.taskCounter.textContent = `Tasks: ${this.storage.data.length}`
   }
 }
