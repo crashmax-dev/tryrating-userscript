@@ -9,8 +9,8 @@ dependencies:
     specifier: 1.12.0
     version: 1.12.0
   '@zero-dependency/dom':
-    specifier: 1.7.0
-    version: 1.7.0
+    specifier: 1.7.1
+    version: 1.7.1
   '@zero-dependency/emitter':
     specifier: 1.2.2
     version: 1.2.2
@@ -120,7 +120,7 @@ packages:
       '@babel/compat-data': 7.22.5
       '@babel/core': 7.22.5
       '@babel/helper-validator-option': 7.22.5
-      browserslist: 4.21.8
+      browserslist: 4.21.9
       lru-cache: 5.1.1
       semver: 6.3.0
     dev: true
@@ -545,8 +545,8 @@ packages:
       '@zero-dependency/utils': 1.6.0
     dev: false
 
-  /@zero-dependency/dom@1.7.0:
-    resolution: {integrity: sha512-5lqbydmG43DDkMx9HfR+bjlPhkkz+SIvLY0ovQDnHNAkK23nMYsBosXzUx4Dsve7nY9QkrWjnuWbrUZmn7rseA==}
+  /@zero-dependency/dom@1.7.1:
+    resolution: {integrity: sha512-AFCbISF3+PpG+3MlJ3U732nsFLEYjPXb6u1UwbJk+TVvq3bKO6pfAKz9mBCjBbvTw4t2hnG2+KfV4QSL6A/7FA==}
     dependencies:
       csstype: 3.1.2
     dev: false
@@ -605,15 +605,15 @@ packages:
       fill-range: 7.0.1
     dev: true
 
-  /browserslist@4.21.8:
-    resolution: {integrity: sha512-j+7xYe+v+q2Id9qbBeCI8WX5NmZSRe8es1+0xntD/+gaWXznP8tFEkv5IgSaHf5dS1YwVMbX/4W6m937mj+wQw==}
+  /browserslist@4.21.9:
+    resolution: {integrity: sha512-M0MFoZzbUrRU4KNfCrDLnvyE7gub+peetoTid3TBIqtunaDJyXlwhakT+/VkvSXcfIzFfK/nkCs4nmyTmxdNSg==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001503
-      electron-to-chromium: 1.4.431
+      caniuse-lite: 1.0.30001504
+      electron-to-chromium: 1.4.433
       node-releases: 2.0.12
-      update-browserslist-db: 1.0.11(browserslist@4.21.8)
+      update-browserslist-db: 1.0.11(browserslist@4.21.9)
     dev: true
 
   /bufferutil@4.0.7:
@@ -629,8 +629,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /caniuse-lite@1.0.30001503:
-    resolution: {integrity: sha512-Sf9NiF+wZxPfzv8Z3iS0rXM1Do+iOy2Lxvib38glFX+08TCYYYGR5fRJXk4d77C4AYwhUjgYgMsMudbh2TqCKw==}
+  /caniuse-lite@1.0.30001504:
+    resolution: {integrity: sha512-5uo7eoOp2mKbWyfMXnGO9rJWOGU8duvzEiYITW+wivukL7yHH4gX9yuRaobu6El4jPxo6jKZfG+N6fB621GD/Q==}
     dev: true
 
   /chalk@2.4.2:
@@ -719,8 +719,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /electron-to-chromium@1.4.431:
-    resolution: {integrity: sha512-m232JTVmCawA2vG+1azVxhKZ9Sv1Q//xxNv5PkP5rWxGgQE8c3CiZFrh8Xnp+d1NmNxlu3QQrGIfdeW5TtXX5w==}
+  /electron-to-chromium@1.4.433:
+    resolution: {integrity: sha512-MGO1k0w1RgrfdbLVwmXcDhHHuxCn2qRgR7dYsJvWFKDttvYPx6FNzCGG0c/fBBvzK2LDh3UV7Tt9awnHnvAAUQ==}
     dev: true
 
   /es5-ext@0.10.62:
@@ -1140,13 +1140,13 @@ packages:
     hasBin: true
     dev: true
 
-  /update-browserslist-db@1.0.11(browserslist@4.21.8):
+  /update-browserslist-db@1.0.11(browserslist@4.21.9):
     resolution: {integrity: sha512-dCwEFf0/oT85M1fHBg4F0jtLwJrutGoHSQXCh7u4o2t1drG+c0a9Flnqww6XUKSfQMPpJBRjU8d4RXB09qtvaA==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
     dependencies:
-      browserslist: 4.21.8
+      browserslist: 4.21.9
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true

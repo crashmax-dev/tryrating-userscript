@@ -21,20 +21,22 @@ export class Backuper {
     const table = el('table', { border: '1' })
     const caption = el('caption')
 
-    const thead = el('tr', [
+    const thead = el(
+      'tr',
       el('th', 'Task Type'),
       el('th', 'Estimated Rating Time')
-    ])
+    )
 
     table.append(caption, thead)
 
     let sumEstimated = 0
     for (const { type, estimated } of values) {
       sumEstimated += estimated
-      const tr = el('tr', [
+      const tr = el(
+        'tr',
         el('td', type),
         el('td', ms(estimated, { long: true }))
-      ])
+      )
       table.append(tr)
     }
 
