@@ -1,36 +1,83 @@
+import dayjs from 'dayjs'
 import { createSignal } from 'solid-js'
 import { STORAGE_KEY } from './constants.js'
 
-interface Task {
+interface TaskList {
   type: string
+  count: number
   estimated: number
 }
 
-export const [tasks, setTasks] = createSignal<Task[]>([])
+interface Tasks {
+  date: string
+  total: number
+  list: TaskList[]
+}
+
+const initialStorage = (): Tasks[] => [
+  {
+    date: dayjs().format('DD.MM.YYYY'),
+    total: 0,
+    list: []
+  }
+]
+
+export const [taskList, setTaskList] = createSignal<Tasks[]>([])
 
 export class StorageTasks {
   constructor() {
     this.read()
-    console.log('tasks', tasks())
   }
 
-  get values() {
-    return tasks()
+  get taskList() {
+    return taskList()
+  }
+
+  private read(): void {
+    const tasks = GM_getValue(STORAGE_KEY, initialStorage())
+    setTaskList(tasks)
   }
 
   reset(): void {
-    setTasks([])
-    GM_setValue(STORAGE_KEY, tasks())
+    setTaskList(initialStorage())
+    GM_setValue(STORAGE_KEY, taskList())
   }
 
-  read(): Task[] {
-    const tasks = GM_getValue<Task[]>(STORAGE_KEY, [])
-    setTasks(tasks)
-    return tasks
+  write(newTask: Omit<TaskList, 'count'>): void {
+    const currentTaskList = this.getTaskList()
+    currentTaskList.total += 1
+
+    const currentTask = currentTaskList.list.find(
+      (task) => task.type === newTask.type
+    )
+
+    if (currentTask) {
+      currentTask.count += 1
+      currentTask.estimated += newTask.estimated
+    } else {
+      currentTaskList.list.push({
+        count: 1,
+        type: newTask.type,
+        estimated: newTask.estimated
+      })
+    }
+
+    const newTaskList = [
+      currentTaskList,
+      ...taskList().filter((task) => task.date !== currentTaskList.date)
+    ]
+
+    setTaskList(newTaskList)
+    GM_setValue(STORAGE_KEY, taskList())
   }
 
-  write(task: Task) {
-    setTasks((prevValue) => [...prevValue, task])
-    GM_setValue(STORAGE_KEY, tasks())
+  getTaskList(): Tasks {
+    const currentDate = dayjs().format('DD.MM.YYYY')
+    const findedTaskList = taskList().find((task) => task.date === currentDate)
+    if (!findedTaskList) {
+      return initialStorage()[0]!
+    }
+
+    return findedTaskList
   }
 }

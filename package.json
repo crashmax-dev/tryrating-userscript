@@ -23,6 +23,7 @@
   "dependencies": {
     "@zero-dependency/dom": "^1.7.1",
     "@zero-dependency/utils": "1.6.0",
+    "dayjs": "^1.11.9",
     "ms": "3.0.0-canary.1",
     "solid-js": "1.7.7",
     "worker-timers": "7.0.72"
