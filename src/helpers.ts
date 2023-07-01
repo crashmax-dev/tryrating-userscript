@@ -1,19 +1,5 @@
 import ms from 'ms'
-import { __DEV__, MODAL_CONTAINER, SUBMIT_BUTTON } from './constants.js'
-
-export function getSubmitButtons(): HTMLButtonElement[] {
-  const buttons: HTMLButtonElement[] = []
-  const elements = Array.from(document.querySelectorAll(SUBMIT_BUTTON.selector))
-
-  for (const element of elements) {
-    if (!(element instanceof HTMLButtonElement)) continue
-    if (element.textContent === SUBMIT_BUTTON.text) {
-      buttons.push(element)
-    }
-  }
-
-  return buttons
-}
+import { __DEV__, MODAL_CONTAINER } from './constants.js'
 
 export function getModal(): Element | null {
   return document.querySelector(MODAL_CONTAINER)
