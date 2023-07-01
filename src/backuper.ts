@@ -1,9 +1,9 @@
 import { el } from '@zero-dependency/dom'
 import ms from 'ms'
-import type { Storage } from './storage.js'
+import type { StorageTasks } from './storage.js'
 
 export class Backuper {
-  constructor(private readonly storage: Storage) {}
+  constructor(private readonly storage: StorageTasks) {}
 
   download(): void {
     const values = this.storage.read()

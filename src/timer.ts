@@ -1,35 +1,34 @@
-import ms from 'ms'
+import { createSignal } from 'solid-js'
 import { clearInterval, setInterval } from 'worker-timers'
+
+const [time, setTime] = createSignal(0)
 
 export class Timer {
   private intervalId: ReturnType<typeof setInterval> | null
-  private ms: number = 0
 
-  private onTickCallback: (time: string) => void
   private onEndCallback: () => void
 
-  onTimerTick(callback: (time: string) => void): void {
-    this.onTickCallback = callback
+  private onTickTimer(): void {
+    const newTime = time() - 1000
+    setTime(newTime)
+
+    if (newTime === 0) {
+      this.onEndCallback()
+      this.stop()
+    }
+  }
+
+  get time() {
+    return time()
   }
 
   onTimerEnd(callback: () => void): void {
     this.onEndCallback = callback
   }
 
-  private onTickTimer(): void {
-    this.ms -= 1000
-    const time = ms(this.ms, { long: true })
-    this.onTickCallback(time)
-
-    if (this.ms === 0) {
-      this.onEndCallback()
-      this.stop()
-    }
-  }
-
   start(ms: number): void {
     this.stop()
-    this.ms = ms
+    setTime(ms)
     this.intervalId = setInterval(() => this.onTickTimer(), 1000)
   }
 

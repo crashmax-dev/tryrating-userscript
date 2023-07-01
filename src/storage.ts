@@ -1,3 +1,4 @@
+import { createSignal } from 'solid-js'
 import { STORAGE_KEY } from './constants.js'
 
 interface Task {
@@ -5,30 +6,31 @@ interface Task {
   estimated: number
 }
 
-export class Storage {
-  private tasks: Task[] = []
+export const [tasks, setTasks] = createSignal<Task[]>([])
 
+export class StorageTasks {
   constructor() {
     this.read()
-    console.log('storage', this.tasks)
+    console.log('tasks', tasks())
   }
 
   get values() {
-    return this.tasks
+    return tasks()
   }
 
   reset(): void {
-    this.tasks = []
-    GM_setValue(STORAGE_KEY, this.tasks)
+    setTasks([])
+    GM_setValue(STORAGE_KEY, tasks())
   }
 
   read(): Task[] {
-    this.tasks = GM_getValue<Task[]>(STORAGE_KEY, [])
-    return this.tasks
+    const tasks = GM_getValue<Task[]>(STORAGE_KEY, [])
+    setTasks(tasks)
+    return tasks
   }
 
   write(task: Task) {
-    this.tasks.push(task)
-    GM_setValue(STORAGE_KEY, this.tasks)
+    setTasks((prevValue) => [...prevValue, task])
+    GM_setValue(STORAGE_KEY, tasks())
   }
 }
