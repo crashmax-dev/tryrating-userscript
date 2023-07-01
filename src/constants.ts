@@ -5,5 +5,5 @@ export const SUBMIT_BUTTON = {
   text: 'Submit Rating'
 }
 export const MODAL_CONTAINER = '.modal-container.visible'
-export const STORAGE_KEY = 'tryrating-storage'
+export const STORAGE_KEY = 'tryrating-storage-v2'
 export const __DEV__ = import.meta.env.MODE === 'development'
