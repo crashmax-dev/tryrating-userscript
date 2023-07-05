@@ -99,27 +99,6 @@ const App: Component = () => {
     <div class="tryrating-container">
       <span class="counter">Time: {currentTime()}</span>
       <span class="timer">Tasks: {currentTaskList()}</span>
-      <button onClick={() => storageTasks.reset()}>Reset</button>
-      <button
-        onClick={() => {
-          storageTasks.write({
-            type: 'haha',
-            estimated: parseTimeToMs('5 seconds')
-          })
-        }}
-      >
-        haha
-      </button>
-      <button
-        onClick={() => {
-          storageTasks.write({
-            type: 'hoho',
-            estimated: parseTimeToMs('3 seconds')
-          })
-        }}
-      >
-        hoho
-      </button>
     </div>
   )
 }
