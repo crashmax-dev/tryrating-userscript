@@ -4,7 +4,11 @@ import { createMemo, createSignal } from 'solid-js'
 import { render } from 'solid-js/web'
 import { setInterval } from 'worker-timers'
 import { Backuper } from './backuper.js'
-import { getModal, parseTimeToMs } from './helpers.js'
+import {
+  getModal,
+  millisToMinutesAndSeconds,
+  parseTimeToMs
+} from './helpers.js'
 import { StorageTasks } from './storage.js'
 import { useSubmitButtons } from './submit-buttons.js'
 import { TaskFieldsWatcher } from './task-fields.js'
@@ -12,6 +16,7 @@ import { Timer } from './timer.js'
 import type { TaskFields } from './task-fields.js'
 import type { Component } from 'solid-js'
 import './styles.css'
+import { Stopwatch } from './stopwatch.js'
 
 const { findSubmitButtons } = useSubmitButtons()
 const [taskFields, setTaskFields] = createSignal<TaskFields | null>(null)
@@ -29,6 +34,8 @@ timer.onTimerEnd(async () => {
 
   buttons[0]?.click()
 })
+
+const stopwatch = new Stopwatch()
 
 const taskFieldsWatcher = new TaskFieldsWatcher()
 taskFieldsWatcher.onChangeTask((newTaskFields) => {
@@ -48,9 +55,10 @@ taskFieldsWatcher.onChangeTask((newTaskFields) => {
   setTaskFields(newTaskFields)
   findSubmitButtons()
 
-  // start timer
+  // start timer and stopwatch
   const taskTime = parseTimeToMs(newTaskFields.estimatedRatingTime)
   timer.start(taskTime)
+  stopwatch.start()
 })
 
 setInterval(() => {
@@ -83,8 +91,12 @@ window.addEventListener('keydown', (event) => {
 })
 
 const App: Component = () => {
-  const currentTime = createMemo(() => {
-    return ms(timer.time, { long: true })
+  const currentTimer = createMemo(() => {
+    return millisToMinutesAndSeconds(timer.time)
+  })
+
+  const currentStopwatch = createMemo(() => {
+    return millisToMinutesAndSeconds(stopwatch.time)
   })
 
   const currentTaskList = createMemo(() => {
@@ -97,8 +109,9 @@ const App: Component = () => {
 
   return (
     <div class="tryrating-container">
-      <span class="counter">Time: {currentTime()}</span>
-      <span class="timer">Tasks: {currentTaskList()}</span>
+      <div>Timer: {currentTimer()}</div>
+      <div>Stopwatch: {currentStopwatch()}</div>
+      <div>Tasks: {currentTaskList()}</div>
     </div>
   )
 }

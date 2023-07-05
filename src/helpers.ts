@@ -1,3 +1,4 @@
+import { addZero } from '@zero-dependency/utils'
 import ms from 'ms'
 import { __DEV__, MODAL_CONTAINER } from './constants.js'
 
@@ -15,4 +16,10 @@ export function parseTimeToMs(time: string): number {
     acc += ms(value)
     return acc
   }, 0)
+}
+
+export function millisToMinutesAndSeconds(ms: number): string {
+  const minutes = addZero(Math.floor(ms / 60000))
+  const seconds = addZero(Number(((ms % 60000) / 1000).toFixed(0)))
+  return `${minutes}:${seconds}`
 }
