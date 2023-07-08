@@ -16,9 +16,9 @@
     "@crashmax/tsconfig": "2.0.1",
     "sass": "1.63.6",
     "typescript": "5.1.6",
-    "vite": "4.3.9",
+    "vite": "4.4.2",
     "vite-plugin-solid": "2.7.0",
-    "vite-userscript-plugin": "1.9.0"
+    "vite-userscript-plugin": "1.10.0"
   },
   "dependencies": {
     "@zero-dependency/dom": "^1.7.1",
@@ -26,6 +26,6 @@
     "dayjs": "^1.11.9",
     "ms": "3.0.0-canary.1",
     "solid-js": "1.7.7",
-    "worker-timers": "7.0.72"
+    "worker-timers": "7.0.73"
   }
 }

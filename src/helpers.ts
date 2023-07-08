@@ -1,9 +1,27 @@
 import { addZero } from '@zero-dependency/utils'
 import ms from 'ms'
-import { __DEV__, MODAL_CONTAINER } from './constants.js'
+import { __DEV__, MODAL_CONTAINER_VISIBLE, MODAL_CONTENT } from './constants.js'
 
-export function getModal(): Element | null {
-  return document.querySelector(MODAL_CONTAINER)
+const MODAL_CONTENT_TEXT = 'Validation failed!'
+
+export function closeModalValidationFailed(): void {
+  const modalContainer = document.querySelector(MODAL_CONTAINER_VISIBLE)
+  if (!modalContainer) return
+
+  const modalContent = modalContainer.querySelector(MODAL_CONTENT)
+  if (!modalContent) return
+
+  if (modalContent.textContent === MODAL_CONTENT_TEXT) {
+    GM_notification({
+      title: document.title,
+      text: MODAL_CONTENT_TEXT,
+      highlight: true,
+      silent: false,
+      timeout: 1000
+    })
+
+    modalContainer.querySelector('button')?.click()
+  }
 }
 
 export function parseTimeToMs(time: string): number {

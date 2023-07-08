@@ -1,14 +1,14 @@
+import { observeElement } from '@zero-dependency/dom'
 import dayjs from 'dayjs'
-import ms from 'ms'
 import { createMemo, createSignal } from 'solid-js'
 import { render } from 'solid-js/web'
-import { setInterval } from 'worker-timers'
 import { Backuper } from './backuper.js'
 import {
-  getModal,
+  closeModalValidationFailed,
   millisToMinutesAndSeconds,
   parseTimeToMs
 } from './helpers.js'
+import { Stopwatch } from './stopwatch.js'
 import { StorageTasks } from './storage.js'
 import { useSubmitButtons } from './submit-buttons.js'
 import { TaskFieldsWatcher } from './task-fields.js'
@@ -16,7 +16,6 @@ import { Timer } from './timer.js'
 import type { TaskFields } from './task-fields.js'
 import type { Component } from 'solid-js'
 import './styles.css'
-import { Stopwatch } from './stopwatch.js'
 
 const { findSubmitButtons } = useSubmitButtons()
 const [taskFields, setTaskFields] = createSignal<TaskFields | null>(null)
@@ -61,18 +60,12 @@ taskFieldsWatcher.onChangeTask((newTaskFields) => {
   stopwatch.start()
 })
 
-setInterval(() => {
-  taskFieldsWatcher.watch()
+const appRoot = document.querySelector('#app-root')!
 
-  if (getModal()) {
-    GM_notification({
-      title: 'Открылось модальное окно',
-      highlight: true,
-      silent: false,
-      timeout: 5000
-    })
-  }
-}, 5000)
+observeElement(appRoot, (mutation) => {
+  taskFieldsWatcher.watch()
+  closeModalValidationFailed()
+})
 
 window.addEventListener('keydown', (event) => {
   // export
