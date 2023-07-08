@@ -16,6 +16,7 @@ import { Timer } from './timer.js'
 import type { TaskFields } from './task-fields.js'
 import type { Component } from 'solid-js'
 import './styles.css'
+import { setInterval } from 'worker-timers'
 
 const { findSubmitButtons } = useSubmitButtons()
 const [taskFields, setTaskFields] = createSignal<TaskFields | null>(null)
@@ -63,9 +64,12 @@ taskFieldsWatcher.onChangeTask((newTaskFields) => {
 const appRoot = document.querySelector('#app-root')!
 
 observeElement(appRoot, (mutation) => {
-  taskFieldsWatcher.watch()
   closeModalValidationFailed()
 })
+
+setInterval(() => {
+  taskFieldsWatcher.watch()
+}, 5000)
 
 window.addEventListener('keydown', (event) => {
   // export
