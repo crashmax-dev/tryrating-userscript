@@ -2,6 +2,7 @@ import { observeElement } from '@zero-dependency/dom'
 import dayjs from 'dayjs'
 import { createMemo, createSignal } from 'solid-js'
 import { render } from 'solid-js/web'
+import { setInterval } from 'worker-timers'
 import { Backuper } from './backuper.js'
 import {
   closeModalValidationFailed,
@@ -16,7 +17,12 @@ import { Timer } from './timer.js'
 import type { TaskFields } from './task-fields.js'
 import type { Component } from 'solid-js'
 import './styles.css'
-import { setInterval } from 'worker-timers'
+
+const [autosubmit, setAutosubmit] = createSignal(true)
+
+function toggleAutosubmit() {
+  setAutosubmit(!autosubmit())
+}
 
 const { findSubmitButtons } = useSubmitButtons()
 const [taskFields, setTaskFields] = createSignal<TaskFields | null>(null)
@@ -25,7 +31,9 @@ const storageTasks = new StorageTasks()
 const backuper = new Backuper(storageTasks)
 
 const timer = new Timer()
-timer.onTimerEnd(async () => {
+timer.onTimerEnd(() => {
+  if (!autosubmit()) return
+
   const buttons = findSubmitButtons()
   if (!buttons.length) {
     console.error('submitButtons is not defined')
@@ -43,6 +51,10 @@ taskFieldsWatcher.onChangeTask((newTaskFields) => {
 
   // write task fields
   if (fields && fields.requestId !== newTaskFields.requestId) {
+    if (!autosubmit()) {
+      toggleAutosubmit()
+    }
+
     console.info('Current task is submitted:', fields)
 
     // write new task fields
@@ -85,6 +97,12 @@ window.addEventListener('keydown', (event) => {
       storageTasks.reset()
     }
   }
+
+  // toggle autosubmit
+  if (event.ctrlKey && event.code === 'KeyO') {
+    event.preventDefault()
+    toggleAutosubmit()
+  }
 })
 
 const App: Component = () => {
@@ -109,6 +127,12 @@ const App: Component = () => {
       <div>Timer: {currentTimer()}</div>
       <div>Stopwatch: {currentStopwatch()}</div>
       <div>Tasks: {currentTaskList()}</div>
+      <button
+        style={{ background: autosubmit() ? '#4CAF50' : '#f44336' }}
+        onClick={() => toggleAutosubmit()}
+      >
+        Autosubmit
+      </button>
     </div>
   )
 }

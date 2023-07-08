@@ -1,18 +1,23 @@
 .tryrating-container {
   display: flex;
   color: #fff;
+  padding-left: 4px;
   gap: 6px;
-  padding: 6px;
   position: absolute;
   z-index: 9999999;
   background: #2e2c2f;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 12px;
   align-items: center;
-  bottom: 10px;
-  left: 10px;
-  height: 40px;
-  border-radius: 4px;
-  width: 310px;
+  left: 0;
+  bottom: 0;
+  height: 32px;
   justify-content: center;
+}
+
+.tryrating-container > button {
+  height: inherit;
+  border: none;
+  font-size: 12px;
+  background: #2e2c2f;
+  color: #fff;
 }
