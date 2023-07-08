@@ -17,6 +17,7 @@ import { Timer } from './timer.js'
 import type { TaskFields } from './task-fields.js'
 import type { Component } from 'solid-js'
 import './styles.css'
+import { currentDate } from './tz.js'
 
 const [autosubmit, setAutosubmit] = createSignal(true)
 
@@ -115,9 +116,9 @@ const App: Component = () => {
   })
 
   const currentTaskList = createMemo(() => {
-    const currentDate = dayjs().format('DD.MM.YYYY')
+    const date = currentDate()
     const findedTaskList = storageTasks.taskList.find(
-      (task) => task.date === currentDate
+      (task) => task.date === date
     )
     return findedTaskList?.total ?? '0'
   })

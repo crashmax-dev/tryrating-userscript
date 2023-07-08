@@ -1,6 +1,6 @@
-import dayjs from 'dayjs'
 import { createSignal } from 'solid-js'
 import { STORAGE_KEY } from './constants.js'
+import { currentDate } from './tz.js'
 
 interface TaskList {
   type: string
@@ -16,7 +16,7 @@ interface Tasks {
 
 const initialStorage = (): Tasks[] => [
   {
-    date: dayjs().format('DD.MM.YYYY'),
+    date: currentDate(),
     total: 0,
     list: []
   }
@@ -72,8 +72,8 @@ export class StorageTasks {
   }
 
   getTaskList(): Tasks {
-    const currentDate = dayjs().format('DD.MM.YYYY')
-    const findedTaskList = taskList().find((task) => task.date === currentDate)
+    const date = currentDate()
+    const findedTaskList = taskList().find((task) => task.date === date)
     if (!findedTaskList) {
       return initialStorage()[0]!
     }
