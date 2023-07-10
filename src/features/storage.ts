@@ -1,6 +1,5 @@
 import { createSignal } from 'solid-js'
-import { STORAGE_KEY } from './constants.js'
-import { currentDate } from './tz.js'
+import { currentDate } from '../utils/current-date.js'
 
 interface TaskList {
   type: string
@@ -24,7 +23,9 @@ const initialStorage = (): Tasks[] => [
 
 export const [taskList, setTaskList] = createSignal<Tasks[]>([])
 
-export class StorageTasks {
+export class Storage {
+  private readonly STORAGE_KEY = 'tryrating-storage-v2'
+
   constructor() {
     this.read()
   }
@@ -34,13 +35,13 @@ export class StorageTasks {
   }
 
   private read(): void {
-    const tasks = GM_getValue(STORAGE_KEY, initialStorage())
+    const tasks = GM_getValue(this.STORAGE_KEY, initialStorage())
     setTaskList(tasks)
   }
 
   reset(): void {
     setTaskList(initialStorage())
-    GM_setValue(STORAGE_KEY, taskList())
+    GM_setValue(this.STORAGE_KEY, taskList())
   }
 
   write(newTask: Omit<TaskList, 'count'>): void {
@@ -68,7 +69,7 @@ export class StorageTasks {
     ]
 
     setTaskList(newTaskList)
-    GM_setValue(STORAGE_KEY, taskList())
+    GM_setValue(this.STORAGE_KEY, taskList())
   }
 
   getTaskList(): Tasks {

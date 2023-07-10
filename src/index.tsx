@@ -1,39 +1,34 @@
-import { observeElement } from '@zero-dependency/dom'
-import dayjs from 'dayjs'
-import { createMemo, createSignal } from 'solid-js'
+import { createMemo } from 'solid-js'
 import { render } from 'solid-js/web'
 import { setInterval } from 'worker-timers'
-import { Backuper } from './backuper.js'
+import { Backuper } from './features/backuper.js'
+import { setKeyboardListeners } from './features/keyboard-listeners.js'
+import { setObserverElement } from './features/observe-elements.js'
+import { Stopwatch } from './features/stopwatch.js'
+import { Storage } from './features/storage.js'
+import { useSubmitButtons } from './features/submit-buttons.js'
+import { TaskFieldsObserve } from './features/task-fields-observe.js'
+import { Timer } from './features/timer.js'
 import {
-  closeModalValidationFailed,
-  millisToMinutesAndSeconds,
-  parseTimeToMs
-} from './helpers.js'
-import { Stopwatch } from './stopwatch.js'
-import { StorageTasks } from './storage.js'
-import { useSubmitButtons } from './submit-buttons.js'
-import { TaskFieldsWatcher } from './task-fields.js'
-import { Timer } from './timer.js'
-import type { TaskFields } from './task-fields.js'
+  ToggleAutoSubmit,
+  useToggleAutosubmit
+} from './features/toggle-auto-submit.js'
+import { currentDate } from './utils/current-date.js'
+import { msToTimeString } from './utils/ms-to-time.js'
+import { parseTimeToMs } from './utils/parse-time-to-ms.js'
 import type { Component } from 'solid-js'
-import './styles.css'
-import { currentDate } from './tz.js'
+import './styles/widget.scss'
 
-const [autosubmit, setAutosubmit] = createSignal(true)
-
-function toggleAutosubmit() {
-  setAutosubmit(!autosubmit())
-}
-
+const { autosubmit } = useToggleAutosubmit()
 const { findSubmitButtons } = useSubmitButtons()
-const [taskFields, setTaskFields] = createSignal<TaskFields | null>(null)
 
-const storageTasks = new StorageTasks()
-const backuper = new Backuper(storageTasks)
+const storage = new Storage()
+const stopwatch = new Stopwatch()
+const backuper = new Backuper(storage)
 
 const timer = new Timer()
 timer.onTimerEnd(() => {
-  if (!autosubmit()) return
+  if (!autosubmit) return
 
   const buttons = findSubmitButtons()
   if (!buttons.length) {
@@ -41,101 +36,47 @@ timer.onTimerEnd(() => {
     return
   }
 
-  buttons[0]?.click()
+  buttons[0]!.click()
 })
 
-const stopwatch = new Stopwatch()
-
-const taskFieldsWatcher = new TaskFieldsWatcher()
-taskFieldsWatcher.onChangeTask((newTaskFields) => {
-  const fields = taskFields()
-
-  // write task fields
-  if (fields && fields.requestId !== newTaskFields.requestId) {
-    if (!autosubmit()) {
-      toggleAutosubmit()
-    }
-
-    console.info('Current task is submitted:', fields)
-
-    // write new task fields
-    storageTasks.write({
-      type: fields.taskType,
-      estimated: parseTimeToMs(fields.estimatedRatingTime)
-    })
-  }
-
-  setTaskFields(newTaskFields)
-  findSubmitButtons()
+const taskFieldsWatcher = new TaskFieldsObserve(storage)
+taskFieldsWatcher.onChangeTask((taskFields) => {
+  // force update signal
+  void findSubmitButtons()
 
   // start timer and stopwatch
-  const taskTime = parseTimeToMs(newTaskFields.estimatedRatingTime)
+  const taskTime = parseTimeToMs(taskFields.estimatedRatingTime)
   timer.start(taskTime)
   stopwatch.start()
 })
 
-const appRoot = document.querySelector('#app-root')!
-
-observeElement(appRoot, (mutation) => {
-  closeModalValidationFailed()
-})
-
-setInterval(() => {
-  taskFieldsWatcher.watch()
-}, 5000)
-
-window.addEventListener('keydown', (event) => {
-  // export
-  if (event.altKey && event.key === '1') {
-    event.preventDefault()
-    backuper.download()
-  }
-
-  // reset
-  if (event.altKey && event.key === '2') {
-    event.preventDefault()
-    if (confirm('Reset data.\nAre you sure?')) {
-      storageTasks.reset()
-    }
-  }
-
-  // toggle autosubmit
-  if (event.ctrlKey && event.code === 'KeyO') {
-    event.preventDefault()
-    toggleAutosubmit()
-  }
-})
-
 const App: Component = () => {
   const currentTimer = createMemo(() => {
-    return millisToMinutesAndSeconds(timer.time)
+    return msToTimeString(timer.time)
   })
 
   const currentStopwatch = createMemo(() => {
-    return millisToMinutesAndSeconds(stopwatch.time)
+    return msToTimeString(stopwatch.time)
   })
 
   const currentTaskList = createMemo(() => {
     const date = currentDate()
-    const findedTaskList = storageTasks.taskList.find(
-      (task) => task.date === date
-    )
+    const findedTaskList = storage.taskList.find((task) => task.date === date)
     return findedTaskList?.total ?? '0'
   })
 
   return (
-    <div class="tryrating-container">
+    <div class="tryrating-widget">
       <div>Timer: {currentTimer()}</div>
       <div>Stopwatch: {currentStopwatch()}</div>
       <div>Tasks: {currentTaskList()}</div>
-      <button
-        style={{ background: autosubmit() ? '#4CAF50' : '#f44336' }}
-        onClick={() => toggleAutosubmit()}
-      >
-        Autosubmit
-      </button>
+      <ToggleAutoSubmit />
     </div>
   )
 }
+
+setKeyboardListeners(backuper, storage)
+setObserverElement()
+setInterval(() => taskFieldsWatcher.observe(), 5000)
 
 render(() => <App />, document.body)

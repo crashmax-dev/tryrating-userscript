@@ -1,4 +1,4 @@
-.tryrating-container {
+.tryrating-widget {
   display: flex;
   color: #fff;
   padding-left: 4px;
@@ -13,13 +13,13 @@
   bottom: 0;
   height: 40px;
   justify-content: center;
-}
 
-.tryrating-container > button {
-  height: inherit;
-  border: none;
-  font-size: inherit;
-  font-weight: inherit;
-  background: #2e2c2f;
-  color: #fff;
+  & > button {
+    height: inherit;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    background: #2e2c2f;
+    color: #fff;
+  }
 }
