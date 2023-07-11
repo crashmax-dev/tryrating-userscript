@@ -1,14 +1,15 @@
 import { el } from '@zero-dependency/dom'
 import ms from 'ms'
-import type { Storage } from './storage.js'
+import { createMemo } from 'solid-js'
+import { currentDate } from '../utils/current-date.js'
+import { storage } from './storage.js'
+import type { Component } from 'solid-js'
 
-export class Backuper {
-  constructor(private readonly storage: Storage) {}
-
-  download(): void {
-    const values = this.storage.taskList
+class TasksViewer {
+  open(): void {
+    const values = storage.taskList
     if (!values.length) {
-      alert('Нету данных для экспорта.')
+      alert('Нету данных для просмотра.')
       return
     }
 
@@ -60,10 +61,30 @@ export class Backuper {
     })
 
     const link = el('a', {
-      href: URL.createObjectURL(blob),
-      download: `tryrating-com-${new Date().toISOString()}.html`
+      target: '_blank',
+      href: URL.createObjectURL(blob)
+      // download: `tryrating-com-${new Date().toISOString()}.html`
     })
 
     link.click()
   }
+}
+
+export const tasksViewer = new TasksViewer()
+
+export const TasksCountButton: Component = () => {
+  const currentTaskList = createMemo(() => {
+    const date = currentDate()
+    const findedTaskList = storage.taskList.find((task) => task.date === date)
+    return findedTaskList?.total ?? '0'
+  })
+
+  return (
+    <button
+      style={{ background: 'gray' }}
+      onClick={() => tasksViewer.open()}
+    >
+      Tasks: {currentTaskList()}
+    </button>
+  )
 }

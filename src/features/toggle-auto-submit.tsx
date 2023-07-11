@@ -16,7 +16,7 @@ export function useToggleAutosubmit() {
   }
 }
 
-export const ToggleAutoSubmit: Component = () => {
+export const ToggleAutoSubmitButton: Component = () => {
   return (
     <button
       style={{ background: autosubmit() ? '#4CAF50' : '#f44336' }}

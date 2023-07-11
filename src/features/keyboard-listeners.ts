@@ -1,21 +1,18 @@
+import { storage } from './storage.js'
+import { tasksViewer } from './tasks-viewer.js'
 import { useToggleAutosubmit } from './toggle-auto-submit.jsx'
-import type { Backuper } from './backuper.js'
-import type { Storage } from './storage.js'
 
 const { toggleAutosubmit } = useToggleAutosubmit()
 
-export function setKeyboardListeners(
-  backuper: Backuper,
-  storage: Storage
-): void {
+export function setKeyboardListeners(): void {
   window.addEventListener('keydown', (event) => {
-    // export
+    // open tasks
     if (event.altKey && event.key === '1') {
       event.preventDefault()
-      backuper.download()
+      tasksViewer.open()
     }
 
-    // reset
+    // reset tasks
     if (event.altKey && event.key === '2') {
       event.preventDefault()
       if (confirm('Reset data.\nAre you sure?')) {

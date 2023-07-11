@@ -3,7 +3,7 @@ import { clearInterval, setInterval } from 'worker-timers'
 
 const [time, setTime] = createSignal(0)
 
-export class Timer {
+class Timer {
   private intervalId: ReturnType<typeof setInterval> | null
 
   private onEndCallback: () => void
@@ -38,3 +38,5 @@ export class Timer {
     this.intervalId = null
   }
 }
+
+export const timer = new Timer()

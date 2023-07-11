@@ -2,7 +2,6 @@
   display: flex;
   color: #fff;
   padding-left: 4px;
-  gap: 6px;
   position: absolute;
   z-index: 9999999;
   background: #2e2c2f;
@@ -13,6 +12,10 @@
   bottom: 0;
   height: 40px;
   justify-content: center;
+
+  & > div {
+    padding: 10px;
+  }
 
   & > button {
     height: inherit;

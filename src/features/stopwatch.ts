@@ -3,7 +3,7 @@ import { clearInterval, setInterval } from 'worker-timers'
 
 const [time, setTime] = createSignal(0)
 
-export class Stopwatch {
+class Stopwatch {
   private intervalId: number
 
   get time() {
@@ -23,3 +23,5 @@ export class Stopwatch {
     this.intervalId = setInterval(() => this.tick(), 1000)
   }
 }
+
+export const stopwatch = new Stopwatch()

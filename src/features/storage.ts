@@ -21,9 +21,9 @@ const initialStorage = (): Tasks[] => [
   }
 ]
 
-export const [taskList, setTaskList] = createSignal<Tasks[]>([])
+const [taskList, setTaskList] = createSignal<Tasks[]>([])
 
-export class Storage {
+class Storage {
   private readonly STORAGE_KEY = 'tryrating-storage-v2'
 
   constructor() {
@@ -82,3 +82,5 @@ export class Storage {
     return findedTaskList
   }
 }
+
+export const storage = new Storage()
