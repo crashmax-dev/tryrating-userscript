@@ -55,7 +55,6 @@ export class TaskFieldsObserve {
         toggleAutosubmit()
       }
 
-      // write new task fields
       if (this.taskFields) {
         console.info('Current task is submitted:', this.taskFields)
         storage.write({

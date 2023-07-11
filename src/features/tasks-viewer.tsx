@@ -63,7 +63,6 @@ class TasksViewer {
     const link = el('a', {
       target: '_blank',
       href: URL.createObjectURL(blob)
-      // download: `tryrating-com-${new Date().toISOString()}.html`
     })
 
     link.click()
