@@ -6,13 +6,6 @@
 
 > [tryrating-userscript.user.js](https://crashmax-dev.github.io/tryrating-userscript/tryrating-userscript.user.js)
 
-## Branches
-
-- [master](https://github.com/crashmax-dev/tryrating-userscript)
-- [jsx](https://github.com/crashmax-dev/tryrating-userscript/tree/jsx)
-- [reatom](https://github.com/crashmax-dev/tryrating-userscript/tree/reatom)
-- [preact](https://github.com/crashmax-dev/tryrating-userscript/tree/preact)
-
 ## Development
 
 - Allow Tampermonkey's access to [local file URI's](https://tampermonkey.net/faq.php?ext=dhdg#Q204)
