@@ -1,4 +1,5 @@
 import { __DEV__ } from '../constants.js'
+import { logger } from '../utils/logger.js'
 
 const MODAL_CONTAINER_VISIBLE_SELECTOR = '.modal-container.visible'
 const MODAL_CONTENT_SELECTOR = 'div[modalwrapref] > div'
@@ -22,6 +23,10 @@ export function autoCloseModal(): void {
       timeout: 1000
     })
 
-    modalContainer.querySelector('button')?.click()
+    const modalButton = modalContainer.querySelector('button')
+    if (modalButton) {
+      logger.log('Modal closed')
+      modalButton.click()
+    }
   }
 }

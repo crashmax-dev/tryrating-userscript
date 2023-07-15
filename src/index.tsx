@@ -1,17 +1,17 @@
 import { createMemo } from 'solid-js'
 import { render } from 'solid-js/web'
-import { setInterval } from 'worker-timers'
 import { setKeyboardListeners } from './features/keyboard-listeners.js'
-import { setObserverElement } from './features/observe-elements.js'
+import { setObserverApp } from './features/observe-elements.js'
 import { stopwatch } from './features/stopwatch.js'
 import { useSubmitButtons } from './features/submit-buttons.js'
-import { TaskFieldsObserve } from './features/task-fields-observe.js'
+import { taskFieldsObserver } from './features/task-fields-observer.js'
 import { TasksCountButton } from './features/tasks-viewer.jsx'
 import { timer } from './features/timer.js'
 import {
   ToggleAutoSubmitButton,
   useToggleAutosubmit
 } from './features/toggle-auto-submit.jsx'
+import { logger } from './utils/logger.js'
 import { msToTimeString } from './utils/ms-to-time.js'
 import { parseTimeToMs } from './utils/parse-time-to-ms.js'
 import type { Component } from 'solid-js'
@@ -25,15 +25,14 @@ timer.onTimerEnd(() => {
 
   const buttons = findSubmitButtons()
   if (!buttons.length) {
-    console.error('submitButtons is not defined')
+    logger.error('Submit button is not defined')
     return
   }
 
   buttons[0]!.click()
 })
 
-const taskFieldsWatcher = new TaskFieldsObserve()
-taskFieldsWatcher.onChangeTask((taskFields) => {
+taskFieldsObserver.onChangeTask((taskFields) => {
   // force update signal
   void findSubmitButtons()
 
@@ -62,8 +61,7 @@ const App: Component = () => {
   )
 }
 
+setObserverApp()
 setKeyboardListeners()
-setObserverElement()
-setInterval(() => taskFieldsWatcher.observe(), 5000)
 
 render(() => <App />, document.body)
