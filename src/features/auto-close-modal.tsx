@@ -16,6 +16,8 @@ function toggleAutoClose() {
 }
 
 export function autoCloseModal(): void {
+  if (!autoClose.value) return
+
   const modalContainer = document.querySelector(
     MODAL_CONTAINER_VISIBLE_SELECTOR
   )
