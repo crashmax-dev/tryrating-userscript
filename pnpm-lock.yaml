@@ -5,14 +5,17 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@thisbeyond/solid-dnd':
+    specifier: 0.7.4
+    version: 0.7.4(solid-js@1.7.8)
   '@zero-dependency/dom':
-    specifier: ^1.7.1
+    specifier: 1.7.1
     version: 1.7.1
   '@zero-dependency/utils':
     specifier: 1.6.0
     version: 1.6.0
   dayjs:
-    specifier: ^1.11.9
+    specifier: 1.11.9
     version: 1.11.9
   ms:
     specifier: 3.0.0-canary.1
@@ -784,6 +787,14 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
+
+  /@thisbeyond/solid-dnd@0.7.4(solid-js@1.7.8):
+    resolution: {integrity: sha512-jgV9EtR3gAtVsILG8p1OAGrhHIgnK4W04YxpyLgJRCDKEFYQWuDrMdUe8F5Kc6pcVXlC4IMXr4cB8fS2Ut3/Ow==}
+    peerDependencies:
+      solid-js: ^1.5
+    dependencies:
+      solid-js: 1.7.8
+    dev: false
 
   /@types/babel__core@7.20.1:
     resolution: {integrity: sha512-aACu/U/omhdk15O4Nfb+fHgH/z3QsfQzpnvRZhYhThms83ZnAOZz7zZAWO7mn2yyNQaA4xTO8GLK3uqFU4bYYw==}

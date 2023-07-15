@@ -11,6 +11,7 @@ import {
   ToggleAutoSubmitButton,
   useToggleAutosubmit
 } from './features/toggle-auto-submit.jsx'
+import { WidgetDraggableProvider } from './features/widget-dnd.jsx'
 import { WidgetVisibilityProvider } from './features/widget-visibility.jsx'
 import { logger } from './utils/logger.js'
 import { msToTimeString } from './utils/ms-to-time.js'
@@ -54,12 +55,14 @@ const App: Component = () => {
 
   return (
     <WidgetVisibilityProvider>
-      <div class="tryrating-widget">
-        <div>Timer: {currentTimer()}</div>
-        <div>Stopwatch: {currentStopwatch()}</div>
-        <TasksCountButton />
-        <ToggleAutoSubmitButton />
-      </div>
+      <WidgetDraggableProvider>
+        <div class="tryrating-widget">
+          <div>Timer: {currentTimer()}</div>
+          <div>Stopwatch: {currentStopwatch()}</div>
+          <TasksCountButton />
+          <ToggleAutoSubmitButton />
+        </div>
+      </WidgetDraggableProvider>
     </WidgetVisibilityProvider>
   )
 }
