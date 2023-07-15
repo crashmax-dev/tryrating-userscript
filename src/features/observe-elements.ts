@@ -20,7 +20,7 @@ export async function setObserverApp(): Promise<void> {
 
   waitElement(taskFieldsObserver.targetSelector)
     .then(() => {
-      setInterval(() => taskFieldsObserver.observe(), 5000)
+      setInterval(() => taskFieldsObserver.observe(), 7 * 1000)
     })
     .finally(() => logger.info('Initialized task fields observer'))
 }
