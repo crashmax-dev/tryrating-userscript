@@ -3,24 +3,23 @@ import type { Component } from 'solid-js'
 
 const [autosubmit, setAutosubmit] = createSignal(true)
 
-function toggleAutosubmit() {
-  setAutosubmit(!autosubmit())
-}
+class ToggleAutoSubmit {
+  get isAutoSubmit(): boolean {
+    return autosubmit()
+  }
 
-export function createToggleAutosubmit() {
-  return {
-    get autosubmit() {
-      return autosubmit()
-    },
-    toggleAutosubmit
+  toggle(): void {
+    setAutosubmit(!autosubmit())
   }
 }
+
+export const toggleAutoSubmit = new ToggleAutoSubmit()
 
 export const ToggleAutoSubmitButton: Component = () => {
   return (
     <button
       classList={{ enabled: autosubmit() }}
-      onClick={() => toggleAutosubmit()}
+      onClick={() => toggleAutoSubmit.toggle()}
     >
       A
     </button>

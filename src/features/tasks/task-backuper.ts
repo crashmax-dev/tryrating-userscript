@@ -1,12 +1,18 @@
 import { el } from '@zero-dependency/dom'
+import dayjs from 'dayjs'
 import ms from 'ms'
-import { createMemo } from 'solid-js'
-import { currentDate } from '../utils/current-date.js'
-import { storage } from './storage.js'
-import type { Component } from 'solid-js'
+import { storage } from '../storage.js'
+import saveBlob from './save-blob.js?raw'
 
-class TasksViewer {
-  open(): void {
+class TaskBackuper {
+  private currentDate(): string {
+    const month = dayjs().month()
+    const year = dayjs().year()
+
+    return `${month + 1}.${year}`
+  }
+
+  openPage(): void {
     const values = storage.taskList
     if (!values.length) {
       alert('Нету данных для просмотра.')
@@ -14,8 +20,10 @@ class TasksViewer {
     }
 
     const page = el('div')
+    let totalTasks = 0
 
     for (const { date, list, total } of values) {
+      totalTasks += total
       let totalEstimate = 0
 
       const table = el('table', { border: '1' })
@@ -56,34 +64,28 @@ class TasksViewer {
       page.append(el('div', table, el('hr')))
     }
 
-    const blob = new Blob([page.outerHTML], {
+    const pageScript = el(
+      'script',
+      saveBlob
+        .replace('__DATE__', this.currentDate())
+        .replace('__TOTAL_TASKS__', totalTasks.toString())
+    )
+    const savePageButton = el('button', 'Save')
+    savePageButton.setAttribute('onclick', 'savePage()')
+    page.append(pageScript)
+    page.prepend(savePageButton)
+
+    const blobPage = new Blob([page.outerHTML], {
       type: 'text/html'
     })
 
     const link = el('a', {
       target: '_blank',
-      href: URL.createObjectURL(blob)
+      href: URL.createObjectURL(blobPage)
     })
 
     link.click()
   }
 }
 
-export const tasksViewer = new TasksViewer()
-
-export const TasksCountButton: Component = () => {
-  const currentTaskList = createMemo(() => {
-    const date = currentDate()
-    const findedTaskList = storage.taskList.find((task) => task.date === date)
-    return findedTaskList?.total ?? '0'
-  })
-
-  return (
-    <button
-      class="task-counter"
-      onClick={() => tasksViewer.open()}
-    >
-      {currentTaskList()}
-    </button>
-  )
-}
+export const taskBackuper = new TaskBackuper()

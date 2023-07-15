@@ -1,9 +1,7 @@
-import { logger } from '../utils/logger.js'
-import { parseTimeToMs } from '../utils/parse-time-to-ms.js'
-import { storage } from './storage.js'
-import { createToggleAutosubmit } from './toggle-auto-submit.js'
-
-const { autosubmit, toggleAutosubmit } = createToggleAutosubmit()
+import { logger } from '../../utils/logger.js'
+import { parseTimeToMs } from '../../utils/parse-time-to-ms.js'
+import { storage } from '../storage.js'
+import { toggleAutoSubmit } from '../widget/auto-submit-button.jsx'
 
 interface TaskFields {
   taskType: string
@@ -54,8 +52,8 @@ class TaskFieldsObserver {
       logger.info('Task fields changed', newTaskFields)
       this.onChangeTaskCallback!(newTaskFields)
 
-      if (!autosubmit) {
-        toggleAutosubmit()
+      if (!toggleAutoSubmit.isAutoSubmit) {
+        toggleAutoSubmit.toggle()
       }
 
       if (this.taskFields) {

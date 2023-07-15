@@ -5,7 +5,7 @@ import {
   DragEventHandler,
   DragOverlay
 } from '@thisbeyond/solid-dnd'
-import { createLocalStore } from '../utils/create-local-storage.js'
+import { createLocalStore } from '../../utils/create-local-storage.js'
 import type { FlowComponent } from 'solid-js'
 
 interface Position {

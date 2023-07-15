@@ -1,17 +1,15 @@
 import { storage } from './storage.js'
-import { tasksViewer } from './tasks-viewer.js'
-import { createToggleAutosubmit } from './toggle-auto-submit.jsx'
-import { resetWidgetPosition } from './widget-dnd.jsx'
-import { toggleWidgetVisibility } from './widget-visibility.jsx'
-
-const { toggleAutosubmit } = createToggleAutosubmit()
+import { taskBackuper } from './tasks/task-backuper.js'
+import { toggleAutoSubmit } from './widget/auto-submit-button.jsx'
+import { resetWidgetPosition } from './widget/widget-dnd.jsx'
+import { toggleWidgetVisibility } from './widget/widget-visibility.jsx'
 
 export function setKeyboardListeners(): void {
   window.addEventListener('keydown', (event) => {
     // open tasks
     if (event.altKey && event.key === '1') {
       event.preventDefault()
-      tasksViewer.open()
+      taskBackuper.openPage()
     }
 
     // reset tasks
@@ -31,7 +29,7 @@ export function setKeyboardListeners(): void {
     // toggle autosubmit
     if (event.ctrlKey && event.code === 'KeyO') {
       event.preventDefault()
-      toggleAutosubmit()
+      toggleAutoSubmit.toggle()
     }
 
     // toggle widget visibility
