@@ -23,6 +23,9 @@ dependencies:
   solid-js:
     specifier: 1.7.8
     version: 1.7.8
+  solid-services:
+    specifier: ^4.3.2
+    version: 4.3.2(solid-js@1.7.8)
   worker-timers:
     specifier: 7.0.73
     version: 7.0.73
@@ -1616,6 +1619,14 @@ packages:
       '@babel/types': 7.22.5
       solid-js: 1.7.8
     dev: true
+
+  /solid-services@4.3.2(solid-js@1.7.8):
+    resolution: {integrity: sha512-168O7I1ZuE3aXkz63NiDKAibHkToFl4BTtaIcmqarNb5VRTbqZMaB3+B4JmNUW+LtTX5BfjpJNomGQsLWd1mdQ==}
+    peerDependencies:
+      solid-js: ^1.0.0
+    dependencies:
+      solid-js: 1.7.8
+    dev: false
 
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}

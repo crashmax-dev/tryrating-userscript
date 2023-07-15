@@ -66,10 +66,15 @@ export const WidgetDraggableProvider: FlowComponent = (props) => {
       <DragDropSensors />
       <Draggable id={1}>{props.children}</Draggable>
       <DragOverlay>
-        <div class="widget-drag-overlay">
-          <span class="widget-drag-text">alt+3 reset position</span>
-        </div>
-        {props.children}
+        {/* @ts-ignore */}
+        {(draggable) => (
+          <>
+            <div class="widget-drag-overlay">
+              <span class="widget-drag-text">alt+3 reset position</span>
+            </div>
+            {draggable}
+          </>
+        )}
       </DragOverlay>
     </DragDropProvider>
   )

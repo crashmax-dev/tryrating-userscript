@@ -15,14 +15,14 @@ import { msToTimeString } from './utils/ms-to-time.js'
 import type { Component } from 'solid-js'
 import './styles/widget.scss'
 
-timer.onTimerEnd(() => submitButton.clickSubmit())
-
-taskFieldsObserver.onChangeTask((taskFields) => {
-  timer.start(taskFields.estimatedRatingTime)
-  stopwatch.start()
-})
-
 const App: Component = () => {
+  timer.onTimerEnd(() => submitButton.clickSubmit())
+
+  taskFieldsObserver.onChangeTask((taskFields) => {
+    timer.start(taskFields.estimatedRatingTime)
+    stopwatch.start()
+  })
+
   const currentTimer = createMemo(() => {
     return msToTimeString(timer.time)
   })
