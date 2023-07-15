@@ -11,7 +11,7 @@ import { ToggleAutoSubmitButton } from './features/widget/auto-submit-button.jsx
 import { OpenTaskPageButton } from './features/widget/open-tasks-page.jsx'
 import { WidgetDraggableProvider } from './features/widget/widget-dnd.jsx'
 import { WidgetVisibilityProvider } from './features/widget/widget-visibility.jsx'
-import { msToTimeString } from './utils/ms-to-time.js'
+import { msToTime } from './utils/ms-to-time.js'
 import type { Component } from 'solid-js'
 import './styles/widget.scss'
 
@@ -24,11 +24,11 @@ const App: Component = () => {
   })
 
   const currentTimer = createMemo(() => {
-    return msToTimeString(timer.time)
+    return msToTime(timer.time)
   })
 
   const currentStopwatch = createMemo(() => {
-    return msToTimeString(stopwatch.time)
+    return msToTime(stopwatch.time)
   })
 
   return (
@@ -40,6 +40,7 @@ const App: Component = () => {
           <OpenTaskPageButton />
           <ToggleAutoSubmitButton />
           <ToggleAutoCloseModalButton />
+          <button onClick={() => {}}>Debug</button>
         </div>
       </WidgetDraggableProvider>
     </WidgetVisibilityProvider>

@@ -2,15 +2,16 @@ import { createSignal } from 'solid-js'
 import { currentDate } from '../utils/current-date.js'
 import { logger } from '../utils/logger.js'
 
-interface TaskList {
+export interface TaskList {
   type: string
   count: number
   estimated: number
 }
 
-interface Tasks {
+export interface Tasks {
   date: string
   total: number
+  estimated: number
   list: TaskList[]
 }
 
@@ -18,6 +19,7 @@ const initialStorage = (): Tasks[] => [
   {
     date: currentDate(),
     total: 0,
+    estimated: 0,
     list: []
   }
 ]
@@ -25,7 +27,7 @@ const initialStorage = (): Tasks[] => [
 const [taskList, setTaskList] = createSignal<Tasks[]>([])
 
 class Storage {
-  private readonly STORAGE_KEY = 'tryrating-storage-v2'
+  private readonly STORAGE_KEY = 'tryrating-storage-v3'
 
   constructor() {
     this.read()
@@ -49,6 +51,7 @@ class Storage {
   write(newTask: Omit<TaskList, 'count'>): void {
     const currentTaskList = this.getTaskList()
     currentTaskList.total += 1
+    currentTaskList.estimated += newTask.estimated
 
     const currentTask = currentTaskList.list.find(
       (task) => task.type === newTask.type

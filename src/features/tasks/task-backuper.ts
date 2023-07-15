@@ -1,16 +1,12 @@
 import { el } from '@zero-dependency/dom'
-import dayjs from 'dayjs'
-import ms from 'ms'
+import { currentDate } from '../../utils/current-date.js'
+import { msToTime, msToTimeFull } from '../../utils/ms-to-time.js'
 import { storage } from '../storage.js'
 import saveBlob from './save-blob.js?raw'
 
 class TaskBackuper {
-  private currentDate(): string {
-    const month = dayjs().month()
-    const year = dayjs().year()
-
-    return `${month + 1}.${year}`
-  }
+  // TODO: #8
+  generateMonthyExport(): void {}
 
   openPage(): void {
     const values = storage.taskList
@@ -50,7 +46,7 @@ class TaskBackuper {
           'tr',
           el('td', type),
           el('td', `${count}`),
-          el('td', ms(estimated, { long: true }))
+          el('td', msToTime(estimated))
         )
         table.append(tr)
       }
@@ -58,7 +54,7 @@ class TaskBackuper {
       info.append(
         el('span', `Date: ${date}`),
         el('span', `Tasks ${total}`),
-        el('span', `Estimated time: ${ms(totalEstimate, { long: true })}`)
+        el('span', `Estimated time: ${msToTimeFull(totalEstimate)}`)
       )
 
       page.append(el('div', table, el('hr')))
@@ -67,7 +63,7 @@ class TaskBackuper {
     const pageScript = el(
       'script',
       saveBlob
-        .replace('__DATE__', this.currentDate())
+        .replace('__DATE__', currentDate())
         .replace('__TOTAL_TASKS__', totalTasks.toString())
     )
     const savePageButton = el('button', 'Save')

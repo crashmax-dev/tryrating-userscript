@@ -1,5 +1,5 @@
 import { logger } from '../../utils/logger.js'
-import { parseTimeToMs } from '../../utils/parse-time-to-ms.js'
+import { parseTimeStringToMs } from '../../utils/parse-time-to-ms.js'
 import { storage } from '../storage.js'
 import { toggleAutoSubmit } from '../widget/auto-submit-button.jsx'
 
@@ -60,7 +60,7 @@ class TaskFieldsObserver {
         logger.info('Task is submitted', this.taskFields)
         storage.write({
           type: this.taskFields.taskType,
-          estimated: parseTimeToMs(this.taskFields.estimatedRatingTime)
+          estimated: parseTimeStringToMs(this.taskFields.estimatedRatingTime)
         })
       }
 

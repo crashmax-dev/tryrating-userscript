@@ -1,13 +1,29 @@
-import ms from 'ms'
+import dayjs from 'dayjs'
+import { logger } from './logger.js'
 
-export function parseTimeToMs(time: string): number {
-  const times = time
-    // by karkar1ch1
-    .split(/\s(?=\d)/)
+export function parseTimeStringToMs(timeString: string): number {
+  // by karkar1ch1
+  const times = timeString.split(/\s(?=\d)/)
 
-  return times.reduce((acc, value) => {
-    // @ts-ignore
-    acc += ms(value)
-    return acc
-  }, 0)
+  let ms = 0
+
+  for (const time of times) {
+    const [value, type] = time.split(' ')
+
+    switch (type) {
+      case 'hours':
+        ms += dayjs().hour(Number(value)).millisecond()
+        break
+      case 'minutes':
+        ms += dayjs().minute(Number(value)).millisecond()
+        break
+      case 'seconds':
+        ms += dayjs().second(Number(value)).millisecond()
+        break
+      default:
+        logger.warn(`Unknown time type: ${type}`)
+    }
+  }
+
+  return ms
 }
