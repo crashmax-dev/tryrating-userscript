@@ -15,8 +15,13 @@
   text-transform: uppercase;
   font-family: var(--try-font-family);
 
+  & > .task-counter {
+    background: gray;
+  }
+
   & > div {
-    padding: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
   }
 
   & > button {
@@ -25,8 +30,14 @@
     border: none;
     font-size: inherit;
     font-weight: inherit;
-    background: #2e2c2f;
     color: #fff;
+    padding-left: 12px;
+    padding-right: 12px;
+    background: #f44336;
+  }
+
+  & > button.enabled {
+    background: #4caf50;
   }
 }
 

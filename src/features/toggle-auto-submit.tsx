@@ -19,10 +19,10 @@ export function createToggleAutosubmit() {
 export const ToggleAutoSubmitButton: Component = () => {
   return (
     <button
-      style={{ background: autosubmit() ? '#4CAF50' : '#f44336' }}
+      classList={{ enabled: autosubmit() }}
       onClick={() => toggleAutosubmit()}
     >
-      Autosubmit
+      A
     </button>
   )
 }

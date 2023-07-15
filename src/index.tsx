@@ -1,5 +1,6 @@
 import { createMemo } from 'solid-js'
 import { render } from 'solid-js/web'
+import { ToggleAutoCloseModalButton } from './features/auto-close-modal.jsx'
 import { setKeyboardListeners } from './features/keyboard-listeners.js'
 import { setObserverApp } from './features/observe-elements.js'
 import { stopwatch } from './features/stopwatch.js'
@@ -57,6 +58,7 @@ const App: Component = () => {
           <div>Stopwatch: {currentStopwatch()}</div>
           <TasksCountButton />
           <ToggleAutoSubmitButton />
+          <ToggleAutoCloseModalButton />
         </div>
       </WidgetDraggableProvider>
     </WidgetVisibilityProvider>

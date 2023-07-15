@@ -1,9 +1,19 @@
 import { __DEV__ } from '../constants.js'
+import { createLocalStore } from '../utils/create-local-storage.js'
 import { logger } from '../utils/logger.js'
+import type { Component } from 'solid-js'
 
 const MODAL_CONTAINER_VISIBLE_SELECTOR = '.modal-container.visible'
 const MODAL_CONTENT_SELECTOR = 'div[modalwrapref] > div'
 const MODAL_CONTENT_TEXT = 'Validation failed!'
+
+const [autoClose, setAutoClose] = createLocalStore('auto-close-modal', {
+  value: true
+})
+
+function toggleAutoClose() {
+  setAutoClose({ value: !autoClose.value })
+}
 
 export function autoCloseModal(): void {
   const modalContainer = document.querySelector(
@@ -29,4 +39,15 @@ export function autoCloseModal(): void {
       modalButton.click()
     }
   }
+}
+
+export const ToggleAutoCloseModalButton: Component = () => {
+  return (
+    <button
+      classList={{ enabled: autoClose.value }}
+      onClick={() => toggleAutoClose()}
+    >
+      M
+    </button>
+  )
 }

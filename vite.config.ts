@@ -4,6 +4,12 @@ import Userscript from 'vite-userscript-plugin'
 import { author, homepage, license, name, version } from './package.json'
 
 export default defineConfig((config) => {
+  const match = ['https://www.tryrating.com/app/survey/*']
+
+  if (config.mode === 'development') {
+    match.push('https://www.tryrating.com/login?*')
+  }
+
   return {
     plugins: [
       Solidjs(),
@@ -15,7 +21,7 @@ export default defineConfig((config) => {
           author,
           license,
           homepage,
-          match: 'https://www.tryrating.com/app/survey/*'
+          match
         },
         server: {
           port: 3000

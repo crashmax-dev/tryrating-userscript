@@ -80,10 +80,10 @@ export const TasksCountButton: Component = () => {
 
   return (
     <button
-      style={{ background: 'gray' }}
+      class="task-counter"
       onClick={() => tasksViewer.open()}
     >
-      Tasks: {currentTaskList()}
+      {currentTaskList()}
     </button>
   )
 }
