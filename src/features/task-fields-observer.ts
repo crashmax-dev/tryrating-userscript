@@ -51,7 +51,7 @@ class TaskFieldsObserver {
     }
 
     if (newTaskFields.requestId !== this.taskFields?.requestId) {
-      logger.log('Task fields changed', newTaskFields)
+      logger.info('Task fields changed', newTaskFields)
       this.onChangeTaskCallback!(newTaskFields)
 
       if (!autosubmit) {
@@ -59,7 +59,7 @@ class TaskFieldsObserver {
       }
 
       if (this.taskFields) {
-        logger.log('Task is submitted', this.taskFields)
+        logger.info('Task is submitted', this.taskFields)
         storage.write({
           type: this.taskFields.taskType,
           estimated: parseTimeToMs(this.taskFields.estimatedRatingTime)

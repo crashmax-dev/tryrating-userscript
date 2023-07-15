@@ -37,7 +37,7 @@ class Storage {
 
   private read(): void {
     const tasks = GM_getValue(this.STORAGE_KEY, initialStorage())
-    logger.log('Readed tasks', tasks)
+    logger.info('Readed tasks', tasks)
     setTaskList(tasks)
   }
 
@@ -76,10 +76,10 @@ class Storage {
 
   getTaskList(): Tasks {
     const date = currentDate()
-    logger.log('Current date', date)
+    logger.info('Current date', date)
 
     const findedTaskList = taskList().find((task) => task.date === date)
-    logger.log('Task list', findedTaskList)
+    logger.info('Task list', findedTaskList)
 
     if (!findedTaskList) {
       return initialStorage()[0]!

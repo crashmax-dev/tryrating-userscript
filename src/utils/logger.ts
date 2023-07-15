@@ -1,10 +1,10 @@
 import { entries } from '@zero-dependency/utils'
 
-type LogType = 'debug' | 'log' | 'warn' | 'error'
+type LogType = 'info' | 'debug' | 'warn' | 'error'
 
 const colors: Record<LogType, string> = {
+  info: `#2ecc71`,
   debug: `#7f8c8d`,
-  log: `#2ecc71`,
   warn: `#f39c12`,
   error: `#c0392b`
 }

@@ -11,17 +11,12 @@ export async function setObserverApp(): Promise<void> {
     return
   }
 
-  observeElement(appRoot, () => {
-    autoCloseModal()
-  })
+  observeElement(appRoot, () => autoCloseModal())
 
   waitElement(taskFieldsObserver.targetSelector)
     .then((el) => {
-      observeElement(el, () => {
-        taskFieldsObserver.observe()
-      })
+      taskFieldsObserver.observe()
+      observeElement(el, () => taskFieldsObserver.observe())
     })
-    .finally(() => {
-      logger.log('Initialized task fields observer')
-    })
+    .finally(() => logger.info('Initialized task fields observer'))
 }

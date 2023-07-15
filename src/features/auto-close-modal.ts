@@ -25,7 +25,7 @@ export function autoCloseModal(): void {
 
     const modalButton = modalContainer.querySelector('button')
     if (modalButton) {
-      logger.log('Modal closed')
+      logger.info('Modal closed')
       modalButton.click()
     }
   }
