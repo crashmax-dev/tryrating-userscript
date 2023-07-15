@@ -1,10 +1,10 @@
 import { storage } from './storage.js'
 import { tasksViewer } from './tasks-viewer.js'
-import { useToggleAutosubmit } from './toggle-auto-submit.jsx'
+import { createToggleAutosubmit } from './toggle-auto-submit.jsx'
 import { resetWidgetPosition } from './widget-dnd.jsx'
 import { toggleWidgetVisibility } from './widget-visibility.jsx'
 
-const { toggleAutosubmit } = useToggleAutosubmit()
+const { toggleAutosubmit } = createToggleAutosubmit()
 
 export function setKeyboardListeners(): void {
   window.addEventListener('keydown', (event) => {

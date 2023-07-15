@@ -1,9 +1,9 @@
 import { logger } from '../utils/logger.js'
 import { parseTimeToMs } from '../utils/parse-time-to-ms.js'
 import { storage } from './storage.js'
-import { useToggleAutosubmit } from './toggle-auto-submit.js'
+import { createToggleAutosubmit } from './toggle-auto-submit.js'
 
-const { autosubmit, toggleAutosubmit } = useToggleAutosubmit()
+const { autosubmit, toggleAutosubmit } = createToggleAutosubmit()
 
 interface TaskFields {
   taskType: string

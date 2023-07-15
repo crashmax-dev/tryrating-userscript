@@ -7,7 +7,7 @@ function toggleAutosubmit() {
   setAutosubmit(!autosubmit())
 }
 
-export function useToggleAutosubmit() {
+export function createToggleAutosubmit() {
   return {
     get autosubmit() {
       return autosubmit()

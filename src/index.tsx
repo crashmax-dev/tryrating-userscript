@@ -3,13 +3,13 @@ import { render } from 'solid-js/web'
 import { setKeyboardListeners } from './features/keyboard-listeners.js'
 import { setObserverApp } from './features/observe-elements.js'
 import { stopwatch } from './features/stopwatch.js'
-import { useSubmitButtons } from './features/submit-buttons.js'
+import { getSubmitButtons } from './features/submit-buttons.js'
 import { taskFieldsObserver } from './features/task-fields-observer.js'
 import { TasksCountButton } from './features/tasks-viewer.jsx'
 import { timer } from './features/timer.js'
 import {
-  ToggleAutoSubmitButton,
-  useToggleAutosubmit
+  createToggleAutosubmit,
+  ToggleAutoSubmitButton
 } from './features/toggle-auto-submit.jsx'
 import { WidgetDraggableProvider } from './features/widget-dnd.jsx'
 import { WidgetVisibilityProvider } from './features/widget-visibility.jsx'
@@ -19,13 +19,12 @@ import { parseTimeToMs } from './utils/parse-time-to-ms.js'
 import type { Component } from 'solid-js'
 import './styles/widget.scss'
 
-const { autosubmit } = useToggleAutosubmit()
-const { findSubmitButtons } = useSubmitButtons()
+const { autosubmit } = createToggleAutosubmit()
 
 timer.onTimerEnd(() => {
   if (!autosubmit) return
 
-  const buttons = findSubmitButtons()
+  const buttons = getSubmitButtons()
   if (!buttons.length) {
     logger.error('Submit button is not defined')
     return
@@ -35,9 +34,6 @@ timer.onTimerEnd(() => {
 })
 
 taskFieldsObserver.onChangeTask((taskFields) => {
-  // force update signal
-  void findSubmitButtons()
-
   // start timer and stopwatch
   const taskTime = parseTimeToMs(taskFields.estimatedRatingTime)
   timer.start(taskTime)

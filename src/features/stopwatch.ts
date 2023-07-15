@@ -1,6 +1,5 @@
 import { createSignal } from 'solid-js'
 import { clearInterval, setInterval } from 'worker-timers'
-import { logger } from '../utils/logger.js'
 
 const [time, setTime] = createSignal(0)
 
