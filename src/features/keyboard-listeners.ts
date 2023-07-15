@@ -1,6 +1,7 @@
 import { storage } from './storage.js'
 import { tasksViewer } from './tasks-viewer.js'
 import { useToggleAutosubmit } from './toggle-auto-submit.jsx'
+import { toggleWidgetVisibility } from './widget-visibility.jsx'
 
 const { toggleAutosubmit } = useToggleAutosubmit()
 
@@ -24,6 +25,12 @@ export function setKeyboardListeners(): void {
     if (event.ctrlKey && event.code === 'KeyO') {
       event.preventDefault()
       toggleAutosubmit()
+    }
+
+    // toggle widget visibility
+    if (event.ctrlKey && event.code === 'KeyX') {
+      event.preventDefault()
+      toggleWidgetVisibility()
     }
   })
 }
