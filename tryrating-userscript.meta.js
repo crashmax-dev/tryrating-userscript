@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        tryrating-userscript
-// @version     1.3.0
+// @version     1.3.1
 // @author      crashmax <userscript@crashmax.ru>
 // @license     MIT
 // @homepage    https://crashmax-dev.github.io/tryrating-userscript/
