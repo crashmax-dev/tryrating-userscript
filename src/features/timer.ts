@@ -28,8 +28,7 @@ class Timer {
     this.onEndCallback = callback
   }
 
-  start(estimatedTime: string): void {
-    const ms = parseTimeStringToMs(estimatedTime)
+  start(ms: number): void {
     this.stop()
     setTime(ms)
     this.intervalId = setInterval(() => this.onTickTimer(), 1000)

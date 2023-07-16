@@ -1,3 +1,4 @@
+import { randomNum } from '@zero-dependency/utils'
 import { logger } from '../../utils/logger.js'
 import { parseTimeStringToMs } from '../../utils/parse-time-to-ms.js'
 import { stopwatch } from '../stopwatch.js'
@@ -8,7 +9,7 @@ import { toggleAutoSubmit } from '../widget/auto-submit-button.jsx'
 interface TaskFields {
   taskType: string
   requestId: string
-  estimatedRatingTime: string
+  estimated: number
 }
 
 class TaskFieldsObserver {
@@ -44,10 +45,16 @@ class TaskFieldsObserver {
       estimatedRatingTime
     ] = fieldsAttributes
 
+    // 5-15 seconds
+    const estimatedTimeShift = randomNum(5 * 1000, 15 * 1000)
+    const estimatedTime =
+      parseTimeStringToMs(estimatedRatingTime!.textContent!.trim()) +
+      estimatedTimeShift
+
     const newTaskFields = {
       taskType: taskType!.textContent!,
       requestId: requestId!.textContent!,
-      estimatedRatingTime: estimatedRatingTime!.textContent!.trim()
+      estimated: estimatedTime
     }
 
     if (newTaskFields.requestId !== this.taskFields?.requestId) {
@@ -62,7 +69,7 @@ class TaskFieldsObserver {
         logger.info('Task is submitted', this.taskFields)
         storage.write({
           type: this.taskFields.taskType,
-          estimated: parseTimeStringToMs(this.taskFields.estimatedRatingTime)
+          estimated: this.taskFields.estimated
         })
       }
 
@@ -74,6 +81,6 @@ class TaskFieldsObserver {
 export const taskFieldsObserver = new TaskFieldsObserver()
 
 taskFieldsObserver.onChangeTask((taskFields) => {
-  timer.start(taskFields.estimatedRatingTime)
+  timer.start(taskFields.estimated)
   stopwatch.start()
 })
