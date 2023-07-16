@@ -18,12 +18,12 @@ export function surveyCheck(): void {
 
   setReloaded(true)
 
-  sleep(5000)
+  sleep(10000)
     .then(() => checkNowButton.click())
     .finally(() => reloadPage())
 }
 
 function reloadPage(): void {
-  const sleepMs = randomNum(5 * 1000, 10 * 1000)
+  const sleepMs = randomNum(30 * 1000, 60 * 1000)
   sleep(sleepMs).then(() => location.reload())
 }
