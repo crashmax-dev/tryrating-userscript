@@ -2,6 +2,7 @@ import { observeElement, waitElement } from '@zero-dependency/dom'
 import { setInterval } from 'worker-timers'
 import { logger } from '../utils/logger.js'
 import { closeModal } from './close-modal.js'
+import { surveyCheck } from './survey-check.js'
 import { taskFieldsObserver } from './tasks/task-fields-observer.js'
 
 export async function setObserverApp(): Promise<void> {
@@ -16,6 +17,8 @@ export async function setObserverApp(): Promise<void> {
     if (closeModal.autoClose) {
       closeModal.closeValidationFailed()
     }
+
+    surveyCheck()
   })
 
   waitElement(taskFieldsObserver.targetSelector)
