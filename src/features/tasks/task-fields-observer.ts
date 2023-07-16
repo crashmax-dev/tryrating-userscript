@@ -1,6 +1,8 @@
 import { logger } from '../../utils/logger.js'
 import { parseTimeStringToMs } from '../../utils/parse-time-to-ms.js'
+import { stopwatch } from '../stopwatch.js'
 import { storage } from '../storage.js'
+import { timer } from '../timer.js'
 import { toggleAutoSubmit } from '../widget/auto-submit-button.jsx'
 
 interface TaskFields {
@@ -70,3 +72,8 @@ class TaskFieldsObserver {
 }
 
 export const taskFieldsObserver = new TaskFieldsObserver()
+
+taskFieldsObserver.onChangeTask((taskFields) => {
+  timer.start(taskFields.estimatedRatingTime)
+  stopwatch.start()
+})

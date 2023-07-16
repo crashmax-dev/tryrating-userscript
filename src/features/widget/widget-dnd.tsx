@@ -33,8 +33,8 @@ const Draggable: FlowComponent<{ id: number }> = (props) => {
   return (
     <div
       use:draggable
-      class="widget-draggable widget-absolute"
-      classList={{ 'widget-opacity-25': draggable.isActiveDraggable }}
+      class="tryrating-widget draggable absolute"
+      classList={{ 'opacity-25': draggable.isActiveDraggable }}
       style={{ top: widgetPosition.top, left: widgetPosition.left }}
     >
       {props.children}
@@ -70,7 +70,7 @@ export const WidgetDraggableProvider: FlowComponent = (props) => {
         {(draggable) => (
           <>
             <div class="widget-drag-overlay">
-              <span class="widget-drag-text">alt+3 reset position</span>
+              <span class="text">alt+3 reset position</span>
             </div>
             {draggable}
           </>
