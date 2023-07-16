@@ -1,6 +1,7 @@
 import { createSignal } from 'solid-js'
 import { clearInterval, setInterval } from 'worker-timers'
-import { parseTimeToMs } from '../utils/parse-time-to-ms.js'
+import { parseTimeStringToMs } from '../utils/parse-time-to-ms.js'
+import { submitButton } from './submit-button.js'
 
 const [time, setTime] = createSignal(0)
 
@@ -27,8 +28,7 @@ class Timer {
     this.onEndCallback = callback
   }
 
-  start(estimatedTime: string): void {
-    const ms = parseTimeToMs(estimatedTime)
+  start(ms: number): void {
     this.stop()
     setTime(ms)
     this.intervalId = setInterval(() => this.onTickTimer(), 1000)
@@ -42,3 +42,5 @@ class Timer {
 }
 
 export const timer = new Timer()
+
+timer.onTimerEnd(() => submitButton.clickSubmit())

@@ -3,6 +3,7 @@
 }
 
 .tryrating-widget {
+  user-select: none;
   display: flex;
   color: #fff;
   padding-left: 4px;
@@ -15,16 +16,29 @@
   text-transform: uppercase;
   font-family: var(--try-font-family);
 
-  & > .task-counter {
+  &.draggable {
+    cursor: pointer;
+  }
+
+  &.absolute {
+    z-index: 999999;
+    position: absolute;
+  }
+
+  &.opacity-25 {
+    opacity: 0.25;
+  }
+
+  > .task-counter {
     background: gray;
   }
 
-  & > div {
+  > div {
     margin-left: 6px;
     margin-right: 6px;
   }
 
-  & > button {
+  > button {
     text-transform: inherit;
     height: inherit;
     border: none;
@@ -36,22 +50,9 @@
     background: #f44336;
   }
 
-  & > button.enabled {
+  > button.enabled {
     background: #4caf50;
   }
-}
-
-.widget-draggable {
-  cursor: pointer;
-}
-
-.widget-absolute {
-  z-index: 999999;
-  position: absolute;
-}
-
-.widget-opacity-25 {
-  opacity: 0.25;
 }
 
 .widget-drag-overlay {
@@ -65,13 +66,13 @@
   align-self: center;
   text-transform: uppercase;
   background: rgba(0, 0, 0, 0.9);
-}
 
-.widget-drag-text {
-  font-family: var(--try-font-family);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+  > .text {
+    font-family: var(--try-font-family);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
 }

@@ -14,7 +14,7 @@ export const OpenTaskPageButton: Component = () => {
   return (
     <button
       class="task-counter"
-      onClick={() => taskBackuper.openPage()}
+      onClick={() => taskBackuper.generateDailyPage()}
     >
       {currentTaskList()}
     </button>

@@ -9,7 +9,7 @@ export function setKeyboardListeners(): void {
     // open tasks
     if (event.altKey && event.key === '1') {
       event.preventDefault()
-      taskBackuper.openPage()
+      taskBackuper.generateDailyPage()
     }
 
     // reset tasks
