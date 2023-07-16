@@ -67,7 +67,7 @@
   text-transform: uppercase;
   background: rgba(0, 0, 0, 0.9);
 
-  &.text {
+  > .text {
     font-family: var(--try-font-family);
     position: absolute;
     top: 50%;
