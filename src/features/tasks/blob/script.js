@@ -11,7 +11,7 @@ const link = document.createElement('a')
 Object.assign(link, {
   target: '_blank',
   href: URL.createObjectURL(blob),
-  download: 'tryrating-__DATE__-__TOTAL_TASKS__.html'
+  download: 'tryrating-__DATE__.html'
 })
 
 function savePage() {

@@ -2,7 +2,8 @@ import { el } from '@zero-dependency/dom'
 import { currentDate } from '../../utils/current-date.js'
 import { msToTime, msToTimeFull } from '../../utils/ms-to-time.js'
 import { storage } from '../storage.js'
-import saveBlob from './save-blob.js?raw'
+import blobScript from './blob/script.js?raw'
+import blobStyles from './blob/styles.css?raw'
 
 class TaskBackuper {
   // TODO: #8
@@ -15,33 +16,28 @@ class TaskBackuper {
       return
     }
 
-    const page = el('div')
-    let totalTasks = 0
+    const container = el('div')
 
-    for (const { date, list, total } of values) {
-      totalTasks += total
-      let totalEstimate = 0
-
-      const table = el('table', { border: '1' })
-      const info = el('div', {
-        style: {
-          display: 'flex',
-          gap: '4px',
-          flexDirection: 'column'
-        }
-      })
-      const thead = el(
-        'tr',
-        el('th', 'Task Type'),
-        el('th', 'Count'),
-        el('th', 'Estimated Rating Time')
+    for (const { date, list, total, estimated } of values) {
+      const caption = el(
+        'caption',
+        el('p', `Date: ${date}`),
+        el('p', `Tasks: ${total}`),
+        el('p', `Estimated: ${msToTimeFull(estimated)}`)
       )
 
-      table.append(info, thead)
+      const table = el('table', caption)
+
+      const thead = el(
+        'tr',
+        el('th', 'Task'),
+        el('th', 'Count'),
+        el('th', 'Estimated')
+      )
+
+      table.append(thead)
 
       for (const { count, estimated, type } of list) {
-        totalEstimate += estimated
-
         const tr = el(
           'tr',
           el('td', type),
@@ -51,27 +47,20 @@ class TaskBackuper {
         table.append(tr)
       }
 
-      info.append(
-        el('span', `Date: ${date}`),
-        el('span', `Tasks ${total}`),
-        el('span', `Estimated time: ${msToTimeFull(totalEstimate)}`)
-      )
-
-      page.append(el('div', table, el('hr')))
+      container.append(table)
     }
 
+    const pageStyles = el('style', blobStyles)
     const pageScript = el(
       'script',
-      saveBlob
-        .replace('__DATE__', currentDate())
-        .replace('__TOTAL_TASKS__', totalTasks.toString())
+      blobScript.replace('__DATE__', currentDate())
     )
-    const savePageButton = el('button', 'Save')
+    const savePageButton = el('button', { className: 'save-button' }, 'Save')
     savePageButton.setAttribute('onclick', 'savePage()')
-    page.append(pageScript)
-    page.prepend(savePageButton)
+    container.append(pageStyles, pageScript)
+    container.prepend(savePageButton)
 
-    const blobPage = new Blob([page.outerHTML], {
+    const blobPage = new Blob([container.outerHTML], {
       type: 'text/html'
     })
 

@@ -1,12 +1,12 @@
 import { createMemo } from 'solid-js'
 import { msToTime } from '../../utils/ms-to-time.js'
-import { timer } from '../timer.js'
+import { stopwatch } from '../stopwatch.js'
 import type { Component } from 'solid-js'
 
 export const Stopwatch: Component = () => {
-  const currentTimer = createMemo(() => {
-    return msToTime(timer.time)
+  const currentStopwatch = createMemo(() => {
+    return msToTime(stopwatch.time)
   })
 
-  return <div>Timer: {currentTimer()}</div>
+  return <div>Stopwatch: {currentStopwatch()}</div>
 }
