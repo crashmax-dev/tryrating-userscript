@@ -1,4 +1,3 @@
-import { randomNum } from '@zero-dependency/utils'
 import { logger } from '../../utils/logger.js'
 import { parseTimeStringToMs } from '../../utils/parse-time-to-ms.js'
 import { stopwatch } from '../stopwatch.js'
@@ -31,33 +30,27 @@ class TaskFieldsObserver {
       return
     }
 
-    const fieldsAttributes = Array.from(
-      taskFields.querySelectorAll('.labeled-attribute__attribute')
-    )
-    if (!fieldsAttributes.length) {
-      logger.error('Task fields attributes not found')
-      return
-    }
-
     const [
       taskType,
       requestId,
       estimatedRatingTime
-    ] = fieldsAttributes
-
-    // 5-15 seconds
-    const estimatedTimeShift = randomNum(5 * 1000, 15 * 1000)
-    const estimatedTime =
-      parseTimeStringToMs(estimatedRatingTime!.textContent!.trim()) +
-      estimatedTimeShift
-
-    const newTaskFields = {
-      taskType: taskType!.textContent!,
-      requestId: requestId!.textContent!,
-      estimated: estimatedTime
+    ] = Array.from(taskFields.querySelectorAll('.labeled-attribute__attribute'))
+    if (!taskType || !requestId || !estimatedRatingTime) {
+      logger.error('Task fields attributes not found')
+      return
     }
 
-    if (newTaskFields.requestId !== this.taskFields?.requestId) {
+    if (taskType.textContent !== this.taskFields?.requestId) {
+      const estimatedTime = this.getRandomEstimatedOffset(
+        estimatedRatingTime.textContent!.trim()
+      )
+
+      const newTaskFields = {
+        taskType: taskType.textContent!,
+        requestId: requestId.textContent!,
+        estimated: estimatedTime
+      }
+
       logger.info('Task fields changed', newTaskFields)
       this.onChangeTaskCallback!(newTaskFields)
 
@@ -75,6 +68,12 @@ class TaskFieldsObserver {
 
       this.taskFields = newTaskFields
     }
+  }
+
+  private getRandomEstimatedOffset(timeString: string): number {
+    const milliseconds = parseTimeStringToMs(timeString)
+    const randomPercent = Math.random() * (0.15 - -0.05) + -0.05
+    return milliseconds + milliseconds * randomPercent
   }
 }
 
