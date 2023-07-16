@@ -2,8 +2,8 @@ import { el } from '@zero-dependency/dom'
 import { currentDate } from '../../utils/current-date.js'
 import { msToTime, msToTimeFull } from '../../utils/ms-to-time.js'
 import { storage } from '../storage.js'
-import blobScript from './blob/script.js?raw'
-import blobStyles from './blob/styles.css?raw'
+import saveBlobScript from './blob/save-blob.js?raw'
+import blobPageStyles from './blob/styles.css?raw'
 
 class TaskBackuper {
   // TODO: #8
@@ -50,10 +50,10 @@ class TaskBackuper {
       container.append(table)
     }
 
-    const pageStyles = el('style', blobStyles)
+    const pageStyles = el('style', blobPageStyles)
     const pageScript = el(
       'script',
-      blobScript.replace('__DATE__', currentDate())
+      saveBlobScript.replace('__DATE__', currentDate())
     )
     const savePageButton = el('button', { className: 'save-button' }, 'Save')
     savePageButton.setAttribute('onclick', 'savePage()')
