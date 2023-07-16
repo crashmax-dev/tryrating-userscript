@@ -14,5 +14,5 @@ export function monthyTaskExporter(): void {
   )
   if (isConfirm) return
 
-  taskBackuper.generateMonthyExport()
+  taskBackuper.generateMonthyPage()
 }

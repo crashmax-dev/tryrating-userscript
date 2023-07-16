@@ -1,75 +1,31 @@
-import { el } from '@zero-dependency/dom'
-import { currentDate } from '../../utils/current-date.js'
-import { msToTime, msToTimeFull } from '../../utils/ms-to-time.js'
 import { storage } from '../storage.js'
-import saveBlobScript from './blob/save-blob.js?raw'
-import blobPageStyles from './blob/styles.css?raw'
+import { TaskTableGenerator } from './task-table-generator.js'
 
 class TaskBackuper {
   // TODO: #8
-  generateMonthyExport(): void {}
+  generateMonthyPage(): void {}
 
-  openPage(): void {
-    const values = storage.taskList
-    if (!values.length) {
-      alert('Нету данных для просмотра.')
-      return
-    }
+  generateDailyPage(): void {
+    const page = TaskTableGenerator.page()
 
-    const container = el('div')
+    for (const { date, list, total, estimated } of storage.taskList) {
+      const table = TaskTableGenerator.table()
 
-    for (const { date, list, total, estimated } of values) {
-      const caption = el(
-        'caption',
-        el('p', `Date: ${date}`),
-        el('p', `Tasks: ${total}`),
-        el('p', `Estimated: ${msToTimeFull(estimated)}`)
-      )
+      const caption = TaskTableGenerator.caption(date, total, estimated)
+      table.append(caption)
 
-      const table = el('table', caption)
-
-      const thead = el(
-        'tr',
-        el('th', 'Task'),
-        el('th', 'Count'),
-        el('th', 'Estimated')
-      )
-
+      const thead = TaskTableGenerator.head()
       table.append(thead)
 
-      for (const { count, estimated, type } of list) {
-        const tr = el(
-          'tr',
-          el('td', type),
-          el('td', `${count}`),
-          el('td', msToTime(estimated))
-        )
+      for (const task of list) {
+        const tr = TaskTableGenerator.tr(task)
         table.append(tr)
       }
 
-      container.append(table)
+      page.prepend(table)
     }
 
-    const pageStyles = el('style', blobPageStyles)
-    const pageScript = el(
-      'script',
-      saveBlobScript.replace('__DATE__', currentDate())
-    )
-    const savePageButton = el('button', { className: 'save-button' }, 'Save')
-    savePageButton.setAttribute('onclick', 'savePage()')
-    container.append(pageStyles, pageScript)
-    container.prepend(savePageButton)
-
-    const blobPage = new Blob([container.outerHTML], {
-      type: 'text/html'
-    })
-
-    const link = el('a', {
-      target: '_blank',
-      href: URL.createObjectURL(blobPage)
-    })
-
-    link.click()
+    TaskTableGenerator.open(page)
   }
 }
 
