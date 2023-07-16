@@ -1,23 +1,23 @@
 import { createSignal } from 'solid-js'
 import { clearInterval, setInterval } from 'worker-timers'
 
-const [time, setTime] = createSignal(0)
+const [stopwatchTime, setStopwatchTime] = createSignal(0)
 
 class Stopwatch {
   private intervalId: number
 
   get time() {
-    return time()
+    return stopwatchTime()
   }
 
   private tick(): void {
-    setTime((prevTime) => prevTime + 1000)
+    setStopwatchTime((prevTime) => prevTime + 1000)
   }
 
   start(): void {
     if (this.intervalId) {
       clearInterval(this.intervalId)
-      setTime(0)
+      setStopwatchTime(0)
     }
 
     this.intervalId = setInterval(() => this.tick(), 1000)

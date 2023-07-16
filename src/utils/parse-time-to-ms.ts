@@ -1,4 +1,3 @@
-import dayjs from 'dayjs'
 import { logger } from './logger.js'
 
 export function parseTimeStringToMs(timeString: string): number {
@@ -12,13 +11,13 @@ export function parseTimeStringToMs(timeString: string): number {
 
     switch (type) {
       case 'hours':
-        ms += dayjs().hour(Number(value)).millisecond()
+        ms += Number(value) * 3600000
         break
       case 'minutes':
-        ms += dayjs().minute(Number(value)).millisecond()
+        ms += Number(value) * 60000
         break
       case 'seconds':
-        ms += dayjs().second(Number(value)).millisecond()
+        ms += Number(value) * 1000
         break
       default:
         logger.warn(`Unknown time type: ${type}`)
