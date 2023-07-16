@@ -6,7 +6,7 @@ const [stopwatchTime, setStopwatchTime] = createSignal(0)
 class Stopwatch {
   private intervalId: number
 
-  get time() {
+  get time(): number {
     return stopwatchTime()
   }
 

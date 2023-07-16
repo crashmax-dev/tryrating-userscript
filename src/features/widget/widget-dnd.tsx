@@ -21,7 +21,7 @@ const [widgetPosition, setWidgetPosition] = createLocalStore<Position>(
   }
 )
 
-export function resetWidgetPosition() {
+export function resetWidgetPosition(): void {
   setWidgetPosition({
     top: '0px',
     left: '0px'

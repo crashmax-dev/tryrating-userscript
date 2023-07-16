@@ -19,7 +19,7 @@ class Timer {
     }
   }
 
-  get time() {
+  get time(): number {
     return timerTime()
   }
 

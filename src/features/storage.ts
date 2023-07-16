@@ -33,7 +33,7 @@ class Storage {
     this.read()
   }
 
-  get taskList() {
+  get taskList(): Tasks[] {
     return taskList()
   }
 

@@ -15,7 +15,7 @@ class TaskFieldsObserver {
   private taskFields: TaskFields | null = null
   private onChangeTaskCallback: ((taskFields: TaskFields) => void) | null = null
 
-  get targetSelector() {
+  get targetSelector(): string {
     return '.survey-meta-fields'
   }
 

@@ -3,7 +3,7 @@ import type { FlowComponent } from 'solid-js'
 
 const [widgetVisibility, setWidgetVisibility] = createSignal(true)
 
-export function toggleWidgetVisibility() {
+export function toggleWidgetVisibility(): void {
   setWidgetVisibility(!widgetVisibility())
 }
 
