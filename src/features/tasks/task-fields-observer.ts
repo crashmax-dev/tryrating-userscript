@@ -1,3 +1,4 @@
+import { randomNum } from '@zero-dependency/utils'
 import { logger } from '../../utils/logger.js'
 import { parseTimeStringToMs } from '../../utils/parse-time-to-ms.js'
 import { stopwatch } from '../stopwatch.js'
@@ -73,8 +74,8 @@ class TaskFieldsObserver {
 
   private getRandomEstimatedOffset(timeString: string): number {
     const milliseconds = parseTimeStringToMs(timeString)
-    const randomPercent = Math.random() * (0.15 - -0.05) + -0.05
-    return milliseconds + milliseconds * randomPercent
+    const randomOffset = randomNum(-5, 15) // -5-15 seconds
+    return milliseconds + (randomOffset * 1000)
   }
 }
 
