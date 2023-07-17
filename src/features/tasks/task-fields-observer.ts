@@ -41,7 +41,7 @@ class TaskFieldsObserver {
       return
     }
 
-    if (taskType.textContent !== this.taskFields?.requestId) {
+    if (requestId.textContent !== this.taskFields?.requestId) {
       const estimatedTime = this.getRandomEstimatedOffset(
         estimatedRatingTime.textContent!.trim()
       )
