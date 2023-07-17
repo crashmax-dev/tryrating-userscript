@@ -13,9 +13,11 @@ export function parseTimeStringToMs(timeString: string): number {
       case 'hours':
         ms += Number(value) * 3600000
         break
+      case 'minute':
       case 'minutes':
         ms += Number(value) * 60000
         break
+      case 'second':
       case 'seconds':
         ms += Number(value) * 1000
         break
