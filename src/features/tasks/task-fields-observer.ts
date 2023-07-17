@@ -3,6 +3,7 @@ import { logger } from '../../utils/logger.js'
 import { parseTimeStringToMs } from '../../utils/parse-time-to-ms.js'
 import { stopwatch } from '../stopwatch.js'
 import { storage } from '../storage.js'
+import { survey } from '../survey-check.js'
 import { timer } from '../timer.js'
 import { updater } from '../updater.js'
 import { toggleAutoSubmit } from '../widget/auto-submit-button.jsx'
@@ -75,7 +76,7 @@ class TaskFieldsObserver {
   private getRandomEstimatedOffset(timeString: string): number {
     const milliseconds = parseTimeStringToMs(timeString)
     const randomOffset = randomNum(-5, 15) // -5-15 seconds
-    return milliseconds + (randomOffset * 1000)
+    return milliseconds + randomOffset * 1000
   }
 }
 
@@ -85,4 +86,5 @@ taskFieldsObserver.onChangeTask((taskFields) => {
   timer.start(taskFields.estimated)
   stopwatch.start()
   updater.checkUpdates()
+  survey.tryNotification()
 })

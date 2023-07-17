@@ -1,29 +1,57 @@
 import { randomNum, sleep } from '@zero-dependency/utils'
 import { createSignal } from 'solid-js'
+import { NOTIFY_URL } from '../constants.js'
+import { createLocalStore } from '../utils/create-local-storage.js'
 import { logger } from '../utils/logger.js'
 
+const [isCheckSurvey, setCheckSurvey] = createLocalStore('check-survey', {
+  value: false
+})
 const [reloaded, setReloaded] = createSignal(false)
 
-export function surveyCheck(): void {
-  if (reloaded()) return
+class SurveyCheck {
+  checkSurvey(): void {
+    if (reloaded()) return
 
-  const noSurveyView = document.querySelector('.no-survey-view')
-  if (!noSurveyView) return
+    const noSurveyView = document.querySelector('.no-survey-view')
+    if (!noSurveyView) return
 
-  const checkNowButton = noSurveyView.querySelector('button')
-  if (!checkNowButton) {
-    logger.info('Check Now button is not defined')
-    return
+    const checkNowButton = noSurveyView.querySelector('button')
+    if (!checkNowButton) {
+      logger.info('Check Now button is not defined')
+      return
+    }
+
+    if (!isCheckSurvey.value) {
+      logger.info('Survey is found. Please, wait...')
+      setCheckSurvey({ value: true })
+    }
+
+    setReloaded(true)
+    sleep(10000)
+      .then(() => checkNowButton.click())
+      .finally(() => this.reloadPage())
   }
 
-  setReloaded(true)
+  tryNotification(): void {
+    if (!isCheckSurvey.value) return
+    setCheckSurvey({ value: false })
 
-  sleep(10000)
-    .then(() => checkNowButton.click())
-    .finally(() => reloadPage())
+    GM_notification({
+      text: 'Survey Found!',
+      highlight: true,
+      timeout: 3000
+    })
+
+    const audio = new Audio(NOTIFY_URL)
+    audio.volume = 0.3
+    audio.play()
+  }
+
+  private reloadPage(): void {
+    const sleepMs = randomNum(30 * 1000, 60 * 1000)
+    sleep(sleepMs).then(() => location.reload())
+  }
 }
 
-function reloadPage(): void {
-  const sleepMs = randomNum(30 * 1000, 60 * 1000)
-  sleep(sleepMs).then(() => location.reload())
-}
+export const survey = new SurveyCheck()
