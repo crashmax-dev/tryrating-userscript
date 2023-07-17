@@ -39,7 +39,7 @@ class Storage {
 
   private read(): void {
     const tasks = GM_getValue(this.STORAGE_KEY, initialStorage())
-    logger.info('Readed tasks', tasks)
+    logger.info('Loaded tasks', tasks)
     setTaskList(tasks)
   }
 

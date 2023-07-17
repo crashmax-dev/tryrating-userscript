@@ -20,9 +20,9 @@ dependencies:
   solid-js:
     specifier: 1.7.8
     version: 1.7.8
-  solid-services:
-    specifier: ^4.3.2
-    version: 4.3.2(solid-js@1.7.8)
+  userscript-parser:
+    specifier: 2.2.2
+    version: 2.2.2
   worker-timers:
     specifier: 7.0.73
     version: 7.0.73
@@ -1612,14 +1612,6 @@ packages:
       solid-js: 1.7.8
     dev: true
 
-  /solid-services@4.3.2(solid-js@1.7.8):
-    resolution: {integrity: sha512-168O7I1ZuE3aXkz63NiDKAibHkToFl4BTtaIcmqarNb5VRTbqZMaB3+B4JmNUW+LtTX5BfjpJNomGQsLWd1mdQ==}
-    peerDependencies:
-      solid-js: ^1.0.0
-    dependencies:
-      solid-js: 1.7.8
-    dev: false
-
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
@@ -1703,6 +1695,10 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true
+
+  /userscript-parser@2.2.2:
+    resolution: {integrity: sha512-EX3iD3WnBX+6OzKCDJ9yj0YGegvyjKdYtJDowddcUZFGr0GBWCCGa7QpaH5Nn3Uafk/oft0M/Dm5oqqFURo5rA==}
+    dev: false
 
   /utf-8-validate@5.0.10:
     resolution: {integrity: sha512-Z6czzLq4u8fPOyx7TU6X3dvUZVvoJmxSQ+IcrlmagKhilxlhZgxPK6C5Jqbkw1IDUmFTM+cz9QDnnLTwDz/2gQ==}

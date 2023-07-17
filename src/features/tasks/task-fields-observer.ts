@@ -3,6 +3,7 @@ import { parseTimeStringToMs } from '../../utils/parse-time-to-ms.js'
 import { stopwatch } from '../stopwatch.js'
 import { storage } from '../storage.js'
 import { timer } from '../timer.js'
+import { updater } from '../updater.js'
 import { toggleAutoSubmit } from '../widget/auto-submit-button.jsx'
 
 interface TaskFields {
@@ -82,4 +83,5 @@ export const taskFieldsObserver = new TaskFieldsObserver()
 taskFieldsObserver.onChangeTask((taskFields) => {
   timer.start(taskFields.estimated)
   stopwatch.start()
+  updater.checkUpdates()
 })

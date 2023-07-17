@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import Solidjs from 'vite-plugin-solid'
 import Userscript from 'vite-userscript-plugin'
-import { author, homepage, license, name, version } from './package.json'
+import { author, license, name, version } from './package.json'
 
 export default defineConfig((config) => {
   const match = ['https://www.tryrating.com/app/survey/*']
@@ -11,6 +11,9 @@ export default defineConfig((config) => {
   }
 
   return {
+    define: {
+      __PROJECT_NAME__: JSON.stringify(name)
+    },
     plugins: [
       Solidjs(),
       Userscript({
@@ -20,8 +23,8 @@ export default defineConfig((config) => {
           version,
           author,
           license,
-          homepage,
-          match
+          match,
+          connect: 'github.io'
         },
         server: {
           port: 3000
