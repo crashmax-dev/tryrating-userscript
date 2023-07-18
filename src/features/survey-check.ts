@@ -23,7 +23,7 @@ class SurveyCheck {
     }
 
     if (!isCheckSurvey.value) {
-      logger.info('Survey is found. Please, wait...')
+      logger.info('Survey is not found. Please, wait...')
       setCheckSurvey({ value: true })
     }
 
@@ -38,7 +38,8 @@ class SurveyCheck {
     setCheckSurvey({ value: false })
 
     GM_notification({
-      text: 'Survey Found!',
+      title: 'Survey found!',
+      text: 'Go to the survey',
       highlight: true,
       timeout: 3000
     })
