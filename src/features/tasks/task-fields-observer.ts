@@ -1,6 +1,6 @@
-import { randomNum } from '@zero-dependency/utils'
 import { logger } from '../../utils/logger.js'
 import { parseTimeStringToMs } from '../../utils/parse-time-to-ms.js'
+import { randomMsOffset } from '../../utils/random-ms-offset.js'
 import { stopwatch } from '../stopwatch.js'
 import { storage } from '../storage.js'
 import { survey } from '../survey-check.js'
@@ -18,15 +18,15 @@ class TaskFieldsObserver {
   private taskFields: TaskFields | null = null
   private onChangeTaskCallback: ((taskFields: TaskFields) => void) | null = null
 
-  get targetSelector(): string {
-    return '.survey-meta-fields'
+  get currentTaskFields(): TaskFields | null {
+    return this.taskFields
   }
 
-  onChangeTask(callback: (taskFields: TaskFields) => void): void {
-    this.onChangeTaskCallback = callback
+  set currentTaskFields(taskFields: TaskFields | null) {
+    this.taskFields = taskFields
   }
 
-  observe(): void {
+  get getTaskFields(): TaskFields | undefined {
     const taskFields = document.querySelector(this.targetSelector)
     if (!taskFields) {
       logger.error('Task fields not found')
@@ -43,20 +43,33 @@ class TaskFieldsObserver {
       return
     }
 
-    if (requestId.textContent !== this.taskFields?.requestId) {
-      const estimatedTime = parseTimeStringToMs(
-        estimatedRatingTime.textContent!.trim()
-      )
-      const estimatedTimeOffset = this.getRandomEstimatedOffset(estimatedTime)
+    return {
+      taskType: taskType.textContent!,
+      requestId: requestId.textContent!,
+      estimated: parseTimeStringToMs(estimatedRatingTime.textContent!.trim())
+    }
+  }
 
-      const newTaskFields = {
-        taskType: taskType.textContent!,
-        requestId: requestId.textContent!,
+  get targetSelector(): string {
+    return '.survey-meta-fields'
+  }
+
+  onChangeTask(callback: (taskFields: TaskFields) => void): void {
+    this.onChangeTaskCallback = callback
+  }
+
+  observe(): void {
+    const taskFields = this.getTaskFields
+    if (!taskFields) return
+
+    if (taskFields.requestId !== this.taskFields?.requestId) {
+      const estimatedTimeOffset = randomMsOffset(taskFields.estimated)
+
+      logger.info('Task fields changed', taskFields)
+      this.onChangeTaskCallback!({
+        ...taskFields,
         estimated: estimatedTimeOffset
-      }
-
-      logger.info('Task fields changed', newTaskFields)
-      this.onChangeTaskCallback!(newTaskFields)
+      })
 
       if (!toggleAutoSubmit.isAutoSubmit) {
         toggleAutoSubmit.toggle()
@@ -66,17 +79,12 @@ class TaskFieldsObserver {
         logger.info('Task is submitted', this.taskFields)
         storage.write({
           type: this.taskFields.taskType,
-          estimated: estimatedTime
+          estimated: this.taskFields.estimated
         })
       }
 
-      this.taskFields = newTaskFields
+      this.currentTaskFields = taskFields
     }
-  }
-
-  private getRandomEstimatedOffset(ms: number): number {
-    const randomOffset = randomNum(-5, 15) // -5/-15 seconds
-    return ms + randomOffset * 1000
   }
 }
 
