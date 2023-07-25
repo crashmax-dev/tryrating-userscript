@@ -44,14 +44,15 @@ class TaskFieldsObserver {
     }
 
     if (requestId.textContent !== this.taskFields?.requestId) {
-      const estimatedTime = this.getRandomEstimatedOffset(
+      const estimatedTime = parseTimeStringToMs(
         estimatedRatingTime.textContent!.trim()
       )
+      const estimatedTimeOffset = this.getRandomEstimatedOffset(estimatedTime)
 
       const newTaskFields = {
         taskType: taskType.textContent!,
         requestId: requestId.textContent!,
-        estimated: estimatedTime
+        estimated: estimatedTimeOffset
       }
 
       logger.info('Task fields changed', newTaskFields)
@@ -65,7 +66,7 @@ class TaskFieldsObserver {
         logger.info('Task is submitted', this.taskFields)
         storage.write({
           type: this.taskFields.taskType,
-          estimated: this.taskFields.estimated
+          estimated: estimatedTime
         })
       }
 
@@ -73,10 +74,9 @@ class TaskFieldsObserver {
     }
   }
 
-  private getRandomEstimatedOffset(timeString: string): number {
-    const milliseconds = parseTimeStringToMs(timeString)
-    const randomOffset = randomNum(-5, 15) // -5-15 seconds
-    return milliseconds + randomOffset * 1000
+  private getRandomEstimatedOffset(ms: number): number {
+    const randomOffset = randomNum(-5, 15) // -5/-15 seconds
+    return ms + randomOffset * 1000
   }
 }
 
