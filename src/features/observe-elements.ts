@@ -21,7 +21,7 @@ export async function setObserverApp(): Promise<void> {
     survey.checkSurvey()
   })
 
-  waitElement(taskFieldsObserver.targetSelector)
+  waitElement({ selector: taskFieldsObserver.targetSelector })
     .then(() => {
       setInterval(() => taskFieldsObserver.observe(), 7 * 1000)
     })

@@ -8,25 +8,26 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite build --watch --mode development",
-    "build": "vite build",
+    "build": "pnpm type-check && vite build",
+    "type-check": "tsc --noEmit",
     "format": "prettier --write '**/*.{js,ts,tsx,json}'"
   },
   "devDependencies": {
-    "@crashmax/prettier-config": "3.2.1",
+    "@crashmax/prettier-config": "5.0.1",
     "@crashmax/tsconfig": "2.0.1",
-    "sass": "1.63.6",
-    "typescript": "5.1.6",
-    "vite": "4.4.4",
-    "vite-plugin-solid": "2.7.0",
+    "sass": "1.69.5",
+    "typescript": "5.2.2",
+    "vite": "4.5.0",
+    "vite-plugin-solid": "2.7.2",
     "vite-userscript-plugin": "1.10.0"
   },
   "dependencies": {
     "@thisbeyond/solid-dnd": "0.7.4",
-    "@zero-dependency/dom": "1.7.1",
-    "@zero-dependency/utils": "1.6.0",
-    "dayjs": "1.11.9",
-    "solid-js": "1.7.8",
+    "@zero-dependency/dom": "1.8.4",
+    "@zero-dependency/utils": "1.7.4",
+    "dayjs": "1.11.10",
+    "solid-js": "1.8.5",
     "userscript-parser": "2.2.2",
-    "worker-timers": "7.0.73"
+    "worker-timers": "7.0.77"
   }
 }
