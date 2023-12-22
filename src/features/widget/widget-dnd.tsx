@@ -2,9 +2,9 @@ import {
   createDraggable,
   DragDropProvider,
   DragDropSensors,
-  DragEventHandler,
   DragOverlay
 } from '@thisbeyond/solid-dnd'
+import type { DragEventHandler } from '@thisbeyond/solid-dnd'
 import type { FlowComponent } from 'solid-js'
 
 import { createLocalStore } from '../../utils/create-local-storage.js'
