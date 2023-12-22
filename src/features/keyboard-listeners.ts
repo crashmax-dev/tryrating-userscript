@@ -1,3 +1,4 @@
+import { EVENT_KEYBOARD_SHORTCUTS } from '../constants.js'
 import { storage } from './storage.js'
 import { taskBackuper } from './tasks/task-backuper.js'
 import { toggleAutoSubmit } from './widget/auto-submit-button.jsx'
@@ -6,34 +7,29 @@ import { toggleWidgetVisibility } from './widget/widget-visibility.jsx'
 
 export function setKeyboardListeners(): void {
   window.addEventListener('keydown', (event) => {
-    // open tasks
-    if (event.altKey && event.key === '1') {
+    if (EVENT_KEYBOARD_SHORTCUTS.openTasks(event)) {
       event.preventDefault()
       taskBackuper.generateDailyPage()
     }
 
-    // reset tasks
-    if (event.altKey && event.key === '2') {
+    if (EVENT_KEYBOARD_SHORTCUTS.resetTasks(event)) {
       event.preventDefault()
       if (confirm('Reset data.\nAre you sure?')) {
         storage.reset()
       }
     }
 
-    // reset widget position
-    if (event.altKey && event.key === '3') {
+    if (EVENT_KEYBOARD_SHORTCUTS.resetWidgetPosition(event)) {
       event.preventDefault()
       resetWidgetPosition()
     }
 
-    // toggle autosubmit
-    if (event.ctrlKey && event.code === 'KeyO') {
+    if (EVENT_KEYBOARD_SHORTCUTS.toggleAutoSubmit(event)) {
       event.preventDefault()
       toggleAutoSubmit.toggle()
     }
 
-    // toggle widget visibility
-    if (event.ctrlKey && event.code === 'KeyX') {
+    if (EVENT_KEYBOARD_SHORTCUTS.toggleWidgetVisibility(event)) {
       event.preventDefault()
       toggleWidgetVisibility()
     }

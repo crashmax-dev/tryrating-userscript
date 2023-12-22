@@ -17,6 +17,9 @@ dependencies:
   dayjs:
     specifier: 1.11.10
     version: 1.11.10
+  microtip:
+    specifier: 0.2.2
+    version: 0.2.2
   solid-js:
     specifier: 1.8.5
     version: 1.8.5
@@ -1236,6 +1239,10 @@ packages:
   /merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
     dev: true
+
+  /microtip@0.2.2:
+    resolution: {integrity: sha512-oah38eH5vSHVFP6yXjbKWOYt92mav++0j3zh844h1vhOscqEg7Rf4agDEIwUTFCcAPPdlhYUQMe6eZfHgD+4oQ==}
+    dev: false
 
   /mime-db@1.33.0:
     resolution: {integrity: sha512-BHJ/EKruNIqJf/QahvxwQZXKygOQ256myeN/Ew+THcAa5q+PjyTTMMeNQC4DZw5AwfvelsUrA6B67NKMqXDbzQ==}
