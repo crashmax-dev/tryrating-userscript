@@ -1,5 +1,6 @@
 import { observeElement, waitElement } from '@zero-dependency/dom'
 import { setInterval } from 'worker-timers'
+
 import { logger } from '../utils/logger.js'
 import { closeModal } from './close-modal.js'
 import { survey } from './survey-check.js'

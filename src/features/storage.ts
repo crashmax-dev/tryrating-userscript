@@ -1,4 +1,5 @@
 import { createSignal } from 'solid-js'
+
 import { currentDate } from '../utils/current-date.js'
 import { logger } from '../utils/logger.js'
 
@@ -70,8 +71,7 @@ class Storage {
 
     const newTaskList = [
       currentTaskList,
-      ...taskList().filter((task) => task.date !== currentTaskList.date)
-    ]
+      ...taskList().filter((task) => task.date !== currentTaskList.date)]
 
     setTaskList(newTaskList)
     GM_setValue(this.STORAGE_KEY, taskList())

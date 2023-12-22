@@ -1,8 +1,9 @@
 import { createMemo } from 'solid-js'
+import type { Component } from 'solid-js'
+
 import { currentDate } from '../../utils/current-date.js'
 import { storage } from '../storage.js'
 import { taskBackuper } from '../tasks/task-backuper.js'
-import type { Component } from 'solid-js'
 
 export const OpenTaskPageButton: Component = () => {
   const currentTaskList = createMemo(() => {

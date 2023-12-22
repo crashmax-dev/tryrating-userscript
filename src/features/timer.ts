@@ -1,5 +1,6 @@
 import { createSignal } from 'solid-js'
 import { clearInterval, setInterval } from 'worker-timers'
+
 import { logger } from '../utils/logger.js'
 import { randomMsOffset } from '../utils/random-ms-offset.js'
 import { submitButton } from './submit-button.js'

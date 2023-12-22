@@ -1,5 +1,6 @@
 import { randomNum, sleep } from '@zero-dependency/utils'
 import { createSignal } from 'solid-js'
+
 import { NOTIFY_URL } from '../constants.js'
 import { createLocalStore } from '../utils/create-local-storage.js'
 import { logger } from '../utils/logger.js'

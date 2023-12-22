@@ -1,4 +1,5 @@
 import { createSignal } from 'solid-js'
+
 import { logger } from '../utils/logger.js'
 import { toggleAutoSubmit } from './widget/auto-submit-button.js'
 

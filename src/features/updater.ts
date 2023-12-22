@@ -1,8 +1,9 @@
 import { createSignal } from 'solid-js'
 import parseMetadata from 'userscript-parser'
+import type { Metadata } from 'userscript-parser'
+
 import { META_URL, USERSCRIPT_URL } from '../constants.js'
 import { logger } from '../utils/logger.js'
-import type { Metadata } from 'userscript-parser'
 
 const [isUpdated, setIsUpdated] = createSignal(false)
 

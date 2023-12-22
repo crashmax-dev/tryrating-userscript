@@ -1,4 +1,5 @@
 import { entries } from '@zero-dependency/utils'
+
 import { updater } from '../features/updater.js'
 
 type LogType = 'info' | 'debug' | 'warn' | 'error'
@@ -22,13 +23,16 @@ function styles(method: LogType) {
 }
 
 function createLogger(prefix: string) {
-  return entries(colors).reduce((acc, [method]) => {
-    acc[method] = (...args) => {
-      console[method](`%c${prefix}`, styles(method), ...args)
-    }
+  return entries(colors).reduce(
+    (acc, [method]) => {
+      acc[method] = (...args) => {
+        console[method](`%c${prefix}`, styles(method), ...args)
+      }
 
-    return acc
-  }, {} as Record<LogType, (...args: any[]) => void>)
+      return acc
+    },
+    {} as Record<LogType, (...args: any[]) => void>
+  )
 }
 
 export const logger = createLogger(

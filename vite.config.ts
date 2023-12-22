@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import Solidjs from 'vite-plugin-solid'
 import Userscript from 'vite-userscript-plugin'
+
 import { author, license, name, version } from './package.json'
 
 export default defineConfig((config) => {
@@ -30,6 +31,7 @@ export default defineConfig((config) => {
           port: 3000
         }
       })
+
     ]
   }
 })
