@@ -2,30 +2,69 @@ import { el } from '@zero-dependency/dom'
 
 import { currentDate } from '../../utils/current-date.js'
 import { msToTimeFull } from '../../utils/ms-to-time.js'
-import saveBlobScript from './blob/save-blob.js?raw'
+import blobPageScript from './blob/script.js?raw'
 import blobPageStyles from './blob/styles.css?raw'
-import type { TaskList } from '../storage.js'
+import type { TaskList, Tasks } from '../storage.js'
 
 export class TaskTableGenerator {
-  static page() {
-    const style = el('style', blobPageStyles)
+  tasks: Tasks[]
+  el: HTMLDivElement
 
-    const script = el(
-      'script',
-      saveBlobScript.replace('__DATE__', currentDate())
+  insertData() {
+    this.el.prepend(
+      el('script', `const tasks = ${JSON.stringify(this.tasks)};`)
     )
-
-    const button = el('button', { className: 'save-button' }, 'Save')
-    button.setAttribute('onclick', 'savePage()')
-
-    return el('div', button, style, script)
   }
 
-  static table() {
+  page() {
+    this.tasks = []
+
+    const root = el('div', { id: 'root', className: 'asc' })
+    const styles = el('style', blobPageStyles)
+    const script = el(
+      'script',
+      blobPageScript.replace('__CURRENT_DATE__', currentDate())
+    )
+
+    const buttons = el('div', { className: 'buttons' })
+    const sortButton = el('button', { id: 'sort-button' }, 'Sort (ASC)')
+    const daySortButton = el('button', { id: 'day-sort-button' }, 'Day Sort')
+    const weekSortButton = el('button', { id: 'week-sort-button' }, 'Week Sort')
+    const monthSortButton = el(
+      'button',
+      { id: 'month-sort-button' },
+      'Month Sort'
+    )
+    const downloadButton = el('button', { id: 'download-button' }, 'Download')
+
+    buttons.append(
+      sortButton,
+      daySortButton,
+      weekSortButton,
+      monthSortButton,
+      downloadButton
+    )
+
+    this.el = el('div', styles, buttons, root, script)
+
+    return {
+      page: this.el,
+      root
+    }
+  }
+
+  table() {
     return el('table')
   }
 
-  static caption(date: string, total: number, estimated: number) {
+  caption(date: string, total: number, estimated: number) {
+    this.tasks.unshift({
+      date,
+      total,
+      estimated,
+      list: []
+    })
+
     return el(
       'caption',
       el('p', `Date: ${date}`),
@@ -34,11 +73,16 @@ export class TaskTableGenerator {
     )
   }
 
-  static head() {
+  head() {
     return el('tr', el('th', 'Task'), el('th', 'Count'), el('th', 'Estimated'))
   }
 
-  static tr(task: TaskList) {
+  tr(task: TaskList) {
+    const tasks = this.tasks.at(0)
+    if (tasks) {
+      tasks.list.push(task)
+    }
+
     return el(
       'tr',
       el('td', task.type),
@@ -47,7 +91,7 @@ export class TaskTableGenerator {
     )
   }
 
-  static open(page: HTMLElement) {
+  open(page: HTMLElement) {
     const blob = new Blob([page.outerHTML], {
       type: 'text/html'
     })

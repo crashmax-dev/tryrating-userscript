@@ -1,31 +1,35 @@
+import { el } from '@zero-dependency/dom'
+
 import { storage } from '../storage.js'
 import { TaskTableGenerator } from './task-table-generator.js'
 
 class TaskBackuper {
-  // TODO: #8
-  generateMonthyPage(): void {}
+  private taskTableGenerator = new TaskTableGenerator()
 
-  generateDailyPage(): void {
-    const page = TaskTableGenerator.page()
+  generate(): void {
+    const { page, root } = this.taskTableGenerator.page()
 
     for (const { date, list, total, estimated } of storage.taskList) {
-      const table = TaskTableGenerator.table()
+      const table = this.taskTableGenerator.table()
+      const tbody = el('tbody')
 
-      const caption = TaskTableGenerator.caption(date, total, estimated)
+      const caption = this.taskTableGenerator.caption(date, total, estimated)
       table.append(caption)
 
-      const thead = TaskTableGenerator.head()
-      table.append(thead)
+      const thead = this.taskTableGenerator.head()
+      tbody.append(thead)
 
       for (const task of list) {
-        const tr = TaskTableGenerator.tr(task)
-        table.append(tr)
+        const tr = this.taskTableGenerator.tr(task)
+        tbody.append(tr)
       }
 
-      page.prepend(table)
+      table.append(tbody)
+      root.prepend(table)
     }
 
-    TaskTableGenerator.open(page)
+    this.taskTableGenerator.insertData()
+    this.taskTableGenerator.open(page)
   }
 }
 

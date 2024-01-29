@@ -9,7 +9,7 @@ export function setKeyboardListeners(): void {
   window.addEventListener('keydown', (event) => {
     if (EVENT_KEYBOARD_SHORTCUTS.openTasks(event)) {
       event.preventDefault()
-      taskBackuper.generateDailyPage()
+      taskBackuper.generate()
     }
 
     if (EVENT_KEYBOARD_SHORTCUTS.resetTasks(event)) {

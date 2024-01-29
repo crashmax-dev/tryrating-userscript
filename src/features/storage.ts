@@ -1,5 +1,7 @@
 import { createSignal } from 'solid-js'
 
+import { __DEV__ } from '../constants.js'
+import tasksMock from '../mock/tasks.json'
 import { currentDate } from '../utils/current-date.js'
 import { logger } from '../utils/logger.js'
 
@@ -16,14 +18,17 @@ export interface Tasks {
   list: TaskList[]
 }
 
-const initialStorage = (): Tasks[] => [
-  {
-    date: currentDate(),
-    total: 0,
-    estimated: 0,
-    list: []
-  }
-]
+const initialStorage = (): Tasks[] => {
+  if (__DEV__) return tasksMock
+  return [
+    {
+      date: currentDate(),
+      total: 0,
+      estimated: 0,
+      list: []
+    }
+  ]
+}
 
 const [taskList, setTaskList] = createSignal<Tasks[]>([])
 

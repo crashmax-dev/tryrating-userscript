@@ -1,0 +1,3456 @@
+[
+  {
+    "date": "01.12.2023",
+    "total": 100,
+    "estimated": 751058,
+    "list": [
+      {
+        "type": "task-qxh2054po6",
+        "count": 8,
+        "estimated": 117968
+      },
+      {
+        "type": "task-tl5z29y0nm",
+        "count": 11,
+        "estimated": 26291
+      },
+      {
+        "type": "task-sk26mlq617",
+        "count": 15,
+        "estimated": 108893
+      },
+      {
+        "type": "task-2chahxoc2qe",
+        "count": 13,
+        "estimated": 102476
+      },
+      {
+        "type": "task-ijkk4ld6l2f",
+        "count": 9,
+        "estimated": 93169
+      },
+      {
+        "type": "task-ts42l12a3ip",
+        "count": 9,
+        "estimated": 41708
+      },
+      {
+        "type": "task-yv436lsf82",
+        "count": 6,
+        "estimated": 63249
+      },
+      {
+        "type": "task-tc98vjqtuh",
+        "count": 9,
+        "estimated": 49706
+      },
+      {
+        "type": "task-mh5ew99pq7a",
+        "count": 11,
+        "estimated": 41117
+      },
+      {
+        "type": "task-yoixi4k7ila",
+        "count": 11,
+        "estimated": 106481
+      }
+    ]
+  },
+  {
+    "date": "02.12.2023",
+    "total": 100,
+    "estimated": 743288,
+    "list": [
+      {
+        "type": "task-mk37u73aa4o",
+        "count": 8,
+        "estimated": 74867
+      },
+      {
+        "type": "task-g3irft4al9b",
+        "count": 14,
+        "estimated": 26064
+      },
+      {
+        "type": "task-7qtscl8fns",
+        "count": 7,
+        "estimated": 26894
+      },
+      {
+        "type": "task-w3sbt8c096k",
+        "count": 6,
+        "estimated": 107749
+      },
+      {
+        "type": "task-oymi01e6u0c",
+        "count": 12,
+        "estimated": 75247
+      },
+      {
+        "type": "task-wz05g72g07",
+        "count": 15,
+        "estimated": 68877
+      },
+      {
+        "type": "task-bw7ohnv1lyv",
+        "count": 7,
+        "estimated": 112761
+      },
+      {
+        "type": "task-vf0v97r3bpt",
+        "count": 11,
+        "estimated": 105626
+      },
+      {
+        "type": "task-cpu1u9ouzm9",
+        "count": 10,
+        "estimated": 41502
+      },
+      {
+        "type": "task-8n7l7wnfk4",
+        "count": 10,
+        "estimated": 103701
+      }
+    ]
+  },
+  {
+    "date": "03.12.2023",
+    "total": 100,
+    "estimated": 750433,
+    "list": [
+      {
+        "type": "task-yc2duxazqcf",
+        "count": 7,
+        "estimated": 105006
+      },
+      {
+        "type": "task-c8hqfi5z44",
+        "count": 7,
+        "estimated": 63224
+      },
+      {
+        "type": "task-oz30zq9nrd",
+        "count": 7,
+        "estimated": 43942
+      },
+      {
+        "type": "task-3gbc4q0z6ag",
+        "count": 9,
+        "estimated": 68239
+      },
+      {
+        "type": "task-ao89b4hao1b",
+        "count": 12,
+        "estimated": 45924
+      },
+      {
+        "type": "task-9ufi1le20ga",
+        "count": 6,
+        "estimated": 105319
+      },
+      {
+        "type": "task-hau3x9yi6ws",
+        "count": 5,
+        "estimated": 84953
+      },
+      {
+        "type": "task-z59g52lrzx",
+        "count": 8,
+        "estimated": 45467
+      },
+      {
+        "type": "task-iegj44by0kc",
+        "count": 5,
+        "estimated": 106266
+      },
+      {
+        "type": "task-nz51kecyyg",
+        "count": 9,
+        "estimated": 82093
+      }
+    ]
+  },
+  {
+    "date": "04.12.2023",
+    "total": 100,
+    "estimated": 787771,
+    "list": [
+      {
+        "type": "task-9d5scai70u6",
+        "count": 15,
+        "estimated": 72859
+      },
+      {
+        "type": "task-sbyln7ps71",
+        "count": 15,
+        "estimated": 49258
+      },
+      {
+        "type": "task-9xoq1c8yn7m",
+        "count": 5,
+        "estimated": 96441
+      },
+      {
+        "type": "task-3mlwvpdyv2r",
+        "count": 7,
+        "estimated": 107996
+      },
+      {
+        "type": "task-407fzoe3if6",
+        "count": 5,
+        "estimated": 68974
+      },
+      {
+        "type": "task-zu93awad79",
+        "count": 5,
+        "estimated": 88163
+      },
+      {
+        "type": "task-gujlkkuub7r",
+        "count": 14,
+        "estimated": 101514
+      },
+      {
+        "type": "task-4jwlfgodta",
+        "count": 6,
+        "estimated": 98965
+      },
+      {
+        "type": "task-klpc11qzosf",
+        "count": 8,
+        "estimated": 44708
+      },
+      {
+        "type": "task-upgb74iuib",
+        "count": 11,
+        "estimated": 58893
+      }
+    ]
+  },
+  {
+    "date": "05.12.2023",
+    "total": 100,
+    "estimated": 721044,
+    "list": [
+      {
+        "type": "task-zg6xanmlj1",
+        "count": 6,
+        "estimated": 114423
+      },
+      {
+        "type": "task-ymik3d81yl",
+        "count": 10,
+        "estimated": 105587
+      },
+      {
+        "type": "task-zj49zwf6gbq",
+        "count": 7,
+        "estimated": 90551
+      },
+      {
+        "type": "task-1v4cqanmi3e",
+        "count": 14,
+        "estimated": 29954
+      },
+      {
+        "type": "task-os93wqcnhu",
+        "count": 8,
+        "estimated": 66823
+      },
+      {
+        "type": "task-0anf01eerjsk",
+        "count": 6,
+        "estimated": 81026
+      },
+      {
+        "type": "task-atr9wq3gyhk",
+        "count": 14,
+        "estimated": 82980
+      },
+      {
+        "type": "task-qoqswic8z4",
+        "count": 15,
+        "estimated": 69108
+      },
+      {
+        "type": "task-9z4y4djjc7w",
+        "count": 9,
+        "estimated": 37615
+      },
+      {
+        "type": "task-i6n7gru1v9",
+        "count": 11,
+        "estimated": 42977
+      }
+    ]
+  },
+  {
+    "date": "06.12.2023",
+    "total": 100,
+    "estimated": 779712,
+    "list": [
+      {
+        "type": "task-8eonritdmvm",
+        "count": 13,
+        "estimated": 29920
+      },
+      {
+        "type": "task-2rxl1jqabrj",
+        "count": 8,
+        "estimated": 88731
+      },
+      {
+        "type": "task-rk776b7mppb",
+        "count": 13,
+        "estimated": 50315
+      },
+      {
+        "type": "task-t8dabtgwux",
+        "count": 10,
+        "estimated": 98244
+      },
+      {
+        "type": "task-dlua6m0hix",
+        "count": 10,
+        "estimated": 104809
+      },
+      {
+        "type": "task-b5ycyvjhinr",
+        "count": 8,
+        "estimated": 104707
+      },
+      {
+        "type": "task-0wcmeqg4vhoo",
+        "count": 14,
+        "estimated": 27205
+      },
+      {
+        "type": "task-xbjb8qlbwj",
+        "count": 8,
+        "estimated": 63669
+      },
+      {
+        "type": "task-jahrhy9krl",
+        "count": 12,
+        "estimated": 106123
+      },
+      {
+        "type": "task-g54pghdjw8p",
+        "count": 9,
+        "estimated": 105989
+      }
+    ]
+  },
+  {
+    "date": "07.12.2023",
+    "total": 100,
+    "estimated": 749236,
+    "list": [
+      {
+        "type": "task-b0l5avfjeyv",
+        "count": 13,
+        "estimated": 101801
+      },
+      {
+        "type": "task-psn4d6xmuc",
+        "count": 5,
+        "estimated": 119753
+      },
+      {
+        "type": "task-72yjnmbn0ea",
+        "count": 9,
+        "estimated": 25206
+      },
+      {
+        "type": "task-4uzh8kxx5t2",
+        "count": 7,
+        "estimated": 39443
+      },
+      {
+        "type": "task-xlxqbh2lavi",
+        "count": 11,
+        "estimated": 87511
+      },
+      {
+        "type": "task-dii4edhfhws",
+        "count": 9,
+        "estimated": 27060
+      },
+      {
+        "type": "task-ktnb6in3vbh",
+        "count": 9,
+        "estimated": 112502
+      },
+      {
+        "type": "task-8qh1lsfau6e",
+        "count": 12,
+        "estimated": 64300
+      },
+      {
+        "type": "task-qgg84266ybs",
+        "count": 13,
+        "estimated": 91701
+      },
+      {
+        "type": "task-c8msb9zcsea",
+        "count": 10,
+        "estimated": 79959
+      }
+    ]
+  },
+  {
+    "date": "08.12.2023",
+    "total": 100,
+    "estimated": 722701,
+    "list": [
+      {
+        "type": "task-cbll9uqlyop",
+        "count": 15,
+        "estimated": 27311
+      },
+      {
+        "type": "task-95qsxuigwp",
+        "count": 14,
+        "estimated": 88481
+      },
+      {
+        "type": "task-mo9cqhcv8h",
+        "count": 14,
+        "estimated": 111658
+      },
+      {
+        "type": "task-ppr7pl3asa",
+        "count": 11,
+        "estimated": 114333
+      },
+      {
+        "type": "task-1yp5mlyzs3j",
+        "count": 10,
+        "estimated": 116758
+      },
+      {
+        "type": "task-1yy37i6xs92h",
+        "count": 8,
+        "estimated": 100466
+      },
+      {
+        "type": "task-yd9z1vsh60e",
+        "count": 7,
+        "estimated": 60203
+      },
+      {
+        "type": "task-hckzlccohud",
+        "count": 11,
+        "estimated": 46849
+      },
+      {
+        "type": "task-94hsr3mtdf",
+        "count": 13,
+        "estimated": 30044
+      },
+      {
+        "type": "task-82vj6ik39ra",
+        "count": 15,
+        "estimated": 26598
+      }
+    ]
+  },
+  {
+    "date": "09.12.2023",
+    "total": 100,
+    "estimated": 661776,
+    "list": [
+      {
+        "type": "task-rgfcnl1mje",
+        "count": 10,
+        "estimated": 103485
+      },
+      {
+        "type": "task-ly8shb9mef",
+        "count": 13,
+        "estimated": 73226
+      },
+      {
+        "type": "task-63tq533faj8",
+        "count": 5,
+        "estimated": 95593
+      },
+      {
+        "type": "task-93xqqq99tu",
+        "count": 7,
+        "estimated": 57545
+      },
+      {
+        "type": "task-xn62b5ddm1",
+        "count": 7,
+        "estimated": 44721
+      },
+      {
+        "type": "task-o2thzc0pt9",
+        "count": 11,
+        "estimated": 98009
+      },
+      {
+        "type": "task-wg2ewcf5bp",
+        "count": 7,
+        "estimated": 38169
+      },
+      {
+        "type": "task-4zl6ygf2zpv",
+        "count": 15,
+        "estimated": 56003
+      },
+      {
+        "type": "task-8n7t119qdq6",
+        "count": 8,
+        "estimated": 60530
+      },
+      {
+        "type": "task-hvdvr0fqy45",
+        "count": 10,
+        "estimated": 34495
+      }
+    ]
+  },
+  {
+    "date": "10.12.2023",
+    "total": 100,
+    "estimated": 721094,
+    "list": [
+      {
+        "type": "task-k503qmo38n",
+        "count": 8,
+        "estimated": 36323
+      },
+      {
+        "type": "task-im6rsk812z",
+        "count": 10,
+        "estimated": 102335
+      },
+      {
+        "type": "task-6uozvpt7pkr",
+        "count": 10,
+        "estimated": 78304
+      },
+      {
+        "type": "task-ks9uotscga",
+        "count": 5,
+        "estimated": 45982
+      },
+      {
+        "type": "task-zcg3xc2rtki",
+        "count": 14,
+        "estimated": 79654
+      },
+      {
+        "type": "task-yul2kcw6q0k",
+        "count": 6,
+        "estimated": 79905
+      },
+      {
+        "type": "task-xo5vqebobj",
+        "count": 8,
+        "estimated": 56935
+      },
+      {
+        "type": "task-x796pxy2tjc",
+        "count": 10,
+        "estimated": 75839
+      },
+      {
+        "type": "task-pnr1mb82w48",
+        "count": 10,
+        "estimated": 53779
+      },
+      {
+        "type": "task-6paciruw7c6",
+        "count": 5,
+        "estimated": 112038
+      }
+    ]
+  },
+  {
+    "date": "11.12.2023",
+    "total": 100,
+    "estimated": 721537,
+    "list": [
+      {
+        "type": "task-9wgysg6y5b",
+        "count": 8,
+        "estimated": 110428
+      },
+      {
+        "type": "task-ayjwioxocyg",
+        "count": 9,
+        "estimated": 59538
+      },
+      {
+        "type": "task-p3o381jcyci",
+        "count": 13,
+        "estimated": 52887
+      },
+      {
+        "type": "task-l8itlob9lc",
+        "count": 10,
+        "estimated": 95114
+      },
+      {
+        "type": "task-sjn9xj6oaab",
+        "count": 15,
+        "estimated": 118212
+      },
+      {
+        "type": "task-15qbeku2rwj",
+        "count": 10,
+        "estimated": 33689
+      },
+      {
+        "type": "task-sg2cz3sxnbj",
+        "count": 13,
+        "estimated": 66667
+      },
+      {
+        "type": "task-4csys5jtpov",
+        "count": 7,
+        "estimated": 59410
+      },
+      {
+        "type": "task-a1g1yngzq1g",
+        "count": 10,
+        "estimated": 95568
+      },
+      {
+        "type": "task-k193j7ifwxl",
+        "count": 7,
+        "estimated": 30024
+      }
+    ]
+  },
+  {
+    "date": "12.12.2023",
+    "total": 100,
+    "estimated": 763739,
+    "list": [
+      {
+        "type": "task-pldt43u88xg",
+        "count": 12,
+        "estimated": 116692
+      },
+      {
+        "type": "task-x9mciu3ufu",
+        "count": 15,
+        "estimated": 34765
+      },
+      {
+        "type": "task-1e5bi1zfcktj",
+        "count": 9,
+        "estimated": 81779
+      },
+      {
+        "type": "task-1adpcw43stu",
+        "count": 10,
+        "estimated": 42608
+      },
+      {
+        "type": "task-xz2f9awt24",
+        "count": 8,
+        "estimated": 93506
+      },
+      {
+        "type": "task-qmhlx9xcvbl",
+        "count": 13,
+        "estimated": 69638
+      },
+      {
+        "type": "task-ieyaanxwkzo",
+        "count": 12,
+        "estimated": 55873
+      },
+      {
+        "type": "task-lu4ke1g17e",
+        "count": 8,
+        "estimated": 56093
+      },
+      {
+        "type": "task-jx4qdcmp0b",
+        "count": 15,
+        "estimated": 113087
+      },
+      {
+        "type": "task-nvzo0fgxg8s",
+        "count": 14,
+        "estimated": 99698
+      }
+    ]
+  },
+  {
+    "date": "13.12.2023",
+    "total": 100,
+    "estimated": 589638,
+    "list": [
+      {
+        "type": "task-hfxbqj9yo9f",
+        "count": 8,
+        "estimated": 26810
+      },
+      {
+        "type": "task-12by3nkbaydf",
+        "count": 11,
+        "estimated": 87438
+      },
+      {
+        "type": "task-cpgis2z3c6",
+        "count": 8,
+        "estimated": 113441
+      },
+      {
+        "type": "task-l5b3gbqgl8h",
+        "count": 8,
+        "estimated": 27414
+      },
+      {
+        "type": "task-0v1o1pkxyv3l",
+        "count": 15,
+        "estimated": 87262
+      },
+      {
+        "type": "task-tule9zi5wve",
+        "count": 7,
+        "estimated": 49511
+      },
+      {
+        "type": "task-i7qswsfyms",
+        "count": 12,
+        "estimated": 82294
+      },
+      {
+        "type": "task-gialcoqz26o",
+        "count": 9,
+        "estimated": 47615
+      },
+      {
+        "type": "task-s2up8m3eoqk",
+        "count": 5,
+        "estimated": 34738
+      },
+      {
+        "type": "task-794xqp2596",
+        "count": 8,
+        "estimated": 33115
+      }
+    ]
+  },
+  {
+    "date": "14.12.2023",
+    "total": 100,
+    "estimated": 781517,
+    "list": [
+      {
+        "type": "task-5dm5w4b13m",
+        "count": 11,
+        "estimated": 85282
+      },
+      {
+        "type": "task-vc9adxnkwc",
+        "count": 6,
+        "estimated": 112096
+      },
+      {
+        "type": "task-yrz1uhb6jwe",
+        "count": 9,
+        "estimated": 76484
+      },
+      {
+        "type": "task-ligty9teukm",
+        "count": 11,
+        "estimated": 86784
+      },
+      {
+        "type": "task-6mfpy4csgux",
+        "count": 11,
+        "estimated": 100667
+      },
+      {
+        "type": "task-r1kfe85l2hq",
+        "count": 13,
+        "estimated": 50749
+      },
+      {
+        "type": "task-axx3ygkzp4q",
+        "count": 9,
+        "estimated": 72067
+      },
+      {
+        "type": "task-dejy0p3ismf",
+        "count": 14,
+        "estimated": 64127
+      },
+      {
+        "type": "task-unbif6t917h",
+        "count": 5,
+        "estimated": 26696
+      },
+      {
+        "type": "task-gy0hk0yj1qa",
+        "count": 8,
+        "estimated": 106565
+      }
+    ]
+  },
+  {
+    "date": "15.12.2023",
+    "total": 100,
+    "estimated": 787547,
+    "list": [
+      {
+        "type": "task-m9imtgwjef",
+        "count": 12,
+        "estimated": 87332
+      },
+      {
+        "type": "task-t2dgh2c149l",
+        "count": 6,
+        "estimated": 37002
+      },
+      {
+        "type": "task-rsujip8d6in",
+        "count": 9,
+        "estimated": 44466
+      },
+      {
+        "type": "task-srr8q3on5gs",
+        "count": 11,
+        "estimated": 89044
+      },
+      {
+        "type": "task-4eqmo4wq6q8",
+        "count": 13,
+        "estimated": 72372
+      },
+      {
+        "type": "task-o7adlvpyaw",
+        "count": 10,
+        "estimated": 75805
+      },
+      {
+        "type": "task-s5gn1ubr96i",
+        "count": 12,
+        "estimated": 102479
+      },
+      {
+        "type": "task-sycts0qrixg",
+        "count": 10,
+        "estimated": 47724
+      },
+      {
+        "type": "task-otmyngo8iv",
+        "count": 11,
+        "estimated": 115524
+      },
+      {
+        "type": "task-k4hbrvw8d5r",
+        "count": 12,
+        "estimated": 115799
+      }
+    ]
+  },
+  {
+    "date": "16.12.2023",
+    "total": 100,
+    "estimated": 927750,
+    "list": [
+      {
+        "type": "task-341bmzsurl8",
+        "count": 10,
+        "estimated": 76238
+      },
+      {
+        "type": "task-wkipx8oslrm",
+        "count": 10,
+        "estimated": 118407
+      },
+      {
+        "type": "task-u8fu2igw43g",
+        "count": 8,
+        "estimated": 109039
+      },
+      {
+        "type": "task-bmqe2in0xjd",
+        "count": 6,
+        "estimated": 71709
+      },
+      {
+        "type": "task-oojelksrl4",
+        "count": 8,
+        "estimated": 25824
+      },
+      {
+        "type": "task-pinzmy7m98j",
+        "count": 11,
+        "estimated": 111555
+      },
+      {
+        "type": "task-3ym65gxfcj1",
+        "count": 15,
+        "estimated": 79251
+      },
+      {
+        "type": "task-pgcftceyq9",
+        "count": 7,
+        "estimated": 118105
+      },
+      {
+        "type": "task-algdomosd8b",
+        "count": 11,
+        "estimated": 108194
+      },
+      {
+        "type": "task-fyywuo7u4xo",
+        "count": 6,
+        "estimated": 109428
+      }
+    ]
+  },
+  {
+    "date": "17.12.2023",
+    "total": 100,
+    "estimated": 848847,
+    "list": [
+      {
+        "type": "task-b15eu1njajj",
+        "count": 11,
+        "estimated": 103497
+      },
+      {
+        "type": "task-jclmzy0v34b",
+        "count": 5,
+        "estimated": 116918
+      },
+      {
+        "type": "task-tghf5zrx4em",
+        "count": 10,
+        "estimated": 69565
+      },
+      {
+        "type": "task-voxfy3cyvt8",
+        "count": 6,
+        "estimated": 51119
+      },
+      {
+        "type": "task-5skmc4pwztr",
+        "count": 13,
+        "estimated": 110474
+      },
+      {
+        "type": "task-hhq3ycq1opc",
+        "count": 5,
+        "estimated": 64555
+      },
+      {
+        "type": "task-7ohz86p403u",
+        "count": 15,
+        "estimated": 63295
+      },
+      {
+        "type": "task-94hnbuw1omq",
+        "count": 7,
+        "estimated": 93876
+      },
+      {
+        "type": "task-a96qevxt66s",
+        "count": 15,
+        "estimated": 99752
+      },
+      {
+        "type": "task-uspi7lnkjyt",
+        "count": 10,
+        "estimated": 75796
+      }
+    ]
+  },
+  {
+    "date": "18.12.2023",
+    "total": 100,
+    "estimated": 678142,
+    "list": [
+      {
+        "type": "task-t0u0pjexse",
+        "count": 7,
+        "estimated": 83575
+      },
+      {
+        "type": "task-0rios7ui3xwb",
+        "count": 5,
+        "estimated": 42345
+      },
+      {
+        "type": "task-kblh4wd8und",
+        "count": 15,
+        "estimated": 51456
+      },
+      {
+        "type": "task-y37v48c15j",
+        "count": 8,
+        "estimated": 51703
+      },
+      {
+        "type": "task-ic4d11n6gf",
+        "count": 10,
+        "estimated": 75764
+      },
+      {
+        "type": "task-3ns60kp7725",
+        "count": 7,
+        "estimated": 47073
+      },
+      {
+        "type": "task-bdzfcodkuf",
+        "count": 15,
+        "estimated": 74629
+      },
+      {
+        "type": "task-1bs2bko74pqj",
+        "count": 11,
+        "estimated": 87431
+      },
+      {
+        "type": "task-2dpe3iu0veh",
+        "count": 7,
+        "estimated": 66481
+      },
+      {
+        "type": "task-zgjoj2mjq48",
+        "count": 14,
+        "estimated": 97685
+      }
+    ]
+  },
+  {
+    "date": "19.12.2023",
+    "total": 100,
+    "estimated": 767849,
+    "list": [
+      {
+        "type": "task-nll80aar7a9",
+        "count": 14,
+        "estimated": 49105
+      },
+      {
+        "type": "task-2gggn01ix8h",
+        "count": 6,
+        "estimated": 62027
+      },
+      {
+        "type": "task-tc50b3d5afi",
+        "count": 10,
+        "estimated": 57611
+      },
+      {
+        "type": "task-foti5t7jk4h",
+        "count": 5,
+        "estimated": 61004
+      },
+      {
+        "type": "task-4lzchjju8ul",
+        "count": 11,
+        "estimated": 96531
+      },
+      {
+        "type": "task-5vlxzsf1gri",
+        "count": 6,
+        "estimated": 69518
+      },
+      {
+        "type": "task-ffywiju9o74",
+        "count": 8,
+        "estimated": 102279
+      },
+      {
+        "type": "task-dou4skaerzo",
+        "count": 12,
+        "estimated": 112875
+      },
+      {
+        "type": "task-f2o99uzygll",
+        "count": 14,
+        "estimated": 75448
+      },
+      {
+        "type": "task-n3wmeyt51en",
+        "count": 14,
+        "estimated": 81451
+      }
+    ]
+  },
+  {
+    "date": "20.12.2023",
+    "total": 100,
+    "estimated": 626387,
+    "list": [
+      {
+        "type": "task-20jhhn0hsgi",
+        "count": 10,
+        "estimated": 82352
+      },
+      {
+        "type": "task-uwxe1ozyf1r",
+        "count": 5,
+        "estimated": 45097
+      },
+      {
+        "type": "task-ye3hgu3bn9i",
+        "count": 8,
+        "estimated": 87391
+      },
+      {
+        "type": "task-j3l3rdh5uu",
+        "count": 6,
+        "estimated": 58881
+      },
+      {
+        "type": "task-sw4jxag0z3",
+        "count": 13,
+        "estimated": 86128
+      },
+      {
+        "type": "task-85jp5mbbb3g",
+        "count": 6,
+        "estimated": 56130
+      },
+      {
+        "type": "task-u0rmpn8hs3",
+        "count": 12,
+        "estimated": 63018
+      },
+      {
+        "type": "task-yvpyr9er5ql",
+        "count": 8,
+        "estimated": 51361
+      },
+      {
+        "type": "task-9bfsslraido",
+        "count": 9,
+        "estimated": 65307
+      },
+      {
+        "type": "task-ab6g0qt7zjd",
+        "count": 8,
+        "estimated": 30722
+      }
+    ]
+  },
+  {
+    "date": "21.12.2023",
+    "total": 100,
+    "estimated": 864092,
+    "list": [
+      {
+        "type": "task-89k88c2al4",
+        "count": 7,
+        "estimated": 94764
+      },
+      {
+        "type": "task-xxaj3idp66",
+        "count": 7,
+        "estimated": 111377
+      },
+      {
+        "type": "task-gsip68duh08",
+        "count": 13,
+        "estimated": 119665
+      },
+      {
+        "type": "task-pxifqgnyj9",
+        "count": 6,
+        "estimated": 81250
+      },
+      {
+        "type": "task-7sjayz4bfsv",
+        "count": 5,
+        "estimated": 42841
+      },
+      {
+        "type": "task-nuqdcjoe16g",
+        "count": 14,
+        "estimated": 84724
+      },
+      {
+        "type": "task-tssf2a21icd",
+        "count": 9,
+        "estimated": 34026
+      },
+      {
+        "type": "task-rjdc9i37wln",
+        "count": 12,
+        "estimated": 117413
+      },
+      {
+        "type": "task-n4tccce0pi",
+        "count": 10,
+        "estimated": 66203
+      },
+      {
+        "type": "task-ynabdh1owib",
+        "count": 11,
+        "estimated": 111829
+      }
+    ]
+  },
+  {
+    "date": "22.12.2023",
+    "total": 100,
+    "estimated": 581556,
+    "list": [
+      {
+        "type": "task-248p54n6zqf",
+        "count": 13,
+        "estimated": 32755
+      },
+      {
+        "type": "task-yg1xan2nl59",
+        "count": 10,
+        "estimated": 55045
+      },
+      {
+        "type": "task-00vc1hp8h01eb",
+        "count": 12,
+        "estimated": 50418
+      },
+      {
+        "type": "task-bjlkmfsrr7c",
+        "count": 15,
+        "estimated": 30422
+      },
+      {
+        "type": "task-rfpi6u3fexq",
+        "count": 9,
+        "estimated": 39157
+      },
+      {
+        "type": "task-w629wubgik9",
+        "count": 6,
+        "estimated": 64583
+      },
+      {
+        "type": "task-osrsqq6394p",
+        "count": 10,
+        "estimated": 61522
+      },
+      {
+        "type": "task-on669afilc",
+        "count": 5,
+        "estimated": 70932
+      },
+      {
+        "type": "task-mlnlpoqndt",
+        "count": 5,
+        "estimated": 102463
+      },
+      {
+        "type": "task-qhrcto5vcg",
+        "count": 10,
+        "estimated": 74259
+      }
+    ]
+  },
+  {
+    "date": "23.12.2023",
+    "total": 100,
+    "estimated": 808266,
+    "list": [
+      {
+        "type": "task-esxghcb1q5",
+        "count": 5,
+        "estimated": 58922
+      },
+      {
+        "type": "task-wszp7rabio",
+        "count": 14,
+        "estimated": 68914
+      },
+      {
+        "type": "task-k7erat0cxjp",
+        "count": 8,
+        "estimated": 117343
+      },
+      {
+        "type": "task-b72zzvs56wb",
+        "count": 8,
+        "estimated": 66559
+      },
+      {
+        "type": "task-0hnbn33jsnck",
+        "count": 8,
+        "estimated": 109279
+      },
+      {
+        "type": "task-yzpk0xm924",
+        "count": 11,
+        "estimated": 79559
+      },
+      {
+        "type": "task-uu8yuvd4m5o",
+        "count": 15,
+        "estimated": 78483
+      },
+      {
+        "type": "task-91wsu6v0vbs",
+        "count": 5,
+        "estimated": 82493
+      },
+      {
+        "type": "task-u7o0xz628x",
+        "count": 12,
+        "estimated": 92493
+      },
+      {
+        "type": "task-6na3ef98b37",
+        "count": 13,
+        "estimated": 54221
+      }
+    ]
+  },
+  {
+    "date": "24.12.2023",
+    "total": 100,
+    "estimated": 471551,
+    "list": [
+      {
+        "type": "task-rbikon1bfs",
+        "count": 14,
+        "estimated": 109932
+      },
+      {
+        "type": "task-htkophbe5ai",
+        "count": 15,
+        "estimated": 25252
+      },
+      {
+        "type": "task-g2xcji58x6r",
+        "count": 6,
+        "estimated": 47071
+      },
+      {
+        "type": "task-hxwz1ez0s14",
+        "count": 9,
+        "estimated": 33914
+      },
+      {
+        "type": "task-4lmgrogmsh8",
+        "count": 8,
+        "estimated": 27854
+      },
+      {
+        "type": "task-pm48kko6lc",
+        "count": 6,
+        "estimated": 32334
+      },
+      {
+        "type": "task-adxugcn7cpa",
+        "count": 13,
+        "estimated": 41702
+      },
+      {
+        "type": "task-sygufszja8d",
+        "count": 8,
+        "estimated": 64046
+      },
+      {
+        "type": "task-yw1pycrwir",
+        "count": 11,
+        "estimated": 41722
+      },
+      {
+        "type": "task-ck0aou8s7bs",
+        "count": 5,
+        "estimated": 47724
+      }
+    ]
+  },
+  {
+    "date": "25.12.2023",
+    "total": 100,
+    "estimated": 656244,
+    "list": [
+      {
+        "type": "task-sojwws3vvxg",
+        "count": 6,
+        "estimated": 46171
+      },
+      {
+        "type": "task-w9crz8z4xx",
+        "count": 5,
+        "estimated": 39575
+      },
+      {
+        "type": "task-rwuk793h3kt",
+        "count": 14,
+        "estimated": 83957
+      },
+      {
+        "type": "task-kgqywc1918",
+        "count": 13,
+        "estimated": 76720
+      },
+      {
+        "type": "task-449u751ti0g",
+        "count": 15,
+        "estimated": 66889
+      },
+      {
+        "type": "task-aguqma34z2s",
+        "count": 15,
+        "estimated": 90108
+      },
+      {
+        "type": "task-iss5folle6i",
+        "count": 5,
+        "estimated": 58652
+      },
+      {
+        "type": "task-enj5cojg0g",
+        "count": 6,
+        "estimated": 30732
+      },
+      {
+        "type": "task-kgxwcp71cb",
+        "count": 7,
+        "estimated": 58376
+      },
+      {
+        "type": "task-3jyeqho82g6",
+        "count": 14,
+        "estimated": 105064
+      }
+    ]
+  },
+  {
+    "date": "26.12.2023",
+    "total": 100,
+    "estimated": 704277,
+    "list": [
+      {
+        "type": "task-cn12et9g1rn",
+        "count": 8,
+        "estimated": 53140
+      },
+      {
+        "type": "task-49fgal6xh8w",
+        "count": 12,
+        "estimated": 63111
+      },
+      {
+        "type": "task-ruxf85p6ip",
+        "count": 5,
+        "estimated": 56858
+      },
+      {
+        "type": "task-3eatf6cpztn",
+        "count": 13,
+        "estimated": 38729
+      },
+      {
+        "type": "task-eq74e586wk5",
+        "count": 8,
+        "estimated": 84379
+      },
+      {
+        "type": "task-2gzq9f9wt61",
+        "count": 13,
+        "estimated": 65363
+      },
+      {
+        "type": "task-9d0xw15ekeu",
+        "count": 10,
+        "estimated": 101135
+      },
+      {
+        "type": "task-9xpa2a9o7an",
+        "count": 11,
+        "estimated": 72576
+      },
+      {
+        "type": "task-273e868ro8w",
+        "count": 7,
+        "estimated": 77432
+      },
+      {
+        "type": "task-9bjj268nmj",
+        "count": 9,
+        "estimated": 91554
+      }
+    ]
+  },
+  {
+    "date": "27.12.2023",
+    "total": 100,
+    "estimated": 773380,
+    "list": [
+      {
+        "type": "task-7ei2xv1gupm",
+        "count": 13,
+        "estimated": 118103
+      },
+      {
+        "type": "task-xx3o9pkocs",
+        "count": 5,
+        "estimated": 42839
+      },
+      {
+        "type": "task-ax04jt7co",
+        "count": 15,
+        "estimated": 47404
+      },
+      {
+        "type": "task-od4d6xd4g99",
+        "count": 6,
+        "estimated": 115317
+      },
+      {
+        "type": "task-olnuw2xfaf8",
+        "count": 12,
+        "estimated": 39348
+      },
+      {
+        "type": "task-gqi3ouxhimv",
+        "count": 15,
+        "estimated": 47766
+      },
+      {
+        "type": "task-s3f5uaf95be",
+        "count": 12,
+        "estimated": 80245
+      },
+      {
+        "type": "task-0z58enhcds1c",
+        "count": 6,
+        "estimated": 119505
+      },
+      {
+        "type": "task-7gaw5htjixo",
+        "count": 5,
+        "estimated": 44181
+      },
+      {
+        "type": "task-1uq567v8be",
+        "count": 13,
+        "estimated": 118672
+      }
+    ]
+  },
+  {
+    "date": "28.12.2023",
+    "total": 100,
+    "estimated": 673992,
+    "list": [
+      {
+        "type": "task-vjw9xsn9gzi",
+        "count": 6,
+        "estimated": 106019
+      },
+      {
+        "type": "task-4b67ljexxdl",
+        "count": 7,
+        "estimated": 75950
+      },
+      {
+        "type": "task-adtxjhw4oga",
+        "count": 11,
+        "estimated": 105376
+      },
+      {
+        "type": "task-saizbe9eyc",
+        "count": 6,
+        "estimated": 64384
+      },
+      {
+        "type": "task-kt5d852bcac",
+        "count": 11,
+        "estimated": 69868
+      },
+      {
+        "type": "task-gcupgrvjxyj",
+        "count": 10,
+        "estimated": 44208
+      },
+      {
+        "type": "task-ak592mro829",
+        "count": 6,
+        "estimated": 34336
+      },
+      {
+        "type": "task-v02odmam75j",
+        "count": 7,
+        "estimated": 50991
+      },
+      {
+        "type": "task-mxafb2hc5tc",
+        "count": 9,
+        "estimated": 29199
+      },
+      {
+        "type": "task-r9t52oqoay",
+        "count": 9,
+        "estimated": 93661
+      }
+    ]
+  },
+  {
+    "date": "29.12.2023",
+    "total": 100,
+    "estimated": 746104,
+    "list": [
+      {
+        "type": "task-2vq9s2oma68",
+        "count": 7,
+        "estimated": 39945
+      },
+      {
+        "type": "task-9wem05kl6tj",
+        "count": 13,
+        "estimated": 68510
+      },
+      {
+        "type": "task-e778t5jxb3c",
+        "count": 8,
+        "estimated": 74839
+      },
+      {
+        "type": "task-781nhso7bg4",
+        "count": 13,
+        "estimated": 82858
+      },
+      {
+        "type": "task-rm6eqhub8kg",
+        "count": 11,
+        "estimated": 91922
+      },
+      {
+        "type": "task-z0fs6j7xjgd",
+        "count": 11,
+        "estimated": 38394
+      },
+      {
+        "type": "task-qkl43368w0e",
+        "count": 5,
+        "estimated": 64423
+      },
+      {
+        "type": "task-upwo2e7ypcc",
+        "count": 14,
+        "estimated": 99019
+      },
+      {
+        "type": "task-8nrcj2eu86x",
+        "count": 13,
+        "estimated": 95279
+      },
+      {
+        "type": "task-82opk480cfv",
+        "count": 14,
+        "estimated": 90915
+      }
+    ]
+  },
+  {
+    "date": "30.12.2023",
+    "total": 100,
+    "estimated": 723768,
+    "list": [
+      {
+        "type": "task-j1ohnv1nwpm",
+        "count": 10,
+        "estimated": 113063
+      },
+      {
+        "type": "task-9wkbypl6jwp",
+        "count": 13,
+        "estimated": 87533
+      },
+      {
+        "type": "task-4wrs8t83xxj",
+        "count": 8,
+        "estimated": 41923
+      },
+      {
+        "type": "task-aozdz145imn",
+        "count": 11,
+        "estimated": 116485
+      },
+      {
+        "type": "task-yi9nddfnlf",
+        "count": 14,
+        "estimated": 70170
+      },
+      {
+        "type": "task-y34n02qbv4l",
+        "count": 8,
+        "estimated": 73655
+      },
+      {
+        "type": "task-5hp0re8lbru",
+        "count": 12,
+        "estimated": 66986
+      },
+      {
+        "type": "task-utplb0kzqqg",
+        "count": 5,
+        "estimated": 55351
+      },
+      {
+        "type": "task-lmnmjyumwg9",
+        "count": 14,
+        "estimated": 71905
+      },
+      {
+        "type": "task-6205dncatmc",
+        "count": 14,
+        "estimated": 26697
+      }
+    ]
+  },
+  {
+    "date": "31.12.2023",
+    "total": 100,
+    "estimated": 1000,
+    "list": [
+      {
+        "type": "task-1",
+        "count": 5,
+        "estimated": 500
+      },
+      {
+        "type": "task-2",
+        "count": 5,
+        "estimated": 500
+      }
+    ]
+  },
+  {
+    "date": "01.12.2024",
+    "total": 100,
+    "estimated": 751058,
+    "list": [
+      {
+        "type": "task-qxh2054po6",
+        "count": 8,
+        "estimated": 117968
+      },
+      {
+        "type": "task-tl5z29y0nm",
+        "count": 11,
+        "estimated": 26291
+      },
+      {
+        "type": "task-sk26mlq617",
+        "count": 15,
+        "estimated": 108893
+      },
+      {
+        "type": "task-2chahxoc2qe",
+        "count": 13,
+        "estimated": 102476
+      },
+      {
+        "type": "task-ijkk4ld6l2f",
+        "count": 9,
+        "estimated": 93169
+      },
+      {
+        "type": "task-ts42l12a3ip",
+        "count": 9,
+        "estimated": 41708
+      },
+      {
+        "type": "task-yv436lsf82",
+        "count": 6,
+        "estimated": 63249
+      },
+      {
+        "type": "task-tc98vjqtuh",
+        "count": 9,
+        "estimated": 49706
+      },
+      {
+        "type": "task-mh5ew99pq7a",
+        "count": 11,
+        "estimated": 41117
+      },
+      {
+        "type": "task-yoixi4k7ila",
+        "count": 11,
+        "estimated": 106481
+      }
+    ]
+  },
+  {
+    "date": "02.12.2024",
+    "total": 100,
+    "estimated": 743288,
+    "list": [
+      {
+        "type": "task-mk37u73aa4o",
+        "count": 8,
+        "estimated": 74867
+      },
+      {
+        "type": "task-g3irft4al9b",
+        "count": 14,
+        "estimated": 26064
+      },
+      {
+        "type": "task-7qtscl8fns",
+        "count": 7,
+        "estimated": 26894
+      },
+      {
+        "type": "task-w3sbt8c096k",
+        "count": 6,
+        "estimated": 107749
+      },
+      {
+        "type": "task-oymi01e6u0c",
+        "count": 12,
+        "estimated": 75247
+      },
+      {
+        "type": "task-wz05g72g07",
+        "count": 15,
+        "estimated": 68877
+      },
+      {
+        "type": "task-bw7ohnv1lyv",
+        "count": 7,
+        "estimated": 112761
+      },
+      {
+        "type": "task-vf0v97r3bpt",
+        "count": 11,
+        "estimated": 105626
+      },
+      {
+        "type": "task-cpu1u9ouzm9",
+        "count": 10,
+        "estimated": 41502
+      },
+      {
+        "type": "task-8n7l7wnfk4",
+        "count": 10,
+        "estimated": 103701
+      }
+    ]
+  },
+  {
+    "date": "03.12.2024",
+    "total": 100,
+    "estimated": 750433,
+    "list": [
+      {
+        "type": "task-yc2duxazqcf",
+        "count": 7,
+        "estimated": 105006
+      },
+      {
+        "type": "task-c8hqfi5z44",
+        "count": 7,
+        "estimated": 63224
+      },
+      {
+        "type": "task-oz30zq9nrd",
+        "count": 7,
+        "estimated": 43942
+      },
+      {
+        "type": "task-3gbc4q0z6ag",
+        "count": 9,
+        "estimated": 68239
+      },
+      {
+        "type": "task-ao89b4hao1b",
+        "count": 12,
+        "estimated": 45924
+      },
+      {
+        "type": "task-9ufi1le20ga",
+        "count": 6,
+        "estimated": 105319
+      },
+      {
+        "type": "task-hau3x9yi6ws",
+        "count": 5,
+        "estimated": 84953
+      },
+      {
+        "type": "task-z59g52lrzx",
+        "count": 8,
+        "estimated": 45467
+      },
+      {
+        "type": "task-iegj44by0kc",
+        "count": 5,
+        "estimated": 106266
+      },
+      {
+        "type": "task-nz51kecyyg",
+        "count": 9,
+        "estimated": 82093
+      }
+    ]
+  },
+  {
+    "date": "04.12.2024",
+    "total": 100,
+    "estimated": 787771,
+    "list": [
+      {
+        "type": "task-9d5scai70u6",
+        "count": 15,
+        "estimated": 72859
+      },
+      {
+        "type": "task-sbyln7ps71",
+        "count": 15,
+        "estimated": 49258
+      },
+      {
+        "type": "task-9xoq1c8yn7m",
+        "count": 5,
+        "estimated": 96441
+      },
+      {
+        "type": "task-3mlwvpdyv2r",
+        "count": 7,
+        "estimated": 107996
+      },
+      {
+        "type": "task-407fzoe3if6",
+        "count": 5,
+        "estimated": 68974
+      },
+      {
+        "type": "task-zu93awad79",
+        "count": 5,
+        "estimated": 88163
+      },
+      {
+        "type": "task-gujlkkuub7r",
+        "count": 14,
+        "estimated": 101514
+      },
+      {
+        "type": "task-4jwlfgodta",
+        "count": 6,
+        "estimated": 98965
+      },
+      {
+        "type": "task-klpc11qzosf",
+        "count": 8,
+        "estimated": 44708
+      },
+      {
+        "type": "task-upgb74iuib",
+        "count": 11,
+        "estimated": 58893
+      }
+    ]
+  },
+  {
+    "date": "05.12.2024",
+    "total": 100,
+    "estimated": 721044,
+    "list": [
+      {
+        "type": "task-zg6xanmlj1",
+        "count": 6,
+        "estimated": 114423
+      },
+      {
+        "type": "task-ymik3d81yl",
+        "count": 10,
+        "estimated": 105587
+      },
+      {
+        "type": "task-zj49zwf6gbq",
+        "count": 7,
+        "estimated": 90551
+      },
+      {
+        "type": "task-1v4cqanmi3e",
+        "count": 14,
+        "estimated": 29954
+      },
+      {
+        "type": "task-os93wqcnhu",
+        "count": 8,
+        "estimated": 66823
+      },
+      {
+        "type": "task-0anf01eerjsk",
+        "count": 6,
+        "estimated": 81026
+      },
+      {
+        "type": "task-atr9wq3gyhk",
+        "count": 14,
+        "estimated": 82980
+      },
+      {
+        "type": "task-qoqswic8z4",
+        "count": 15,
+        "estimated": 69108
+      },
+      {
+        "type": "task-9z4y4djjc7w",
+        "count": 9,
+        "estimated": 37615
+      },
+      {
+        "type": "task-i6n7gru1v9",
+        "count": 11,
+        "estimated": 42977
+      }
+    ]
+  },
+  {
+    "date": "06.12.2024",
+    "total": 100,
+    "estimated": 779712,
+    "list": [
+      {
+        "type": "task-8eonritdmvm",
+        "count": 13,
+        "estimated": 29920
+      },
+      {
+        "type": "task-2rxl1jqabrj",
+        "count": 8,
+        "estimated": 88731
+      },
+      {
+        "type": "task-rk776b7mppb",
+        "count": 13,
+        "estimated": 50315
+      },
+      {
+        "type": "task-t8dabtgwux",
+        "count": 10,
+        "estimated": 98244
+      },
+      {
+        "type": "task-dlua6m0hix",
+        "count": 10,
+        "estimated": 104809
+      },
+      {
+        "type": "task-b5ycyvjhinr",
+        "count": 8,
+        "estimated": 104707
+      },
+      {
+        "type": "task-0wcmeqg4vhoo",
+        "count": 14,
+        "estimated": 27205
+      },
+      {
+        "type": "task-xbjb8qlbwj",
+        "count": 8,
+        "estimated": 63669
+      },
+      {
+        "type": "task-jahrhy9krl",
+        "count": 12,
+        "estimated": 106123
+      },
+      {
+        "type": "task-g54pghdjw8p",
+        "count": 9,
+        "estimated": 105989
+      }
+    ]
+  },
+  {
+    "date": "07.12.2024",
+    "total": 100,
+    "estimated": 749236,
+    "list": [
+      {
+        "type": "task-b0l5avfjeyv",
+        "count": 13,
+        "estimated": 101801
+      },
+      {
+        "type": "task-psn4d6xmuc",
+        "count": 5,
+        "estimated": 119753
+      },
+      {
+        "type": "task-72yjnmbn0ea",
+        "count": 9,
+        "estimated": 25206
+      },
+      {
+        "type": "task-4uzh8kxx5t2",
+        "count": 7,
+        "estimated": 39443
+      },
+      {
+        "type": "task-xlxqbh2lavi",
+        "count": 11,
+        "estimated": 87511
+      },
+      {
+        "type": "task-dii4edhfhws",
+        "count": 9,
+        "estimated": 27060
+      },
+      {
+        "type": "task-ktnb6in3vbh",
+        "count": 9,
+        "estimated": 112502
+      },
+      {
+        "type": "task-8qh1lsfau6e",
+        "count": 12,
+        "estimated": 64300
+      },
+      {
+        "type": "task-qgg84266ybs",
+        "count": 13,
+        "estimated": 91701
+      },
+      {
+        "type": "task-c8msb9zcsea",
+        "count": 10,
+        "estimated": 79959
+      }
+    ]
+  },
+  {
+    "date": "08.12.2024",
+    "total": 100,
+    "estimated": 722701,
+    "list": [
+      {
+        "type": "task-cbll9uqlyop",
+        "count": 15,
+        "estimated": 27311
+      },
+      {
+        "type": "task-95qsxuigwp",
+        "count": 14,
+        "estimated": 88481
+      },
+      {
+        "type": "task-mo9cqhcv8h",
+        "count": 14,
+        "estimated": 111658
+      },
+      {
+        "type": "task-ppr7pl3asa",
+        "count": 11,
+        "estimated": 114333
+      },
+      {
+        "type": "task-1yp5mlyzs3j",
+        "count": 10,
+        "estimated": 116758
+      },
+      {
+        "type": "task-1yy37i6xs92h",
+        "count": 8,
+        "estimated": 100466
+      },
+      {
+        "type": "task-yd9z1vsh60e",
+        "count": 7,
+        "estimated": 60203
+      },
+      {
+        "type": "task-hckzlccohud",
+        "count": 11,
+        "estimated": 46849
+      },
+      {
+        "type": "task-94hsr3mtdf",
+        "count": 13,
+        "estimated": 30044
+      },
+      {
+        "type": "task-82vj6ik39ra",
+        "count": 15,
+        "estimated": 26598
+      }
+    ]
+  },
+  {
+    "date": "09.12.2024",
+    "total": 100,
+    "estimated": 661776,
+    "list": [
+      {
+        "type": "task-rgfcnl1mje",
+        "count": 10,
+        "estimated": 103485
+      },
+      {
+        "type": "task-ly8shb9mef",
+        "count": 13,
+        "estimated": 73226
+      },
+      {
+        "type": "task-63tq533faj8",
+        "count": 5,
+        "estimated": 95593
+      },
+      {
+        "type": "task-93xqqq99tu",
+        "count": 7,
+        "estimated": 57545
+      },
+      {
+        "type": "task-xn62b5ddm1",
+        "count": 7,
+        "estimated": 44721
+      },
+      {
+        "type": "task-o2thzc0pt9",
+        "count": 11,
+        "estimated": 98009
+      },
+      {
+        "type": "task-wg2ewcf5bp",
+        "count": 7,
+        "estimated": 38169
+      },
+      {
+        "type": "task-4zl6ygf2zpv",
+        "count": 15,
+        "estimated": 56003
+      },
+      {
+        "type": "task-8n7t119qdq6",
+        "count": 8,
+        "estimated": 60530
+      },
+      {
+        "type": "task-hvdvr0fqy45",
+        "count": 10,
+        "estimated": 34495
+      }
+    ]
+  },
+  {
+    "date": "10.12.2024",
+    "total": 100,
+    "estimated": 721094,
+    "list": [
+      {
+        "type": "task-k503qmo38n",
+        "count": 8,
+        "estimated": 36323
+      },
+      {
+        "type": "task-im6rsk812z",
+        "count": 10,
+        "estimated": 102335
+      },
+      {
+        "type": "task-6uozvpt7pkr",
+        "count": 10,
+        "estimated": 78304
+      },
+      {
+        "type": "task-ks9uotscga",
+        "count": 5,
+        "estimated": 45982
+      },
+      {
+        "type": "task-zcg3xc2rtki",
+        "count": 14,
+        "estimated": 79654
+      },
+      {
+        "type": "task-yul2kcw6q0k",
+        "count": 6,
+        "estimated": 79905
+      },
+      {
+        "type": "task-xo5vqebobj",
+        "count": 8,
+        "estimated": 56935
+      },
+      {
+        "type": "task-x796pxy2tjc",
+        "count": 10,
+        "estimated": 75839
+      },
+      {
+        "type": "task-pnr1mb82w48",
+        "count": 10,
+        "estimated": 53779
+      },
+      {
+        "type": "task-6paciruw7c6",
+        "count": 5,
+        "estimated": 112038
+      }
+    ]
+  },
+  {
+    "date": "11.12.2024",
+    "total": 100,
+    "estimated": 721537,
+    "list": [
+      {
+        "type": "task-9wgysg6y5b",
+        "count": 8,
+        "estimated": 110428
+      },
+      {
+        "type": "task-ayjwioxocyg",
+        "count": 9,
+        "estimated": 59538
+      },
+      {
+        "type": "task-p3o381jcyci",
+        "count": 13,
+        "estimated": 52887
+      },
+      {
+        "type": "task-l8itlob9lc",
+        "count": 10,
+        "estimated": 95114
+      },
+      {
+        "type": "task-sjn9xj6oaab",
+        "count": 15,
+        "estimated": 118212
+      },
+      {
+        "type": "task-15qbeku2rwj",
+        "count": 10,
+        "estimated": 33689
+      },
+      {
+        "type": "task-sg2cz3sxnbj",
+        "count": 13,
+        "estimated": 66667
+      },
+      {
+        "type": "task-4csys5jtpov",
+        "count": 7,
+        "estimated": 59410
+      },
+      {
+        "type": "task-a1g1yngzq1g",
+        "count": 10,
+        "estimated": 95568
+      },
+      {
+        "type": "task-k193j7ifwxl",
+        "count": 7,
+        "estimated": 30024
+      }
+    ]
+  },
+  {
+    "date": "12.12.2024",
+    "total": 100,
+    "estimated": 763739,
+    "list": [
+      {
+        "type": "task-pldt43u88xg",
+        "count": 12,
+        "estimated": 116692
+      },
+      {
+        "type": "task-x9mciu3ufu",
+        "count": 15,
+        "estimated": 34765
+      },
+      {
+        "type": "task-1e5bi1zfcktj",
+        "count": 9,
+        "estimated": 81779
+      },
+      {
+        "type": "task-1adpcw43stu",
+        "count": 10,
+        "estimated": 42608
+      },
+      {
+        "type": "task-xz2f9awt24",
+        "count": 8,
+        "estimated": 93506
+      },
+      {
+        "type": "task-qmhlx9xcvbl",
+        "count": 13,
+        "estimated": 69638
+      },
+      {
+        "type": "task-ieyaanxwkzo",
+        "count": 12,
+        "estimated": 55873
+      },
+      {
+        "type": "task-lu4ke1g17e",
+        "count": 8,
+        "estimated": 56093
+      },
+      {
+        "type": "task-jx4qdcmp0b",
+        "count": 15,
+        "estimated": 113087
+      },
+      {
+        "type": "task-nvzo0fgxg8s",
+        "count": 14,
+        "estimated": 99698
+      }
+    ]
+  },
+  {
+    "date": "13.12.2024",
+    "total": 100,
+    "estimated": 589638,
+    "list": [
+      {
+        "type": "task-hfxbqj9yo9f",
+        "count": 8,
+        "estimated": 26810
+      },
+      {
+        "type": "task-12by3nkbaydf",
+        "count": 11,
+        "estimated": 87438
+      },
+      {
+        "type": "task-cpgis2z3c6",
+        "count": 8,
+        "estimated": 113441
+      },
+      {
+        "type": "task-l5b3gbqgl8h",
+        "count": 8,
+        "estimated": 27414
+      },
+      {
+        "type": "task-0v1o1pkxyv3l",
+        "count": 15,
+        "estimated": 87262
+      },
+      {
+        "type": "task-tule9zi5wve",
+        "count": 7,
+        "estimated": 49511
+      },
+      {
+        "type": "task-i7qswsfyms",
+        "count": 12,
+        "estimated": 82294
+      },
+      {
+        "type": "task-gialcoqz26o",
+        "count": 9,
+        "estimated": 47615
+      },
+      {
+        "type": "task-s2up8m3eoqk",
+        "count": 5,
+        "estimated": 34738
+      },
+      {
+        "type": "task-794xqp2596",
+        "count": 8,
+        "estimated": 33115
+      }
+    ]
+  },
+  {
+    "date": "14.12.2024",
+    "total": 100,
+    "estimated": 781517,
+    "list": [
+      {
+        "type": "task-5dm5w4b13m",
+        "count": 11,
+        "estimated": 85282
+      },
+      {
+        "type": "task-vc9adxnkwc",
+        "count": 6,
+        "estimated": 112096
+      },
+      {
+        "type": "task-yrz1uhb6jwe",
+        "count": 9,
+        "estimated": 76484
+      },
+      {
+        "type": "task-ligty9teukm",
+        "count": 11,
+        "estimated": 86784
+      },
+      {
+        "type": "task-6mfpy4csgux",
+        "count": 11,
+        "estimated": 100667
+      },
+      {
+        "type": "task-r1kfe85l2hq",
+        "count": 13,
+        "estimated": 50749
+      },
+      {
+        "type": "task-axx3ygkzp4q",
+        "count": 9,
+        "estimated": 72067
+      },
+      {
+        "type": "task-dejy0p3ismf",
+        "count": 14,
+        "estimated": 64127
+      },
+      {
+        "type": "task-unbif6t917h",
+        "count": 5,
+        "estimated": 26696
+      },
+      {
+        "type": "task-gy0hk0yj1qa",
+        "count": 8,
+        "estimated": 106565
+      }
+    ]
+  },
+  {
+    "date": "15.12.2024",
+    "total": 100,
+    "estimated": 787547,
+    "list": [
+      {
+        "type": "task-m9imtgwjef",
+        "count": 12,
+        "estimated": 87332
+      },
+      {
+        "type": "task-t2dgh2c149l",
+        "count": 6,
+        "estimated": 37002
+      },
+      {
+        "type": "task-rsujip8d6in",
+        "count": 9,
+        "estimated": 44466
+      },
+      {
+        "type": "task-srr8q3on5gs",
+        "count": 11,
+        "estimated": 89044
+      },
+      {
+        "type": "task-4eqmo4wq6q8",
+        "count": 13,
+        "estimated": 72372
+      },
+      {
+        "type": "task-o7adlvpyaw",
+        "count": 10,
+        "estimated": 75805
+      },
+      {
+        "type": "task-s5gn1ubr96i",
+        "count": 12,
+        "estimated": 102479
+      },
+      {
+        "type": "task-sycts0qrixg",
+        "count": 10,
+        "estimated": 47724
+      },
+      {
+        "type": "task-otmyngo8iv",
+        "count": 11,
+        "estimated": 115524
+      },
+      {
+        "type": "task-k4hbrvw8d5r",
+        "count": 12,
+        "estimated": 115799
+      }
+    ]
+  },
+  {
+    "date": "16.12.2024",
+    "total": 100,
+    "estimated": 927750,
+    "list": [
+      {
+        "type": "task-341bmzsurl8",
+        "count": 10,
+        "estimated": 76238
+      },
+      {
+        "type": "task-wkipx8oslrm",
+        "count": 10,
+        "estimated": 118407
+      },
+      {
+        "type": "task-u8fu2igw43g",
+        "count": 8,
+        "estimated": 109039
+      },
+      {
+        "type": "task-bmqe2in0xjd",
+        "count": 6,
+        "estimated": 71709
+      },
+      {
+        "type": "task-oojelksrl4",
+        "count": 8,
+        "estimated": 25824
+      },
+      {
+        "type": "task-pinzmy7m98j",
+        "count": 11,
+        "estimated": 111555
+      },
+      {
+        "type": "task-3ym65gxfcj1",
+        "count": 15,
+        "estimated": 79251
+      },
+      {
+        "type": "task-pgcftceyq9",
+        "count": 7,
+        "estimated": 118105
+      },
+      {
+        "type": "task-algdomosd8b",
+        "count": 11,
+        "estimated": 108194
+      },
+      {
+        "type": "task-fyywuo7u4xo",
+        "count": 6,
+        "estimated": 109428
+      }
+    ]
+  },
+  {
+    "date": "17.12.2024",
+    "total": 100,
+    "estimated": 848847,
+    "list": [
+      {
+        "type": "task-b15eu1njajj",
+        "count": 11,
+        "estimated": 103497
+      },
+      {
+        "type": "task-jclmzy0v34b",
+        "count": 5,
+        "estimated": 116918
+      },
+      {
+        "type": "task-tghf5zrx4em",
+        "count": 10,
+        "estimated": 69565
+      },
+      {
+        "type": "task-voxfy3cyvt8",
+        "count": 6,
+        "estimated": 51119
+      },
+      {
+        "type": "task-5skmc4pwztr",
+        "count": 13,
+        "estimated": 110474
+      },
+      {
+        "type": "task-hhq3ycq1opc",
+        "count": 5,
+        "estimated": 64555
+      },
+      {
+        "type": "task-7ohz86p403u",
+        "count": 15,
+        "estimated": 63295
+      },
+      {
+        "type": "task-94hnbuw1omq",
+        "count": 7,
+        "estimated": 93876
+      },
+      {
+        "type": "task-a96qevxt66s",
+        "count": 15,
+        "estimated": 99752
+      },
+      {
+        "type": "task-uspi7lnkjyt",
+        "count": 10,
+        "estimated": 75796
+      }
+    ]
+  },
+  {
+    "date": "18.12.2024",
+    "total": 100,
+    "estimated": 678142,
+    "list": [
+      {
+        "type": "task-t0u0pjexse",
+        "count": 7,
+        "estimated": 83575
+      },
+      {
+        "type": "task-0rios7ui3xwb",
+        "count": 5,
+        "estimated": 42345
+      },
+      {
+        "type": "task-kblh4wd8und",
+        "count": 15,
+        "estimated": 51456
+      },
+      {
+        "type": "task-y37v48c15j",
+        "count": 8,
+        "estimated": 51703
+      },
+      {
+        "type": "task-ic4d11n6gf",
+        "count": 10,
+        "estimated": 75764
+      },
+      {
+        "type": "task-3ns60kp7725",
+        "count": 7,
+        "estimated": 47073
+      },
+      {
+        "type": "task-bdzfcodkuf",
+        "count": 15,
+        "estimated": 74629
+      },
+      {
+        "type": "task-1bs2bko74pqj",
+        "count": 11,
+        "estimated": 87431
+      },
+      {
+        "type": "task-2dpe3iu0veh",
+        "count": 7,
+        "estimated": 66481
+      },
+      {
+        "type": "task-zgjoj2mjq48",
+        "count": 14,
+        "estimated": 97685
+      }
+    ]
+  },
+  {
+    "date": "19.12.2024",
+    "total": 100,
+    "estimated": 767849,
+    "list": [
+      {
+        "type": "task-nll80aar7a9",
+        "count": 14,
+        "estimated": 49105
+      },
+      {
+        "type": "task-2gggn01ix8h",
+        "count": 6,
+        "estimated": 62027
+      },
+      {
+        "type": "task-tc50b3d5afi",
+        "count": 10,
+        "estimated": 57611
+      },
+      {
+        "type": "task-foti5t7jk4h",
+        "count": 5,
+        "estimated": 61004
+      },
+      {
+        "type": "task-4lzchjju8ul",
+        "count": 11,
+        "estimated": 96531
+      },
+      {
+        "type": "task-5vlxzsf1gri",
+        "count": 6,
+        "estimated": 69518
+      },
+      {
+        "type": "task-ffywiju9o74",
+        "count": 8,
+        "estimated": 102279
+      },
+      {
+        "type": "task-dou4skaerzo",
+        "count": 12,
+        "estimated": 112875
+      },
+      {
+        "type": "task-f2o99uzygll",
+        "count": 14,
+        "estimated": 75448
+      },
+      {
+        "type": "task-n3wmeyt51en",
+        "count": 14,
+        "estimated": 81451
+      }
+    ]
+  },
+  {
+    "date": "20.12.2024",
+    "total": 100,
+    "estimated": 626387,
+    "list": [
+      {
+        "type": "task-20jhhn0hsgi",
+        "count": 10,
+        "estimated": 82352
+      },
+      {
+        "type": "task-uwxe1ozyf1r",
+        "count": 5,
+        "estimated": 45097
+      },
+      {
+        "type": "task-ye3hgu3bn9i",
+        "count": 8,
+        "estimated": 87391
+      },
+      {
+        "type": "task-j3l3rdh5uu",
+        "count": 6,
+        "estimated": 58881
+      },
+      {
+        "type": "task-sw4jxag0z3",
+        "count": 13,
+        "estimated": 86128
+      },
+      {
+        "type": "task-85jp5mbbb3g",
+        "count": 6,
+        "estimated": 56130
+      },
+      {
+        "type": "task-u0rmpn8hs3",
+        "count": 12,
+        "estimated": 63018
+      },
+      {
+        "type": "task-yvpyr9er5ql",
+        "count": 8,
+        "estimated": 51361
+      },
+      {
+        "type": "task-9bfsslraido",
+        "count": 9,
+        "estimated": 65307
+      },
+      {
+        "type": "task-ab6g0qt7zjd",
+        "count": 8,
+        "estimated": 30722
+      }
+    ]
+  },
+  {
+    "date": "21.12.2024",
+    "total": 100,
+    "estimated": 864092,
+    "list": [
+      {
+        "type": "task-89k88c2al4",
+        "count": 7,
+        "estimated": 94764
+      },
+      {
+        "type": "task-xxaj3idp66",
+        "count": 7,
+        "estimated": 111377
+      },
+      {
+        "type": "task-gsip68duh08",
+        "count": 13,
+        "estimated": 119665
+      },
+      {
+        "type": "task-pxifqgnyj9",
+        "count": 6,
+        "estimated": 81250
+      },
+      {
+        "type": "task-7sjayz4bfsv",
+        "count": 5,
+        "estimated": 42841
+      },
+      {
+        "type": "task-nuqdcjoe16g",
+        "count": 14,
+        "estimated": 84724
+      },
+      {
+        "type": "task-tssf2a21icd",
+        "count": 9,
+        "estimated": 34026
+      },
+      {
+        "type": "task-rjdc9i37wln",
+        "count": 12,
+        "estimated": 117413
+      },
+      {
+        "type": "task-n4tccce0pi",
+        "count": 10,
+        "estimated": 66203
+      },
+      {
+        "type": "task-ynabdh1owib",
+        "count": 11,
+        "estimated": 111829
+      }
+    ]
+  },
+  {
+    "date": "22.12.2024",
+    "total": 100,
+    "estimated": 581556,
+    "list": [
+      {
+        "type": "task-248p54n6zqf",
+        "count": 13,
+        "estimated": 32755
+      },
+      {
+        "type": "task-yg1xan2nl59",
+        "count": 10,
+        "estimated": 55045
+      },
+      {
+        "type": "task-00vc1hp8h01eb",
+        "count": 12,
+        "estimated": 50418
+      },
+      {
+        "type": "task-bjlkmfsrr7c",
+        "count": 15,
+        "estimated": 30422
+      },
+      {
+        "type": "task-rfpi6u3fexq",
+        "count": 9,
+        "estimated": 39157
+      },
+      {
+        "type": "task-w629wubgik9",
+        "count": 6,
+        "estimated": 64583
+      },
+      {
+        "type": "task-osrsqq6394p",
+        "count": 10,
+        "estimated": 61522
+      },
+      {
+        "type": "task-on669afilc",
+        "count": 5,
+        "estimated": 70932
+      },
+      {
+        "type": "task-mlnlpoqndt",
+        "count": 5,
+        "estimated": 102463
+      },
+      {
+        "type": "task-qhrcto5vcg",
+        "count": 10,
+        "estimated": 74259
+      }
+    ]
+  },
+  {
+    "date": "23.12.2024",
+    "total": 100,
+    "estimated": 808266,
+    "list": [
+      {
+        "type": "task-esxghcb1q5",
+        "count": 5,
+        "estimated": 58922
+      },
+      {
+        "type": "task-wszp7rabio",
+        "count": 14,
+        "estimated": 68914
+      },
+      {
+        "type": "task-k7erat0cxjp",
+        "count": 8,
+        "estimated": 117343
+      },
+      {
+        "type": "task-b72zzvs56wb",
+        "count": 8,
+        "estimated": 66559
+      },
+      {
+        "type": "task-0hnbn33jsnck",
+        "count": 8,
+        "estimated": 109279
+      },
+      {
+        "type": "task-yzpk0xm924",
+        "count": 11,
+        "estimated": 79559
+      },
+      {
+        "type": "task-uu8yuvd4m5o",
+        "count": 15,
+        "estimated": 78483
+      },
+      {
+        "type": "task-91wsu6v0vbs",
+        "count": 5,
+        "estimated": 82493
+      },
+      {
+        "type": "task-u7o0xz628x",
+        "count": 12,
+        "estimated": 92493
+      },
+      {
+        "type": "task-6na3ef98b37",
+        "count": 13,
+        "estimated": 54221
+      }
+    ]
+  },
+  {
+    "date": "24.12.2024",
+    "total": 100,
+    "estimated": 471551,
+    "list": [
+      {
+        "type": "task-rbikon1bfs",
+        "count": 14,
+        "estimated": 109932
+      },
+      {
+        "type": "task-htkophbe5ai",
+        "count": 15,
+        "estimated": 25252
+      },
+      {
+        "type": "task-g2xcji58x6r",
+        "count": 6,
+        "estimated": 47071
+      },
+      {
+        "type": "task-hxwz1ez0s14",
+        "count": 9,
+        "estimated": 33914
+      },
+      {
+        "type": "task-4lmgrogmsh8",
+        "count": 8,
+        "estimated": 27854
+      },
+      {
+        "type": "task-pm48kko6lc",
+        "count": 6,
+        "estimated": 32334
+      },
+      {
+        "type": "task-adxugcn7cpa",
+        "count": 13,
+        "estimated": 41702
+      },
+      {
+        "type": "task-sygufszja8d",
+        "count": 8,
+        "estimated": 64046
+      },
+      {
+        "type": "task-yw1pycrwir",
+        "count": 11,
+        "estimated": 41722
+      },
+      {
+        "type": "task-ck0aou8s7bs",
+        "count": 5,
+        "estimated": 47724
+      }
+    ]
+  },
+  {
+    "date": "25.12.2024",
+    "total": 100,
+    "estimated": 656244,
+    "list": [
+      {
+        "type": "task-sojwws3vvxg",
+        "count": 6,
+        "estimated": 46171
+      },
+      {
+        "type": "task-w9crz8z4xx",
+        "count": 5,
+        "estimated": 39575
+      },
+      {
+        "type": "task-rwuk793h3kt",
+        "count": 14,
+        "estimated": 83957
+      },
+      {
+        "type": "task-kgqywc1918",
+        "count": 13,
+        "estimated": 76720
+      },
+      {
+        "type": "task-449u751ti0g",
+        "count": 15,
+        "estimated": 66889
+      },
+      {
+        "type": "task-aguqma34z2s",
+        "count": 15,
+        "estimated": 90108
+      },
+      {
+        "type": "task-iss5folle6i",
+        "count": 5,
+        "estimated": 58652
+      },
+      {
+        "type": "task-enj5cojg0g",
+        "count": 6,
+        "estimated": 30732
+      },
+      {
+        "type": "task-kgxwcp71cb",
+        "count": 7,
+        "estimated": 58376
+      },
+      {
+        "type": "task-3jyeqho82g6",
+        "count": 14,
+        "estimated": 105064
+      }
+    ]
+  },
+  {
+    "date": "26.12.2024",
+    "total": 100,
+    "estimated": 704277,
+    "list": [
+      {
+        "type": "task-cn12et9g1rn",
+        "count": 8,
+        "estimated": 53140
+      },
+      {
+        "type": "task-49fgal6xh8w",
+        "count": 12,
+        "estimated": 63111
+      },
+      {
+        "type": "task-ruxf85p6ip",
+        "count": 5,
+        "estimated": 56858
+      },
+      {
+        "type": "task-3eatf6cpztn",
+        "count": 13,
+        "estimated": 38729
+      },
+      {
+        "type": "task-eq74e586wk5",
+        "count": 8,
+        "estimated": 84379
+      },
+      {
+        "type": "task-2gzq9f9wt61",
+        "count": 13,
+        "estimated": 65363
+      },
+      {
+        "type": "task-9d0xw15ekeu",
+        "count": 10,
+        "estimated": 101135
+      },
+      {
+        "type": "task-9xpa2a9o7an",
+        "count": 11,
+        "estimated": 72576
+      },
+      {
+        "type": "task-273e868ro8w",
+        "count": 7,
+        "estimated": 77432
+      },
+      {
+        "type": "task-9bjj268nmj",
+        "count": 9,
+        "estimated": 91554
+      }
+    ]
+  },
+  {
+    "date": "27.12.2024",
+    "total": 100,
+    "estimated": 773380,
+    "list": [
+      {
+        "type": "task-7ei2xv1gupm",
+        "count": 13,
+        "estimated": 118103
+      },
+      {
+        "type": "task-xx3o9pkocs",
+        "count": 5,
+        "estimated": 42839
+      },
+      {
+        "type": "task-ax04jt7co",
+        "count": 15,
+        "estimated": 47404
+      },
+      {
+        "type": "task-od4d6xd4g99",
+        "count": 6,
+        "estimated": 115317
+      },
+      {
+        "type": "task-olnuw2xfaf8",
+        "count": 12,
+        "estimated": 39348
+      },
+      {
+        "type": "task-gqi3ouxhimv",
+        "count": 15,
+        "estimated": 47766
+      },
+      {
+        "type": "task-s3f5uaf95be",
+        "count": 12,
+        "estimated": 80245
+      },
+      {
+        "type": "task-0z58enhcds1c",
+        "count": 6,
+        "estimated": 119505
+      },
+      {
+        "type": "task-7gaw5htjixo",
+        "count": 5,
+        "estimated": 44181
+      },
+      {
+        "type": "task-1uq567v8be",
+        "count": 13,
+        "estimated": 118672
+      }
+    ]
+  },
+  {
+    "date": "28.12.2024",
+    "total": 100,
+    "estimated": 673992,
+    "list": [
+      {
+        "type": "task-vjw9xsn9gzi",
+        "count": 6,
+        "estimated": 106019
+      },
+      {
+        "type": "task-4b67ljexxdl",
+        "count": 7,
+        "estimated": 75950
+      },
+      {
+        "type": "task-adtxjhw4oga",
+        "count": 11,
+        "estimated": 105376
+      },
+      {
+        "type": "task-saizbe9eyc",
+        "count": 6,
+        "estimated": 64384
+      },
+      {
+        "type": "task-kt5d852bcac",
+        "count": 11,
+        "estimated": 69868
+      },
+      {
+        "type": "task-gcupgrvjxyj",
+        "count": 10,
+        "estimated": 44208
+      },
+      {
+        "type": "task-ak592mro829",
+        "count": 6,
+        "estimated": 34336
+      },
+      {
+        "type": "task-v02odmam75j",
+        "count": 7,
+        "estimated": 50991
+      },
+      {
+        "type": "task-mxafb2hc5tc",
+        "count": 9,
+        "estimated": 29199
+      },
+      {
+        "type": "task-r9t52oqoay",
+        "count": 9,
+        "estimated": 93661
+      }
+    ]
+  },
+  {
+    "date": "29.12.2024",
+    "total": 100,
+    "estimated": 746104,
+    "list": [
+      {
+        "type": "task-2vq9s2oma68",
+        "count": 7,
+        "estimated": 39945
+      },
+      {
+        "type": "task-9wem05kl6tj",
+        "count": 13,
+        "estimated": 68510
+      },
+      {
+        "type": "task-e778t5jxb3c",
+        "count": 8,
+        "estimated": 74839
+      },
+      {
+        "type": "task-781nhso7bg4",
+        "count": 13,
+        "estimated": 82858
+      },
+      {
+        "type": "task-rm6eqhub8kg",
+        "count": 11,
+        "estimated": 91922
+      },
+      {
+        "type": "task-z0fs6j7xjgd",
+        "count": 11,
+        "estimated": 38394
+      },
+      {
+        "type": "task-qkl43368w0e",
+        "count": 5,
+        "estimated": 64423
+      },
+      {
+        "type": "task-upwo2e7ypcc",
+        "count": 14,
+        "estimated": 99019
+      },
+      {
+        "type": "task-8nrcj2eu86x",
+        "count": 13,
+        "estimated": 95279
+      },
+      {
+        "type": "task-82opk480cfv",
+        "count": 14,
+        "estimated": 90915
+      }
+    ]
+  },
+  {
+    "date": "30.12.2024",
+    "total": 100,
+    "estimated": 723768,
+    "list": [
+      {
+        "type": "task-j1ohnv1nwpm",
+        "count": 10,
+        "estimated": 113063
+      },
+      {
+        "type": "task-9wkbypl6jwp",
+        "count": 13,
+        "estimated": 87533
+      },
+      {
+        "type": "task-4wrs8t83xxj",
+        "count": 8,
+        "estimated": 41923
+      },
+      {
+        "type": "task-aozdz145imn",
+        "count": 11,
+        "estimated": 116485
+      },
+      {
+        "type": "task-yi9nddfnlf",
+        "count": 14,
+        "estimated": 70170
+      },
+      {
+        "type": "task-y34n02qbv4l",
+        "count": 8,
+        "estimated": 73655
+      },
+      {
+        "type": "task-5hp0re8lbru",
+        "count": 12,
+        "estimated": 66986
+      },
+      {
+        "type": "task-utplb0kzqqg",
+        "count": 5,
+        "estimated": 55351
+      },
+      {
+        "type": "task-lmnmjyumwg9",
+        "count": 14,
+        "estimated": 71905
+      },
+      {
+        "type": "task-6205dncatmc",
+        "count": 14,
+        "estimated": 26697
+      }
+    ]
+  },
+  {
+    "date": "31.12.2024",
+    "total": 100,
+    "estimated": 1000,
+    "list": [
+      {
+        "type": "task-1",
+        "count": 5,
+        "estimated": 500
+      },
+      {
+        "type": "task-2",
+        "count": 5,
+        "estimated": 500
+      }
+    ]
+  }
+]

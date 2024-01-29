@@ -66,12 +66,17 @@ td:nth-child(3) {
   width: 10%;
 }
 
-button {
-  font-family: inherit;
-  font-weight: 600;
+.buttons {
   position: fixed;
   right: 1rem;
   top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  font-family: inherit;
+  font-weight: 600;
   display: inline-block;
   border: none;
   padding: 10px 20px;
@@ -94,4 +99,13 @@ button:hover {
 button:focus {
   outline: none;
   box-shadow: 0 0 0 2px #999;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.desc {
+  flex-direction: column-reverse !important;
 }
