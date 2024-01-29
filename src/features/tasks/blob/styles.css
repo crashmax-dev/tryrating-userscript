@@ -5,6 +5,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #9999;
 }
 
 table {
@@ -39,6 +40,10 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
@@ -68,7 +73,7 @@ td:nth-child(3) {
 
 .buttons {
   position: fixed;
-  right: 1rem;
+  right: 9rem;
   top: 1rem;
   display: flex;
   gap: 1rem;
@@ -104,6 +109,9 @@ button:focus {
 #root {
   display: flex;
   flex-direction: column;
+  margin-top: 5rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
 }
 
 .desc {
