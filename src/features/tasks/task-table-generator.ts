@@ -1,97 +1,80 @@
 import { el } from '@zero-dependency/dom'
 
 import { currentDate } from '../../utils/current-date.js'
-import { msToTimeFull } from '../../utils/ms-to-time.js'
+import { storage } from '../storage.js'
 import blobPageScript from './blob/script.js?raw'
 import blobPageStyles from './blob/styles.css?raw'
-import type { TaskList, Tasks } from '../storage.js'
 
-export class TaskTableGenerator {
-  tasks: Tasks[]
-  el: HTMLDivElement
+export class TasksPageGenerator {
+  createTasksPage() {
+    const html = el('html')
+    const htmlBody = el('body')
+    const headHtml = el('head')
+    html.append(headHtml, htmlBody)
 
-  insertData() {
-    this.el.prepend(
-      el('script', `const tasks = ${JSON.stringify(this.tasks)};`)
-    )
-  }
+    const metaCharset = el('meta')
+    metaCharset.setAttribute('charset', 'utf-8')
+    headHtml.append(metaCharset)
 
-  page() {
-    this.tasks = []
-
-    const root = el('div', { id: 'root', className: 'asc' })
+    const rootContainer = el('div', { id: 'root', className: 'desc' })
     const styles = el('style', blobPageStyles)
-    const script = el(
+    const mainScript = el(
       'script',
       blobPageScript.replace('__CURRENT_DATE__', currentDate())
     )
 
     const buttons = el('div', { className: 'buttons' })
-    const sortButton = el('button', { id: 'sort-button' }, 'Sort (ASC)')
-    const daySortButton = el('button', { id: 'day-sort-button' }, 'Day Sort')
-    const weekSortButton = el('button', { id: 'week-sort-button' }, 'Week Sort')
+    const sortButton = el(
+      'button',
+      { id: 'sort-button' },
+      'Сортировать по убыванию'
+    )
+    const toggleTablesButton = el(
+      'button',
+      { id: 'toggle-tables-button' },
+      'Показать таблицы'
+    )
+    const daySortButton = el(
+      'button',
+      { id: 'day-sort-button' },
+      'Сортировать по дням'
+    )
+    const weekSortButton = el(
+      'button',
+      { id: 'week-sort-button' },
+      'Сортировать по неделям'
+    )
     const monthSortButton = el(
       'button',
       { id: 'month-sort-button' },
-      'Month Sort'
+      'Сортировать по месяцам'
     )
-    const downloadButton = el('button', { id: 'download-button' }, 'Download')
+    const downloadButton = el(
+      'button',
+      { id: 'download-button' },
+      'Скачать в HTML'
+    )
 
     buttons.append(
       sortButton,
+      toggleTablesButton,
       daySortButton,
       weekSortButton,
       monthSortButton,
       downloadButton
     )
 
-    this.el = el('div', styles, buttons, root, script)
-
-    return {
-      page: this.el,
-      root
-    }
-  }
-
-  table() {
-    return el('table')
-  }
-
-  caption(date: string, total: number, estimated: number) {
-    this.tasks.unshift({
-      date,
-      total,
-      estimated,
-      list: []
-    })
-
-    return el(
-      'caption',
-      el('p', `Date: ${date}`),
-      el('p', `Tasks: ${total}`),
-      el('p', `Estimated: ${msToTimeFull(estimated)}`)
+    const scriptTasks = el(
+      'script',
+      `const tasks = ${JSON.stringify(storage.taskList)}`
     )
+    headHtml.append(styles, scriptTasks)
+    htmlBody.append(buttons, rootContainer, mainScript)
+
+    return html
   }
 
-  head() {
-    return el('tr', el('th', 'Task'), el('th', 'Count'), el('th', 'Estimated'))
-  }
-
-  tr(task: TaskList) {
-    const tasks = this.tasks.at(0)
-    if (tasks) {
-      tasks.list.push(task)
-    }
-
-    return el(
-      'tr',
-      el('td', task.type),
-      el('td', `${task.count}`),
-      el('td', msToTimeFull(task.estimated))
-    )
-  }
-
-  open(page: HTMLElement) {
+  savePage(page: HTMLElement) {
     const blob = new Blob([page.outerHTML], {
       type: 'text/html'
     })

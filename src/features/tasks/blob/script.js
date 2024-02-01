@@ -1,14 +1,31 @@
 const root = document.querySelector('#root')
+const sortButton = document.querySelector('#sort-button')
+const toggleTablesButton = document.querySelector('#toggle-tables-button')
 const daySortButton = document.querySelector('#day-sort-button')
 const weekSortButton = document.querySelector('#week-sort-button')
 const monthSortButton = document.querySelector('#month-sort-button')
-const sortButton = document.querySelector('#sort-button')
 const downloadButton = document.querySelector('#download-button')
 
-daySortButton.addEventListener('click', () => sortTable('day'))
-weekSortButton.addEventListener('click', () => sortTable('week'))
-monthSortButton.addEventListener('click', () => sortTable('month'))
-sortButton.addEventListener('click', () => sortTable('desc'))
+const SortType = {
+  // по возрастанию
+  Asc: 'asc',
+  // по убыванию
+  Desc: 'desc',
+  Day: 'day',
+  Week: 'week',
+  Month: 'month'
+}
+
+const PageState = {
+  tablesOpen: false
+}
+
+sortButton.addEventListener('click', () => sortTable(SortType.Desc))
+toggleTablesButton.addEventListener('click', () => toggleTables())
+daySortButton.addEventListener('click', () => sortTable(SortType.Day))
+weekSortButton.addEventListener('click', () => sortTable(SortType.Week))
+monthSortButton.addEventListener('click', () => sortTable(SortType.Month))
+document.addEventListener('DOMContentLoaded', () => createTable(SortType.Day))
 
 // https://github.com/zero-dependency/dom/blob/17c3739f94515d14283d3a3377a80147aaa8378f/src/html.ts
 function el(tag, props, ...children) {
@@ -57,39 +74,33 @@ function msToTimeFull(ms) {
 }
 
 function sortTable(type) {
-  if (type === 'desc') {
-    root.classList.toggle('desc')
+  // asc / desc
+  if (type === SortType.Desc) {
+    root.classList.toggle(SortType.Desc)
 
-    if (root.classList.contains('desc')) {
-      sortButton.textContent = 'Sort (DESC)'
+    if (root.classList.contains(SortType.Desc)) {
+      sortButton.textContent = 'Сортировать по убыванию'
     } else {
-      sortButton.textContent = 'Sort (ASC)'
+      sortButton.textContent = 'Сортировать по возрастанию'
     }
+
+    return
   }
 
-  if (type === 'day') {
-    createTable('day')
-  }
-
-  if (type === 'week') {
-    createTable('week')
-  }
-
-  if (type === 'month') {
-    createTable('month')
-  }
+  // day / week / month
+  createTable(type)
 }
 
 function createTableHead() {
-  return el('tr', el('th', 'Task'), el('th', 'Count'), el('th', 'Estimated'))
+  return el('tr', el('th', 'Тип'), el('th', 'Количество'), el('th', 'Время'))
 }
 
 function createTableCaption(task) {
   return el(
     'caption',
-    el('p', `Date: ${task.date}`),
-    el('p', `Tasks: ${task.total}`),
-    el('p', `Estimated: ${msToTimeFull(task.estimated)}`)
+    el('p', `Дата: ${task.date}`),
+    el('p', `Количество: ${task.total}`),
+    el('p', `Время: ${msToTimeFull(task.estimated)}`)
   )
 }
 
@@ -102,14 +113,26 @@ function createTableTr(task) {
   )
 }
 
-function createTable(sortType) {
-  root.innerHTML = ''
+function toggleTables() {
+  const details = root.querySelectorAll('details')
+  PageState.tablesOpen = !PageState.tablesOpen
+  toggleTablesButton.textContent = `${
+    PageState.tablesOpen ? 'Скрыть' : 'Показать'
+  } таблицы`
+  for (const detail of details) {
+    detail.open = PageState.tablesOpen
+  }
+}
 
-  function initTableData() {
-    return {
+class TableState {
+  constructor() {
+    this.initState()
+  }
+
+  initState() {
+    this.data = {
       table: el('table'),
-      tbody: el('tbody'),
-      day: 0,
+      days: 0,
       date: '',
       total: 0,
       estimated: 0,
@@ -117,69 +140,72 @@ function createTable(sortType) {
     }
   }
 
-  function pushTable(date) {
-    tableData.table.append(
-      createTableCaption({
-        date: `${tableData.date} - ${date} (${tableData.day - 1} days)`,
-        total: tableData.total,
-        estimated: tableData.estimated
-      })
-    )
-    tableData.tbody.append(createTableHead(), ...tableData.list)
-    tableData.table.append(tableData.tbody)
-    root.prepend(tableData.table)
-    tableData = initTableData()
+  pushTable(latestData) {
+    const caption = createTableCaption({
+      date: `${this.data.date} - ${latestData} (${this.data.days - 1} days)`,
+      total: this.data.total,
+      estimated: this.data.estimated
+    })
+    const details = el('details', el('summary', caption))
+    this.data.table.append(createTableHead(), ...this.data.list)
+    details.append(this.data.table)
+    root.prepend(details)
+    this.initState()
   }
+}
 
-  let tableData = initTableData()
-  const daysBySortType = sortType === 'week' ? 7 : 30
+function createTable(sortingType) {
+  root.innerHTML = ''
+
+  const tableState = new TableState()
+  const isDaysSort = sortingType === SortType.Day
+  const isWeeksSort = sortingType === SortType.Week
+  const countDaysBySort = isWeeksSort ? 7 : 30
+  const isNotDaysSort = [SortType.Week, SortType.Month].includes(sortingType)
 
   for (const { date, list, total, estimated } of tasks) {
-    if (sortType === 'day') {
+    if (isDaysSort) {
       createTableAllGroup({ date, list, total, estimated })
       continue
     }
 
-    if (sortType === 'week' || sortType === 'month') {
-      tableData.day++
-      if (tableData.day > daysBySortType) {
-        pushTable(date)
-        tableData.day = 1
+    if (isNotDaysSort) {
+      tableState.data.days++
+      if (tableState.data.days > countDaysBySort) {
+        tableState.pushTable(date)
+        tableState.data.days = 1
       }
 
-      if (!tableData.date) tableData.date = date
-      tableData.total += total
-      tableData.estimated += estimated
+      tableState.data.date ||= date
+      tableState.data.total += total
+      tableState.data.estimated += estimated
 
       for (const task of list) {
         const tr = createTableTr(task)
-        tableData.list.push(tr)
+        tableState.data.list.push(tr)
       }
     }
   }
 
-  if (sortType === 'week' && tableData.list.length) {
-    pushTable(tasks.at(-1).date)
+  if (isNotDaysSort && tableState.data.list.length) {
+    tableState.pushTable(tasks.at(-1).date)
   }
 }
 
 function createTableAllGroup(task) {
   const table = el('table')
-  const tbody = el('tbody')
-
-  const caption = createTableCaption(task)
-  table.append(caption)
+  const details = el('details', el('summary', createTableCaption(task)))
 
   const thead = createTableHead()
-  tbody.append(thead)
+  table.append(thead)
 
   for (const currentTask of task.list) {
     const tr = createTableTr(currentTask)
-    tbody.append(tr)
+    table.append(tr)
   }
 
-  table.append(tbody)
-  root.append(table)
+  details.append(table)
+  root.prepend(details)
 }
 
 downloadButton.addEventListener('click', () => {
