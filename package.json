@@ -10,7 +10,7 @@
     "dev": "vite build --watch --mode development",
     "build": "pnpm type-check && vite build",
     "type-check": "tsc --noEmit",
-    "format": "prettier --write '**/*.{js,ts,tsx,json}'"
+    "format": "prettier --write **/*.{js,ts,tsx,json}"
   },
   "devDependencies": {
     "@crashmax/prettier-config": "5.0.1",

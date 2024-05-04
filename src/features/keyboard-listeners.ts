@@ -1,5 +1,6 @@
 import { EVENT_KEYBOARD_SHORTCUTS } from '../constants.js'
 import { storage } from './storage.js'
+import { submitButton } from './submit-button.js'
 import { taskBackuper } from './tasks/task-backuper.js'
 import { toggleAutoSubmit } from './widget/auto-submit-button.jsx'
 import { resetWidgetPosition } from './widget/widget-dnd.jsx'
@@ -32,6 +33,11 @@ export function setKeyboardListeners(): void {
     if (EVENT_KEYBOARD_SHORTCUTS.toggleWidgetVisibility(event)) {
       event.preventDefault()
       toggleWidgetVisibility()
+    }
+
+    if (EVENT_KEYBOARD_SHORTCUTS.clickSubmit(event)) {
+      event.preventDefault()
+      submitButton.clickSubmit(true)
     }
   })
 }

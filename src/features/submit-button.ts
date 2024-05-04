@@ -33,8 +33,8 @@ class SubmitButton {
     return buttons
   }
 
-  clickSubmit(): void {
-    if (!toggleAutoSubmit.isAutoSubmit) return
+  clickSubmit(force = false): void {
+    if (!force && toggleAutoSubmit.isAutoSubmit) return
 
     const buttons = this.getSubmitButtons()
     if (!buttons.length) {
