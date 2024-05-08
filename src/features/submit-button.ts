@@ -17,32 +17,31 @@ class SubmitButton {
     setAutoSubmitting(!autoSubmitting())
   }
 
-  private getSubmitButtons(): HTMLButtonElement[] {
-    const buttons: HTMLButtonElement[] = []
-    const elements = Array.from(
+  getSubmitButton(): HTMLButtonElement | null {
+    const buttons = Array.from(
       document.querySelectorAll(SUBMIT_BUTTON_SELECTOR)
     )
 
-    for (const element of elements) {
-      if (!(element instanceof HTMLButtonElement)) continue
-      if (element.textContent === SUBMIT_BUTTON_TEXT) {
-        buttons.push(element)
+    for (const button of buttons) {
+      if (!(button instanceof HTMLButtonElement)) continue
+      if (button.textContent === SUBMIT_BUTTON_TEXT) {
+        return button
       }
     }
 
-    return buttons
+    return null
   }
 
-  clickSubmit(force = false): void {
-    if (!force && toggleAutoSubmit.isAutoSubmit) return
+  clickSubmit(): void {
+    if (toggleAutoSubmit.isAutoSubmit) return
 
-    const buttons = this.getSubmitButtons()
-    if (!buttons.length) {
+    const submitButton = this.getSubmitButton()
+    if (!submitButton) {
       logger.error('Submit button is not defined')
       return
     }
 
-    buttons[0]!.click()
+    submitButton.click()
   }
 }
 

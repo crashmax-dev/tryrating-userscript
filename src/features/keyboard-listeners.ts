@@ -37,7 +37,7 @@ export function setKeyboardListeners(): void {
 
     if (EVENT_KEYBOARD_SHORTCUTS.clickSubmit(event)) {
       event.preventDefault()
-      submitButton.clickSubmit(true)
+      submitButton.getSubmitButton()?.click()
     }
   })
 }
