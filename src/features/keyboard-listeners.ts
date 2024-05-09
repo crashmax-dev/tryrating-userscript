@@ -34,10 +34,5 @@ export function setKeyboardListeners(): void {
       event.preventDefault()
       toggleWidgetVisibility()
     }
-
-    if (EVENT_KEYBOARD_SHORTCUTS.clickSubmit(event)) {
-      event.preventDefault()
-      submitButton.getSubmitButton()?.click()
-    }
   })
 }

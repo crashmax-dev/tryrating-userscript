@@ -71,10 +71,6 @@ class TaskFieldsObserver {
         estimated: estimatedTimeOffset
       })
 
-      if (!toggleAutoSubmit.isAutoSubmit) {
-        toggleAutoSubmit.toggle()
-      }
-
       if (this.taskFields) {
         logger.info('Task is submitted', this.taskFields)
         storage.write({

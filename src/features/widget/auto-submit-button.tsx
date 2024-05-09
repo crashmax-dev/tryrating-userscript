@@ -6,7 +6,7 @@ import { tooltip } from '../../utils/tooltip.js'
 const [autosubmit, setAutosubmit] = createSignal(true)
 
 class ToggleAutoSubmit {
-  get isAutoSubmit(): boolean {
+  get isEnabled(): boolean {
     return autosubmit()
   }
 

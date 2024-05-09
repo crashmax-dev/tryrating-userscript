@@ -1,22 +1,10 @@
-import { createSignal } from 'solid-js'
-
 import { logger } from '../utils/logger.js'
 import { toggleAutoSubmit } from './widget/auto-submit-button.js'
 
 const SUBMIT_BUTTON_SELECTOR = '.btn-success'
 const SUBMIT_BUTTON_TEXT = 'Submit Rating'
 
-const [autoSubmitting, setAutoSubmitting] = createSignal(true)
-
 class SubmitButton {
-  get isAutoSubmit(): boolean {
-    return autoSubmitting()
-  }
-
-  toggleAutoSubmit(): void {
-    setAutoSubmitting(!autoSubmitting())
-  }
-
   getSubmitButton(): HTMLButtonElement | null {
     const buttons = Array.from(
       document.querySelectorAll(SUBMIT_BUTTON_SELECTOR)
@@ -33,7 +21,7 @@ class SubmitButton {
   }
 
   clickSubmit(): void {
-    if (toggleAutoSubmit.isAutoSubmit) return
+    if (toggleAutoSubmit.isEnabled) return
 
     const submitButton = this.getSubmitButton()
     if (!submitButton) {

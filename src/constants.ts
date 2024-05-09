@@ -13,8 +13,7 @@ export const EVENT_KEYBOARD_SHORTCUTS = {
   toggleAutoSubmit: (event: KeyboardEvent) =>
     event.ctrlKey && event.code === 'KeyO',
   toggleWidgetVisibility: (event: KeyboardEvent) =>
-    event.ctrlKey && event.code === 'KeyX',
-  clickSubmit: (event: KeyboardEvent) => event.ctrlKey && event.code === 'KeyM'
+    event.ctrlKey && event.code === 'KeyX'
 } as const
 
 export const EVENT_KEYBOARD_SHORTCUTS_HELP = `
